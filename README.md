@@ -1,15 +1,29 @@
 # docker-mapcache
 
+## Build 
+
 ```
 docker build -t sogis/mapcache:latest .
 ```
+
+## Run
 ```
-docker run -p 8281:80 -v /tmp:/var/sig/tiles -v /Users/stefan/Projekte/docker-mapcache:/mapcache --name mapcache sogis/mapcache
+docker run -p 8281:80 -v /tmp:/tiles --rm --name mapcache sogis/docker-mapcache
 ```
 
-docker run -p 8281:80 -v /tmp:/var/sig/tiles -v /Users/stefan/Projekte/docker-mapcache/mapcache.xml:/mapcache/mapcache.xml --name mapcache sogis/mapcache
+Log into container:
+```
+bash -c "clear && docker exec -it mapcache /bin/bash"
+```
 
-http://localhost:8281/?SERVICE=WMS&REQUEST=GetCapabilities ??
+Seeding:
+```
+docker exec -it mapcache mapcache_seed -c /mapcache/mapcache.xml -t ch.so.agi.hintergrundkarte_farbig -f -z 11,11 -n 4 -d /data/wmts-seeding-geom.gpkg -l kanton1000m
+```
 
-http://localhost:8281/mapcache/wmts?service=wmts&request=getcapabilities&version=1.0.0
+WMTSCapabilities.xml:
+```
 http://localhost:8281/mapcache/wmts/1.0.0/WMTSCapabilities.xml
+```
+
+

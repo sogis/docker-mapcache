@@ -1,61 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<!-- see the accompanying mapcache.xml.sample for a fully commented configuration file -->
-
 <mapcache>
-   <cache name="disk" type="disk">
-      <base>/tmp</base>
-      <symlink_blank/>
-   </cache>
-   <cache name="sqlite" type="sqlite3">
-     <dbfile>/tmp/{tileset}-{z}-{grid}.db</dbfile>
-      <detect_blank/>
-   </cache>
+  <title>WMTS / Amt für Geoinformation Kanton Solothurn</title>
+  <abstract>None</abstract>
+  <grid name="2056">
+    <metadata>
+      <title>CH1903+ / LV95</title>
+    </metadata>
+    <origin>top-left</origin>
+    <srs>EPSG:2056</srs>
+    <units>m</units>
+    <extent>2570000,1208000,2667000,1268000</extent>
+    <!--eCH-0056 v2 ? / bisher -->
+    <!--<resolutions>4000,3750,3500,3250,3000,2750,2500,2250,2000,1750,1500,1250,1000,750,650,500,250,100,50,20,10,5,2.5,2,1.5,1,0.5,0.25,0.1</resolutions>-->
+    <!--eCH-0056 v3-->
+    <!--0.05 will not be seeded-->
+    <resolutions>4000,2000,1000,500,250,100,50,20,10,5,2.5,1,0.5,0.25,0.1,0.05</resolutions>
+    <size>256 256</size>
+  </grid>
 
-   <source name="vmap0" type="wms">
+  <cache name="sqlite" type="sqlite3">
+    <dbfile>/tiles/{tileset}-{z}-{grid}.db</dbfile>
+    <detect_blank/>
+  </cache>
+  
+   <format name="myjpeg" type ="JPEG">
+      <quality>80</quality>  
+      <photometric>YCBCR</photometric>   <!-- RGB | YCBCR -->
+   </format>
+
+  <source name="ch.so.agi.hintergrundkarte_ortho" type="wms">
       <getmap>
          <params>
-            <FORMAT>image/png</FORMAT>
-            <LAYERS>basic</LAYERS>
+            <FORMAT>image/jpeg</FORMAT>
+            <LAYERS>ch.so.agi.hintergrundkarte_ortho</LAYERS>
          </params>
       </getmap>
-
       <http>
-         <url>http://vmap0.tiles.osgeo.org/wms/vmap0</url>
+         <url>http://geo.dev.so.ch/ows/somap</url>
+         <connection_timeout>60</connection_timeout>         
       </http>
    </source>
 
-   <tileset name="test">
-      <source>vmap0</source>
+  <source name="ch.so.agi.hintergrundkarte_farbig" type="wms">
+      <getmap>
+         <params>
+            <FORMAT>image/png</FORMAT>
+            <LAYERS>ch.so.agi.hintergrundkarte_farbig</LAYERS>
+         </params>
+      </getmap>
+      <http>
+         <url>http://geo.dev.so.ch/ows/somap</url>
+         <connection_timeout>60</connection_timeout>         
+      </http>
+   </source>
+
+  <source name="ch.so.agi.hintergrundkarte_sw" type="wms">
+      <getmap>
+         <params>
+            <FORMAT>image/png</FORMAT>
+            <LAYERS>ch.so.agi.hintergrundkarte_sw</LAYERS>
+         </params>
+      </getmap>
+      <http>
+         <url>http://geo.dev.so.ch/ows/somap?</url>
+         <connection_timeout>60</connection_timeout>         
+      </http>
+   </source>
+
+   <tileset name="ch.so.agi.hintergrundkarte_ortho">
+      <source>ch.so.agi.hintergrundkarte_ortho</source>
       <cache>sqlite</cache>
-      <grid>WGS84</grid>
-      <grid>GoogleMapsCompatible</grid>
-      <format>PNG</format>
-      <metatile>5 5</metatile>
-      <metabuffer>10</metabuffer>
-      <expires>3600</expires>
+      <grid restricted_extent="2570000,1208000,2667000,1268000">2056</grid>      
+      <format>myjpeg</format>
+      <metatile>8 8</metatile>
+      <metabuffer>0</metabuffer>
+      <expires>25200</expires>
+      <auto_expire>31536000</auto_expire>
    </tileset>
 
-   <default_format>JPEG</default_format>
+   <tileset name="ch.so.agi.hintergrundkarte_farbig">
+      <source>ch.so.agi.hintergrundkarte_farbig</source>
+      <cache>sqlite</cache>
+      <grid restricted_extent="2570000,1208000,2667000,1268000">2056</grid>      
+      <format>PNG</format>
+      <metatile>8 8</metatile>
+      <metabuffer>20</metabuffer>
+      <expires>25200</expires>
+      <auto_expire>31536000</auto_expire>
+   </tileset>   
 
-   <service type="wms" enabled="false">
-      <full_wms>assemble</full_wms>
-      <resample_mode>bilinear</resample_mode>
-      <format>JPEG</format>
-      <maxsize>4096</maxsize>
-   </service>
-   <service type="wmts" enabled="true"/>
-   <service type="tms" enabled="false"/>
-   <service type="kml" enabled="false"/>
-   <service type="gmaps" enabled="false"/>
-   <service type="ve" enabled="false"/>
-   <service type="mapguide" enabled="false"/>
-   <service type="demo" enabled="true"/>
+   <tileset name="ch.so.agi.hintergrundkarte_sw">
+      <source>ch.so.agi.hintergrundkarte_sw</source>
+      <cache>sqlite</cache>
+      <grid restricted_extent="2570000,1208000,2667000,1268000">2056</grid>      
+      <format>PNG</format>
+      <metatile>8 8</metatile>
+      <metabuffer>20</metabuffer>
+      <expires>25200</expires>
+      <auto_expire>31536000</auto_expire>
+   </tileset> 
 
-   <errors>report</errors>
-   <locker type="disk">
-     <directory>/tmp</directory>
-     <timeout>300</timeout>
-    </locker>
-
+  <default_format>JPEG</default_format>
+  <service type="wms" enabled="false">
+    <full_wms>assemble</full_wms>
+    <resample_mode>bilinear</resample_mode>
+    <format>JPEG</format>
+    <maxsize>4096</maxsize>
+  </service>
+  <service type="wmts" enabled="true"/>
+  <service type="tms" enabled="false"/>
+  <service type="kml" enabled="false"/>
+  <service type="gmaps" enabled="false"/>
+  <service type="ve" enabled="false"/>
+  <service type="mapguide" enabled="false"/>
+  <service type="demo" enabled="true"/>
+  <errors>report</errors>
+  <locker type="disk">
+    <directory>/tmp</directory>
+    <timeout>300</timeout>
+  </locker>
 </mapcache>
