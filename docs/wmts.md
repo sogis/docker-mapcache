@@ -11,4 +11,4 @@ Die letzte Zoomstufe wird nicht geseedet.
 CH1903+ / LV95
 
 ## Layer
-Im Moment stehen die Hintergrundkarten zur Verfügung. 
+Im Moment stehen die Hintergrundkarten des Web GIS Clients zur Verfügung. 
