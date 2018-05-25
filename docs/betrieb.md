@@ -1,7 +1,7 @@
 # Betrieb
 
 ## Architektur
-![MapCache](https://github.com/edigonzales/docker-mapcache/blob/master/docs/architektur-mapcache.png)
+![MapCache](https://github.com/edigonzales/docker-mapcache/blob/master/docs/mapcache-architektur.png)
 
 Für einen vollautomatischen Seedingprozess innerhalb und mit OpenShift wird zukünftig eine zweite MapCache-Instanz benötigt. Diese wird dann als Kubernetes/OpenShift-Cronjob definiert und übernimmt das Seeden. Falls die Performanz des "SO!MAP-WMS" nicht reicht, kann eine zusätzliche QGIS-Server-Instanz (Docker-Image plusminus vorbereitet) innerhalb von OpenShift gestartet werden. Diese Instanz muss im QGIS-Projektfile (oder -files) nur die Hintergrundkarten (resp. die zu seedenden Karten) definiert haben.
 
