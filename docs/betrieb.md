@@ -29,7 +29,10 @@ bash -c "clear && docker exec -it mapcache /bin/bash"
 ### Perimeter
 Es gibt zwei Perimeter. Der erste entspricht dem im `mapcache.xml` definierten Extent. Dieser wird verwendet um die statischen Zoomstufen zu seeden (Orthofotos, Landeskarten). Der zweite Perimeter ist eine um einen Kilometer gebufferte Kantonsgrenze. Diese wird zum Seeden des Planes für das Grundbuch verwendent, da ausserhalb des Kantons keine Daten vorhanden sind.
 
-### Tägliches Seeden (to be done)
+### Tägliches Seeden
+
+*TO BE DONE*
+
 Die Daten der amtlichen Vermessung werden mindestens einmal pro Woche von verschiedenen Nachführungsgeometern geliefert. Aus diesem Grund müssen die Zoomlevel, wo die Daten der amtlichen Vermessung dargestellt werden und im Perimeter, wo sich die Daten neu geliefert wurden, jeden Tag neu gerechnet werden.
 
 MapCache kann auf eine beliebige OGR-Datenquelle zum Eingrenzen des Seeding-Perimeters zugreifen, z.B. PostgreSQL:
@@ -39,9 +42,6 @@ MapCache kann auf eine beliebige OGR-Datenquelle zum Eingrenzen des Seeding-Peri
 -d PG:"dbname='pub' host='192.168.50.6' port='5432' user='user' password='password'" -s "select * from test" 
 ``` 
 
-Es kann eine View (innerhalb des MOpublic-Schemas) oder mit GRETL ein Tabelle täglich aktualisiert werden, deren Inhalt die neu gelieferten Gemeinden sind. Leider kann man mit MapCache "nur" die OGR-Sql-Syntax verwenden (`-s`) . Dies verunmöglicht das direkte Abfragen der neu gelieferten Gemeinden. 
-
-Die statischen Zoomstufen müssen nicht täglich geseeded werden, nur bei Bedarf (z.B. neues Orthofoto oder aktualisierte Landeskarten).
 
 ### Beispiele
 
@@ -53,7 +53,7 @@ Hintergrundkarte farbig, Zoomstufen 11,14, 4 Threads, alle Kacheln ersetzen, Per
 
 `mapcache_seed -c /mapcache/mapcache.xml -t ch.so.agi.hintergrundkarte_farbig -f -z 11,14 -n 4 -d /data/wmts-seeding-perimeter.gpkg -l kanton1000m`
 
-## QWC2-Konfigurationen (gehört in QWC-/AGDI-Doku)
+## QWC2-Konfigurationen (gehört in QWC2-/AGDI-Doku)
 
 Im AGDI müssen die Hintergrundkarten unter "Map" - "BackgroundLayer" definiert werden. Attribute `Name` und `Beschreibung` werden nicht im GUI des Web GIS Clients in irgendwelcher Form dargesetllt. Da die Logos der Hintergrundkarten im Web GIS Client alphabetisch aufgrund des Attributs `Name` dargestellt werden, muss man sich mit einem Workaround behelfen indem man `Name` entsprechend wählt (z.B. mit Nummern-Präfix).
 
