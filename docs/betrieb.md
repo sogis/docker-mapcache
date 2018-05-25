@@ -105,3 +105,5 @@ Wichtig scheint `dpiMode` zu sein. Entsprechend werden beim WMS-Request vendor-s
 ```
 
 Das Attribut `title` entspricht dem Hintergrundkarten-Titel im Web GIS Client.
+
+Das kleine Vorschaubildli kann unter "Vorschaubild" hochgeladen werden.
