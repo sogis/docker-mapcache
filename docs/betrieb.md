@@ -29,9 +29,7 @@ bash -c "clear && docker exec -it mapcache /bin/bash"
 ### Perimeter
 Es gibt zwei Perimeter. Der erste entspricht dem im `mapcache.xml` definierten Extent. Dieser wird verwendet um die statischen Zoomstufen zu seeden (Orthofotos, Landeskarten). Der zweite Perimeter ist eine um einen Kilometer gebufferte Kantonsgrenze. Diese wird zum Seeden des Planes f체r das Grundbuch verwendent, da ausserhalb des Kantons keine Daten vorhanden sind.
 
-### T채gliches Seeden
-
-*TO BE DONE*
+### T채gliches Seeden (to be done)
 
 Die Daten der amtlichen Vermessung werden mindestens einmal pro Woche von verschiedenen Nachf체hrungsgeometern geliefert. Aus diesem Grund m체ssen die Zoomlevel, wo die Daten der amtlichen Vermessung dargestellt werden und im Perimeter, wo sich die Daten neu geliefert wurden, jeden Tag neu gerechnet werden.
 
@@ -46,7 +44,7 @@ Es kann eine View (innerhalb des MOpublic-Schemas) oder mit GRETL ein Tabelle t�
 
 Die statischen Zoomstufen m체ssen nicht t채glich geseeded werden, nur bei Bedarf (z.B. neues Orthofoto oder aktualisierte Landeskarten).
 
-### T채gliches Seeden
+### Beispiele
 
 Orthofoto, Zoomstufen 0 bis 10, 2 Threads, alle Kacheln ersetzen:
 
