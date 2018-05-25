@@ -38,10 +38,6 @@ Die Daten der amtlichen Vermessung werden mindestens einmal pro Woche von versch
 MapCache kann auf eine beliebige OGR-Datenquelle zum Eingrenzen des Seeding-Perimeters zugreifen, z.B. PostgreSQL:
 
 
-```
--d PG:"dbname='pub' host='192.168.50.6' port='5432' user='user' password='password'" -s "select * from test" 
-``` 
-
 
 ### Beispiele
 
