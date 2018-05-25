@@ -43,7 +43,7 @@ Es kann eine View (innerhalb des MOpublic-Schemas) oder mit GRETL ein Tabelle t�
 
 Die statischen Zoomstufen müssen nicht täglich geseeded werden, nur bei Bedarf (z.B. neues Orthofoto oder aktualisierte Landeskarten).
 
-### Beispiel-Befehle
+### Beispiele
 
 Orthofoto, Zoomstufen 0 bis 10, 2 Threads, alle Kacheln ersetzen:
 
@@ -53,10 +53,54 @@ Hintergrundkarte farbig, Zoomstufen 11,14, 4 Threads, alle Kacheln ersetzen, Per
 
 `mapcache_seed -c /mapcache/mapcache.xml -t ch.so.agi.hintergrundkarte_farbig -f -z 11,14 -n 4 -d /data/wmts-seeding-perimeter.gpkg -l kanton1000m`
 
+## QWC2-Konfigurationen (gehört in QWC-/AGDI-Doku)
 
+Im AGDI müssen die Hintergrundkarten unter "Map" - "BackgroundLayer" definiert werden. Attribute `Name` und `Beschreibung` werden nicht im GUI des Web GIS Clients in irgendwelcher Form dargesetllt. Da die Logos der Hintergrundkarten im Web GIS Client alphabetisch aufgrund des Attributs `Name` dargestellt werden, muss man sich mit einem Workaround behelfen indem man `Name` entsprechend wählt (z.B. mit Nummern-Präfix).
 
+`QGIS Datasource`: Datenquelle für QGIS-Server zum Drucken der Hintergrundkarte. Kann WMS oder WMTS sein, z.B.:
 
-Cronjob
-Perimeter -> Sql/gretl/view/
+```
+contextualWMSLegend=0&crs=EPSG:2056&dpiMode=7&featureCount=10&format=image/png&layers=hintergrundkarte_sw&styles=&url=http://159.69.8.22/cgi-bin/qgis_mapserv.fcgi?map%3D/opt/qwc2-background-layer-seeding/qgis/qgs/hintergrundkarte_sw.qgs
+```
 
-## QWC2-Konfigurationen
+Wichtig scheint `dpiMode` zu sein. Entsprechend werden beim WMS-Request vendor-spezifische DPI-Parameter mitgesendet, was sich auf die Darstellung im Resultat auswirkt, weil sich die Hintergrundkarte nicht nur aus einer Datenquelle bedienen, sondern massstabsabhängig aus verschieden Landeskarten und Vektordaten.
+
+`QWC2 Config`: Definiert den zu verwendenden WMTS:
+
+```
+{
+  "name": "hintergrundkarte_sw",
+  "title": "Karte SW",
+  "type": "wmts",
+  "url": "http://159.69.8.22/mapcache/wmts/1.0.0/ch.so.agi.hintergrundkarte_sw/default/{TileMatrixSet}/{TileMatrix}/{TileRow}/{TileCol}.png",
+  "tileMatrixSet": "2056",
+  "tileMatrixPrefix": "",
+  "thumbnail": "img/mapthumbs/default.jpg",
+  "projection": "EPSG:2056",
+  "resolutions": [
+    4000,
+    2000,
+    1000,
+    500,
+    250,
+    100,
+    50,
+    20,
+    10,
+    5,
+    2.5,
+    1,
+    0.5,
+    0.25,
+    0.1
+  ],
+  "originX": 2570000,
+  "originY": 1268000,
+  "tileSize": [
+    256,
+    256
+  ]
+}
+```
+
+Das Attribut `title` entspricht dem Hintergrundkarten-Titel im Web GIS Client.
