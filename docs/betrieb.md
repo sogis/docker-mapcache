@@ -38,8 +38,15 @@ Die Daten der amtlichen Vermessung werden mindestens einmal pro Woche von versch
 MapCache kann auf eine beliebige OGR-Datenquelle zum Eingrenzen des Seeding-Perimeters zugreifen, z.B. PostgreSQL:
 
 
+```
+-d PG:"dbname='pub' host='192.168.50.6' port='5432' user='user' password='password'" -s "select * from test" 
+``` 
 
-### Beispiele
+Es kann eine View (innerhalb des MOpublic-Schemas) oder mit GRETL ein Tabelle täglich aktualisiert werden, deren Inhalt die neu gelieferten Gemeinden sind. Leider kann man mit MapCache "nur" die OGR-Sql-Syntax verwenden (`-s`) . Dies verunmöglicht das direkte Abfragen der neu gelieferten Gemeinden. 
+
+Die statischen Zoomstufen müssen nicht täglich geseeded werden, nur bei Bedarf (z.B. neues Orthofoto oder aktualisierte Landeskarten).
+
+### Tägliches Seeden
 
 Orthofoto, Zoomstufen 0 bis 10, 2 Threads, alle Kacheln ersetzen:
 
