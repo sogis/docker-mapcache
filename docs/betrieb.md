@@ -104,6 +104,8 @@ Wichtig scheint `dpiMode` zu sein. Entsprechend werden beim WMS-Request vendor-s
 }
 ```
 
+Die Zoomstufen resp. Auflösungen müssen nicht mit den Zoomstufen im QWC2-Client übereinstimmen. Es wird interpoliert. Die hier verwendeten Zoomstufen entsprechen eCH-0056 (ohne die letzte Zoomstufe).
+
 Das Attribut `title` entspricht dem Hintergrundkarten-Titel im Web GIS Client.
 
-Das kleine Vorschaubildli kann unter "Vorschaubild" hochgeladen werden.
+Das kleine Vorschaubildli kann unter `Vorschaubild` hochgeladen werden.
