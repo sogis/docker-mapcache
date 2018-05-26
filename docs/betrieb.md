@@ -10,12 +10,19 @@ Als Cache wird SQlite (pro Tileset / pro Zoomstufe) verwendet.
 ## Openshift
 Zu definieren ist das Volume für die SQlite-Caches. -> Hat eventuell noch Auswirkungen auf das Dockerfile. MapCache schreibt die SQlite-Datein in das `/tiles`-Verzeichnis, das gemountet werden kann. Lokale Tests haben gezeigt, dass - obwohl das gemountete `/tiles`-Verzeichnis `root` gehört - im Laufenden Betrieb MapCache aus den SQlite-Dateien die Tiles lesen und ausliefern kann. Was wohl nicht geht, ist das Schreiben von allfällig fehlenden, da MapCache als `www-data` läuft (was aber sowieso aus Performancegründen nicht unbedingt unser Ziel ist).
 
+_TODO_: Mehr Dokumentation! Wo muss was (in OpenShift) eingetragen werden? Was muss wie gemountet sein?
+
 ## Docker-Image
 Die MapCache-Konfiguration `mapcache.xml` ist hardcodiert im Image und muss bei Änderungen bei den WMS-Endpunkten dementsprechend angepasst werden. Bei Bedarf kann das Dockerfile so angepasst werden, dass die Konfiguration gemountet werden kann.
 
 Die `WMTSCapabilities`-URL ist: `http://localhost:8281/mapcache/wmts/1.0.0/WMTSCapabilities.xml`
 
 Im Image ist eine GeoPackage-Datei mit gebufferten Kantonsgrenzen (1km) für das Seeden des Grundbuchplanes.
+
+## Url
+Der WMTS ist unter der Domain https://geo.so.ch/wmts erreichbar. 
+
+_TODO_: Mehr Dokumentation! Wo muss was eingetragen werden?
 
 ## Seeding
 Mit nur einer MapCache-Instanz in Openshift muss das Seeding manuell ausgeführt werden indem man sich in den Container einloggt:
