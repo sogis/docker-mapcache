@@ -9,8 +9,8 @@ ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
 # TODO: CHANGE BACK to upgrade!!!!!!!!
-#RUN apt-get update && apt-get upgrade -y
-RUN apt-get update 
+RUN apt-get update && apt-get upgrade -y
+#RUN apt-get update 
 
 # Install Apache FCGI
 RUN apt-get update && apt-get install -y apache2 libapache2-mod-fcgid
