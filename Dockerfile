@@ -39,11 +39,6 @@ RUN mkdir /etc/service/apache2
 ADD apache2-run.sh /etc/service/apache2/run
 RUN chmod +x /etc/service/apache2/run
 
-# Docker log file
-RUN mkdir /etc/service/dockerlog
-ADD dockerlog-run.sh /etc/service/dockerlog/run
-RUN chmod +x /etc/service/dockerlog/run
-
 # Directory for tiles
 RUN mkdir /tiles
 VOLUME ["/tiles"]
