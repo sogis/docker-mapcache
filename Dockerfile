@@ -22,4 +22,4 @@ EXPOSE 8080
 
 USER www-data
 
-CMD ["/usr/sbin/apachectl", "-DFOREGROUND"]
+CMD ["/usr/sbin/apache2ctl", "-DFOREGROUND"]
