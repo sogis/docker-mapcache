@@ -22,4 +22,4 @@ EXPOSE 8080
 
 USER www-data
 
-ENTRYPOINT ["/usr/sbin/apachectl", "-D", "FOREGROUND"]
+CMD ["/usr/sbin/apachectl", "-DFOREGROUND"]
