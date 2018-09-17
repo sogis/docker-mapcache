@@ -11,7 +11,8 @@ RUN mkdir -p /var/run/apache2 && \
 
 RUN mkdir /mapcache /tiles && \
     chown www-data: /mapcache /tiles
-COPY mapcache.xml wmts-seeding-perimeter.gpkg /mapcache/
+COPY mapcache.xml /mapcache/
+COPY wmts-seeding-perimeter.gpkg /mapcache/
 RUN chown www-data: /mapcache/wmts-seeding-perimeter.gpkg
 COPY mapcache.conf /etc/apache2/sites-available/mapcache.conf
 RUN a2ensite mapcache
