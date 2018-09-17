@@ -1,52 +1,26 @@
-# QGIS Server 2.18 and MapCache 1.6.1 with Apache FCGI
+FROM debian:buster
 
-FROM phusion/baseimage:0.10.1
+RUN apt-get update && \
+    apt-get install --assume-yes --no-install-recommends apache2 libapache2-mod-mapcache mapcache-tools ca-certificates && \
+    apt-get clean
+RUN mkdir -p /var/run/apache2 && \
+    chown --recursive root:www-data /var/log/apache2/ /var/run/apache2 && \
+    chmod --recursive g+w /var/log/apache2 /var/run/apache2 && \
+    sed -i -e 's/<VirtualHost \*:80>/<VirtualHost *:8080>/' /etc/apache2/sites-available/000-default.conf && \
+    sed -i -e 's/Listen 80/Listen 8080/' /etc/apache2/ports.conf
 
-# Based off work by Sourcepole 
-MAINTAINER Stefan Ziegler
-
-ENV LANG en_US.UTF-8
-ENV LC_ALL en_US.UTF-8
-
-# TODO: CHANGE BACK to upgrade!!!!!!!!
-RUN apt-get update && apt-get upgrade -y
-#RUN apt-get update 
-
-# Install Apache FCGI
-RUN apt-get update && apt-get install -y apache2 libapache2-mod-fcgid
-
-# Install QGIS Server and MapCache
-#RUN echo "deb http://qgis.org/debian-ltr xenial main" > /etc/apt/sources.list.d/qgis.org-debian.list
-#RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-key CAEB3DC3BDF7FB45
-RUN apt-get install -qqy software-properties-common --no-install-recommends  && \
-    apt-add-repository -y ppa:ubuntugis/ubuntugis-unstable && \
-    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 314DF160    
-RUN apt-get update && apt-get install -y libgeos-3.5.1 gdal-bin libapache2-mod-mapcache libmapcache1 libmapcache1-dev mapcache-cgi mapcache-tools
-
-# Enable apache modules
-RUN a2enmod rewrite headers mapcache
-
-# MapCache configuration 
-RUN mkdir /mapcache
-COPY mapcache.xml /mapcache/mapcache.xml
+RUN mkdir /mapcache /tiles && \
+    chown www-data: /mapcache /tiles
+COPY mapcache.xml /mapcache/
 COPY wmts-seeding-perimeter.gpkg /mapcache/
+RUN chown www-data: /mapcache/wmts-seeding-perimeter.gpkg
 COPY mapcache.conf /etc/apache2/sites-available/mapcache.conf
-RUN a2dissite 000-default
 RUN a2ensite mapcache
 
-# Install apache2 run script
-RUN mkdir /etc/service/apache2
-ADD apache2-run.sh /etc/service/apache2/run
-RUN chmod +x /etc/service/apache2/run
-
-# Directory for tiles
-RUN mkdir /tiles
 VOLUME ["/tiles"]
 
-EXPOSE 80
+EXPOSE 8080
 
-# Use baseimage-docker's init system.
-CMD ["/sbin/my_init"]
+USER www-data
 
-# Clean up downloaded packages
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+CMD ["/usr/sbin/apache2ctl", "-DFOREGROUND"]

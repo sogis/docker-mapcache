@@ -8,7 +8,7 @@ docker build -t sogis/mapcache:latest .
 
 ## Run
 ```
-docker run -p 8281:80 -v /tmp:/tiles --rm --name mapcache sogis/mapcache
+docker run -p 8281:8080 -v /tmp:/tiles --rm --name mapcache sogis/mapcache
 ```
 
 Log into container:
@@ -18,7 +18,7 @@ bash -c "clear && docker exec -it mapcache /bin/bash"
 
 Seeding:
 ```
-docker exec -it mapcache mapcache_seed -c /mapcache/mapcache.xml -t ch.so.agi.hintergrundkarte_farbig -f -z 11,11 -n 4 -d /data/wmts-seeding-geom.gpkg -l kanton1000m
+docker exec -it mapcache mapcache_seed -c /mapcache/mapcache.xml -t ch.so.agi.hintergrundkarte_farbig -f -z 11,11 -n 4 -d /mapcache/wmts-seeding-perimeter.gpkg -l kanton1000m
 ```
 
 WMTSCapabilities.xml:
