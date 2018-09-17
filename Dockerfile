@@ -9,12 +9,9 @@ RUN mkdir -p /var/run/apache2 && \
     sed -i -e 's/<VirtualHost \*:80>/<VirtualHost *:8080>/' /etc/apache2/sites-available/000-default.conf && \
     sed -i -e 's/Listen 80/Listen 8080/' /etc/apache2/ports.conf
 
-RUN mkdir /mapcache && \
-    mkdir /tiles && \
-    chown www-data: /mapcache && \
-    chown www-data: /tiles
-COPY mapcache.xml /mapcache/
-COPY wmts-seeding-perimeter.gpkg /mapcache/
+RUN mkdir /mapcache /tiles && \
+    chown www-data: /mapcache /tiles
+COPY mapcache.xml wmts-seeding-perimeter.gpkg /mapcache/
 RUN chown www-data: /mapcache/wmts-seeding-perimeter.gpkg
 COPY mapcache.conf /etc/apache2/sites-available/mapcache.conf
 RUN a2ensite mapcache
