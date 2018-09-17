@@ -62,7 +62,7 @@
          </params>
       </getmap>
       <http>
-         <url>https://geo.so.ch/ows/somap?</url>
+         <url>https://geo.so.ch/ows/somap</url>
          <connection_timeout>60</connection_timeout>
       </http>
    </source>
