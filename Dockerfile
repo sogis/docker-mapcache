@@ -1,7 +1,7 @@
 FROM debian:buster
 
 RUN apt-get update && \
-    apt-get install --assume-yes --no-install-recommends apache2 libapache2-mod-mapcache mapcache-tools && \
+    apt-get install --assume-yes --no-install-recommends apache2 libapache2-mod-mapcache mapcache-tools ca-certificates && \
     apt-get clean
 RUN mkdir -p /var/run/apache2 && \
     chown --recursive root:www-data /var/log/apache2/ /var/run/apache2 && \
