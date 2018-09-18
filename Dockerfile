@@ -2,7 +2,8 @@ FROM debian:buster
 
 RUN apt-get update && \
     apt-get install --assume-yes --no-install-recommends apache2 libapache2-mod-mapcache mapcache-tools ca-certificates && \
-    apt-get clean
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 RUN mkdir -p /var/run/apache2 && \
     chown --recursive root:root /var/log/apache2 /var/run/apache2 && \
     chmod --recursive g+w /var/log/apache2 /var/run/apache2 && \
