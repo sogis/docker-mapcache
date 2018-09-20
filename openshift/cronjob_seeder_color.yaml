@@ -1,0 +1,38 @@
+apiVersion: batch/v2alpha1
+kind: CronJob
+metadata:
+  name: seeder-color
+spec:
+  schedule: 00 02 * * *
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            parent: cronjob-seeder-color
+        spec:
+          containers:
+          - name: seeder-color
+            image: sogis/docker-mapcache
+            command:
+            - mapcache_seed
+            - -c
+            - /mapcache/mapcache.xml
+            - -t
+            - ch.so.agi.hintergrundkarte_farbig
+            - -f
+            - -z
+            - 11,11
+            - -n
+            - "2"
+            - -d
+            - /mapcache/wmts-seeding-perimeter.gpkg
+            - -l
+            - kanton1000m
+            volumeMounts:
+            - mountPath: /tiles
+              name: mapcache-tiles
+          restartPolicy: OnFailure
+          volumes:
+          - name: mapcache-tiles
+            emptyDir: {}

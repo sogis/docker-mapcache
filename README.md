@@ -26,4 +26,6 @@ WMTSCapabilities.xml:
 http://localhost:8281/mapcache/wmts/1.0.0/WMTSCapabilities.xml
 ```
 
+## Run in OpenShift
 
+See the *openshift* folder for documentation on running *docker-mapcache* in OpenShift and on creating OpenShift Cron Jobs for tile seeding.
