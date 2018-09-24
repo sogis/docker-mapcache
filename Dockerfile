@@ -7,7 +7,6 @@ RUN apt-get update && \
 RUN mkdir -p /var/run/apache2 && \
     chown --recursive root:root /var/log/apache2 /var/run/apache2 && \
     chmod --recursive g+w /var/log/apache2 /var/run/apache2 && \
-    sed -i -e 's/<VirtualHost \*:80>/<VirtualHost *:8080>/' /etc/apache2/sites-available/000-default.conf && \
     sed -i -e 's/Listen 80/Listen 8080/' /etc/apache2/ports.conf
 
 RUN mkdir /mapcache /tiles && \
