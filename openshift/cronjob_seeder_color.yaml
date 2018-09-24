@@ -32,7 +32,7 @@ spec:
             volumeMounts:
             - mountPath: /tiles
               name: mapcache-tiles
-          restartPolicy: OnFailure
+          restartPolicy: Never
           volumes:
           - name: mapcache-tiles
             emptyDir: {}
