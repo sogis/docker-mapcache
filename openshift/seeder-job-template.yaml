@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: Template
+metadata:
+  name: seeder-job-template
+objects:
+- apiVersion: batch/v1
+  kind: Job
+  metadata:
+    name: seeder-static-${VARIANT}
+  spec:
+    template:
+      metadata:
+        name: seeder-static-${VARIANT}
+      spec:
+        containers:
+        - name: seeder-static-${VARIANT}
+          image: sogis/docker-mapcache
+          command:
+          - mapcache_seed
+          - -c
+          - /mapcache/mapcache.xml
+          - -t
+          - ch.so.agi.hintergrundkarte_${VARIANT}
+          - -f
+          - -z
+          - ${ZOOM_LEVELS}
+          - -n
+          - "2"
+          - -d
+          - /mapcache/wmts-seeding-perimeter.gpkg
+          - -l
+          - kanton1000m
+          volumeMounts:
+          - mountPath: /tiles
+            name: mapcache-tiles
+        restartPolicy: Never
+        volumes:
+        - name: mapcache-tiles
+          persistentVolumeClaim:
+            claimName: ${PVC_NAME}
+parameters:
+- name: PVC_NAME
+  description: Persistent Volume Claim to be added to the container
+  displayName: Persistent Volume Claim name
+  value: my-storage-claim
+- name: VARIANT
+  description: "Job variant to create (allowed values: farbig, sw, ortho)"
+  displayName: Job variant
+  value: farbig
+- name: ZOOM_LEVELS
+  description: The zoom levels to be seeded by this job (e.g. 0,10)
+  displayName: Zoom levels to seed
+  value: 0,14

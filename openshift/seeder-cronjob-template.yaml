@@ -1,0 +1,57 @@
+apiVersion: v1
+kind: Template
+metadata:
+  name: seeder-cronjob-template
+objects:
+- apiVersion: batch/v2alpha1
+  kind: CronJob
+  metadata:
+    name: seeder-${VARIANT}
+  spec:
+    schedule: 00 04 * * *
+    jobTemplate:
+      spec:
+        template:
+          metadata:
+            labels:
+              parent: cronjob-seeder-${VARIANT}
+          spec:
+            containers:
+            - name: seeder-${VARIANT}
+              image: sogis/docker-mapcache
+              command:
+              - mapcache_seed
+              - -c
+              - /mapcache/mapcache.xml
+              - -t
+              - ch.so.agi.hintergrundkarte_${VARIANT}
+              - -f
+              - -z
+              - ${ZOOM_LEVELS}
+              - -n
+              - "2"
+              - -d
+              - /mapcache/wmts-seeding-perimeter.gpkg
+              - -l
+              - kanton1000m
+              volumeMounts:
+              - mountPath: /tiles
+                name: mapcache-tiles
+            restartPolicy: Never
+            volumes:
+            - name: mapcache-tiles
+              persistentVolumeClaim:
+                claimName: ${PVC_NAME}
+parameters:
+- name: PVC_NAME
+  description: Persistent Volume Claim to be added to the container
+  displayName: Persistent Volume Claim name
+  value: my-storage-claim
+- name: VARIANT
+  description: "Job variant to create (allowed values: farbig, sw, ortho)"
+  displayName: Job variant
+  value: farbig
+- name: ZOOM_LEVELS
+  description: The zoom levels to be seeded by this job (e.g. 0,10)
+  displayName: Zoom levels to seed
+  value: 0,14
