@@ -24,6 +24,7 @@ http://wmts.example.org/mapcache/wmts/1.0.0/WMTSCapabilities.xml
 Run the following commands to create two OpenShift Cron Jobs which regularly update a part of the MapCache tiles:
 ```
 git clone https://github.com/sogis/docker-mapcache.git
+cd docker-mapcache
 oc project mapcache
 oc process -f openshift/seeder-cronjob-template.yaml \
   -p PVC_NAME=my-storage-claim \
@@ -42,7 +43,6 @@ oc process -f openshift/seeder-cronjob-template.yaml \
 
 Run the following commands to directly run OpenShift Jobs that update the "static" part of the MapCache tiles:
 ```
-git clone https://github.com/sogis/docker-mapcache.git
 oc project mapcache
 oc delete $(oc get -l job-name=seeder-static-farbig job -o name) && \
 oc process -f openshift/seeder-job-template.yaml \
@@ -64,4 +64,4 @@ oc process -f openshift/seeder-job-template.yaml \
   | oc create -f -
 ```
 
-(On the very first run after generating the OpenShift project, omit the `oc delete ...` part of these command, as there are no existing jobs to delete yet.)
+(On the very first run after generating the OpenShift project, just run the `oc process ...` commands and omit the `oc delete ...` commands, as there are no existing jobs to delete yet.)
