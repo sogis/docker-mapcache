@@ -23,4 +23,4 @@ EXPOSE 8080
 
 USER 1001
 
-CMD ["/usr/sbin/apache2ctl", "-DFOREGROUND"]
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND", "-c", "ErrorLog |/usr/bin/cat"]
