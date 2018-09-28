@@ -4,6 +4,7 @@
     <title>WMTS / Amt für Geoinformation Kanton Solothurn</title>
     <abstract>None</abstract>
   </metadata>
+
   <grid name="2056">
     <metadata>
       <title>CH1903+ / LV95</title>
