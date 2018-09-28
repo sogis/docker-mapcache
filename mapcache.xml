@@ -26,82 +26,82 @@
     <detect_blank/>
   </cache>
 
-   <format name="myjpeg" type ="JPEG">
-      <quality>80</quality>
-      <photometric>YCBCR</photometric>   <!-- RGB | YCBCR -->
-   </format>
+  <format name="myjpeg" type ="JPEG">
+    <quality>80</quality>
+    <photometric>YCBCR</photometric>   <!-- RGB | YCBCR -->
+  </format>
 
   <source name="ch.so.agi.hintergrundkarte_ortho" type="wms">
-      <getmap>
-         <params>
-            <FORMAT>image/jpeg</FORMAT>
-            <LAYERS>ch.so.agi.hintergrundkarte_ortho</LAYERS>
-         </params>
-      </getmap>
-      <http>
-         <url>https://geo.so.ch/ows/somap</url>
-         <connection_timeout>60</connection_timeout>
-      </http>
-   </source>
+    <getmap>
+      <params>
+        <FORMAT>image/jpeg</FORMAT>
+        <LAYERS>ch.so.agi.hintergrundkarte_ortho</LAYERS>
+      </params>
+    </getmap>
+    <http>
+      <url>https://geo.so.ch/ows/somap</url>
+      <connection_timeout>60</connection_timeout>
+    </http>
+  </source>
 
   <source name="ch.so.agi.hintergrundkarte_farbig" type="wms">
-      <getmap>
-         <params>
-            <FORMAT>image/png</FORMAT>
-            <LAYERS>ch.so.agi.hintergrundkarte_farbig</LAYERS>
-         </params>
-      </getmap>
-      <http>
-         <url>https://geo.so.ch/ows/somap</url>
-         <connection_timeout>60</connection_timeout>
-      </http>
-   </source>
+    <getmap>
+      <params>
+        <FORMAT>image/png</FORMAT>
+        <LAYERS>ch.so.agi.hintergrundkarte_farbig</LAYERS>
+      </params>
+  </getmap>
+    <http>
+      <url>https://geo.so.ch/ows/somap</url>
+      <connection_timeout>60</connection_timeout>
+    </http>
+  </source>
 
   <source name="ch.so.agi.hintergrundkarte_sw" type="wms">
-      <getmap>
-         <params>
-            <FORMAT>image/png</FORMAT>
-            <LAYERS>ch.so.agi.hintergrundkarte_sw</LAYERS>
-         </params>
-      </getmap>
-      <http>
-         <url>https://geo.so.ch/ows/somap</url>
-         <connection_timeout>60</connection_timeout>
-      </http>
-   </source>
+    <getmap>
+      <params>
+        <FORMAT>image/png</FORMAT>
+        <LAYERS>ch.so.agi.hintergrundkarte_sw</LAYERS>
+      </params>
+    </getmap>
+    <http>
+      <url>https://geo.so.ch/ows/somap</url>
+      <connection_timeout>60</connection_timeout>
+    </http>
+  </source>
 
-   <tileset name="ch.so.agi.hintergrundkarte_ortho">
-      <source>ch.so.agi.hintergrundkarte_ortho</source>
-      <cache>sqlite</cache>
-      <grid restricted_extent="2570000,1208000,2667000,1268000">2056</grid>
-      <format>myjpeg</format>
-      <metatile>8 8</metatile>
-      <metabuffer>0</metabuffer>
-      <expires>25200</expires>
-      <auto_expire>31536000</auto_expire>
-   </tileset>
+  <tileset name="ch.so.agi.hintergrundkarte_ortho">
+    <source>ch.so.agi.hintergrundkarte_ortho</source>
+    <cache>sqlite</cache>
+    <grid restricted_extent="2570000,1208000,2667000,1268000">2056</grid>
+    <format>myjpeg</format>
+    <metatile>8 8</metatile>
+    <metabuffer>0</metabuffer>
+    <expires>25200</expires>
+    <auto_expire>31536000</auto_expire>
+  </tileset>
 
-   <tileset name="ch.so.agi.hintergrundkarte_farbig">
-      <source>ch.so.agi.hintergrundkarte_farbig</source>
-      <cache>sqlite</cache>
-      <grid restricted_extent="2570000,1208000,2667000,1268000">2056</grid>
-      <format>PNG</format>
-      <metatile>8 8</metatile>
-      <metabuffer>20</metabuffer>
-      <expires>25200</expires>
-      <auto_expire>31536000</auto_expire>
-   </tileset>
+  <tileset name="ch.so.agi.hintergrundkarte_farbig">
+    <source>ch.so.agi.hintergrundkarte_farbig</source>
+    <cache>sqlite</cache>
+    <grid restricted_extent="2570000,1208000,2667000,1268000">2056</grid>
+    <format>PNG</format>
+    <metatile>8 8</metatile>
+    <metabuffer>20</metabuffer>
+    <expires>25200</expires>
+    <auto_expire>31536000</auto_expire>
+  </tileset>
 
-   <tileset name="ch.so.agi.hintergrundkarte_sw">
-      <source>ch.so.agi.hintergrundkarte_sw</source>
-      <cache>sqlite</cache>
-      <grid restricted_extent="2570000,1208000,2667000,1268000">2056</grid>
-      <format>PNG</format>
-      <metatile>8 8</metatile>
-      <metabuffer>20</metabuffer>
-      <expires>25200</expires>
-      <auto_expire>31536000</auto_expire>
-   </tileset>
+  <tileset name="ch.so.agi.hintergrundkarte_sw">
+    <source>ch.so.agi.hintergrundkarte_sw</source>
+    <cache>sqlite</cache>
+    <grid restricted_extent="2570000,1208000,2667000,1268000">2056</grid>
+    <format>PNG</format>
+    <metatile>8 8</metatile>
+    <metabuffer>20</metabuffer>
+    <expires>25200</expires>
+    <auto_expire>31536000</auto_expire>
+  </tileset>
 
   <default_format>JPEG</default_format>
   <service type="wms" enabled="false">
