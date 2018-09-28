@@ -19,21 +19,14 @@ http://wmts.example.org/mapcache/wmts/1.0.0/WMTSCapabilities.xml
 ```
 
 
-## Set up MapCache seeder Cron Jobs
+## Set up MapCache seeder Cron Job
 
-Run the following commands to create two OpenShift Cron Jobs which regularly update a part of the MapCache tiles:
+Run the following commands to create an OpenShift Cron Job which regularly updates a part of the MapCache tiles:
 ```
 git clone https://github.com/sogis/docker-mapcache.git
-cd docker-mapcache
 oc project mapcache
-oc process -f openshift/seeder-cronjob-template.yaml \
+oc process -f docker-mapcache/openshift/seeder-cronjob-template.yaml \
   -p PVC_NAME=my-storage-claim \
-  -p VARIANT=farbig \
-  -p ZOOM_LEVELS=11,14 \
-  | oc create -f -
-oc process -f openshift/seeder-cronjob-template.yaml \
-  -p PVC_NAME=my-storage-claim \
-  -p VARIANT=sw \
   -p ZOOM_LEVELS=11,14 \
   | oc create -f -
 ```
@@ -43,21 +36,22 @@ oc process -f openshift/seeder-cronjob-template.yaml \
 
 Run the following commands to directly run OpenShift Jobs that update the "static" part of the MapCache tiles:
 ```
+git clone https://github.com/sogis/docker-mapcache.git
 oc project mapcache
 oc delete $(oc get -l job-name=seeder-static-farbig job -o name) && \
-oc process -f openshift/seeder-job-template.yaml \
+oc process -f docker-mapcache/openshift/seeder-job-template.yaml \
   -p PVC_NAME=my-storage-claim \
   -p VARIANT=farbig \
   -p ZOOM_LEVELS=0,10 \
   | oc create -f -
 oc delete $(oc get -l job-name=seeder-static-sw job -o name) && \
-oc process -f openshift/seeder-job-template.yaml \
+oc process -f docker-mapcache/openshift/seeder-job-template.yaml \
   -p PVC_NAME=my-storage-claim \
   -p VARIANT=sw \
   -p ZOOM_LEVELS=0,10 \
   | oc create -f -
 oc delete $(oc get -l job-name=seeder-static-ortho job -o name) && \
-oc process -f openshift/seeder-job-template.yaml \
+oc process -f docker-mapcache/openshift/seeder-job-template.yaml \
   -p PVC_NAME=my-storage-claim \
   -p VARIANT=ortho \
   -p ZOOM_LEVELS=0,14 \
