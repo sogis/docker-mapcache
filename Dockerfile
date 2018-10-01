@@ -11,7 +11,7 @@ RUN mkdir -p /var/run/apache2 && \
 
 RUN mkdir /mapcache /tiles && \
     chmod g+w /mapcache /tiles
-COPY mapcache.xml /mapcache/
+COPY mapcache*.xml /mapcache/
 COPY wmts-seeding-perimeter.gpkg /mapcache/
 RUN chmod --recursive g+w /mapcache
 COPY mapcache.conf /etc/apache2/sites-available/mapcache.conf

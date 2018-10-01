@@ -9,6 +9,7 @@ oc new-app sogis/docker-mapcache
 oc expose service docker-mapcache --hostname=geo-wmts-t.so.ch
 oc set volume dc/docker-mapcache --remove --name=docker-mapcache-volume-1
 oc set volume dc/docker-mapcache --add -t pvc --claim-name=gditest-mapcache --mount-path=/tiles --name docker-mapcache-tiles # adapt claim-name to your needs; it must exist already
+oc set env dc/docker-mapcache ENVIRONMENT=test
 oc scale --replicas=2 dc/docker-mapcache
 # if you wish:
 oc tag --source=docker sogis/docker-mapcache:latest docker-mapcache:latest --scheduled=true

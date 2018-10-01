@@ -4,7 +4,7 @@
     <title>WMTS / Amt für Geoinformation Kanton Solothurn</title>
     <abstract>None</abstract>
     <!-- You might want to remove the following line when running the container locally -->
-    <!-- <url>https://geo-t.so.ch/api</url> -->
+    <url>https://geo-t.so.ch/api</url>
   </metadata>
 
   <grid name="2056">
