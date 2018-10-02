@@ -18,7 +18,7 @@ objects:
           command:
           - mapcache_seed
           - -c
-          - /mapcache/mapcache.xml
+          - /mapcache/mapcache${ENVIRONMENT_NAME}.xml
           - -t
           - ch.so.agi.hintergrundkarte_${VARIANT}
           - -f
@@ -51,3 +51,7 @@ parameters:
   description: The zoom levels to be seeded by this job (e.g. 0,10)
   displayName: Zoom levels to seed
   value: 0,14
+- name: ENVIRONMENT_NAME
+  description: Name of the environment in which the container is running (e.g. test or production)
+  displayName: Environment name
+  value: ''

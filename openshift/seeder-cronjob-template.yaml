@@ -8,7 +8,7 @@ objects:
   metadata:
     name: seeder
   spec:
-    schedule: 00 04 * * *
+    schedule: ${SCHEDULE}
     jobTemplate:
       spec:
         template:
@@ -23,7 +23,7 @@ objects:
               - /bin/bash
               args:
               - "-c"
-              - "mapcache_seed -c /mapcache/mapcache.xml -t ch.so.agi.hintergrundkarte_sw -f -z ${ZOOM_LEVELS} -n 4 -d /mapcache/wmts-seeding-perimeter.gpkg -l kanton1000m && mapcache_seed -c /mapcache/mapcache.xml -t ch.so.agi.hintergrundkarte_farbig -f -z ${ZOOM_LEVELS} -n 4 -d /mapcache/wmts-seeding-perimeter.gpkg -l kanton1000m"
+              - "mapcache_seed -c /mapcache/mapcache${ENVIRONMENT_NAME}.xml -t ch.so.agi.hintergrundkarte_sw -f -z ${ZOOM_LEVELS} -n 4 -d /mapcache/wmts-seeding-perimeter.gpkg -l kanton1000m && mapcache_seed -c /mapcache/mapcache${ENVIRONMENT_NAME}.xml -t ch.so.agi.hintergrundkarte_farbig -f -z ${ZOOM_LEVELS} -n 4 -d /mapcache/wmts-seeding-perimeter.gpkg -l kanton1000m"
               volumeMounts:
               - mountPath: /tiles
                 name: mapcache-tiles
@@ -41,3 +41,11 @@ parameters:
   description: The zoom levels to be seeded by this job (e.g. 0,10)
   displayName: Zoom levels to seed
   value: 0,14
+- name: SCHEDULE
+  description: Schedule of the Cron Job in Cron format
+  displayName: Schedule of Cron Job
+  value: '00 04 * * *'
+- name: ENVIRONMENT_NAME
+  description: Name of the environment in which the container is running (e.g. test or production)
+  displayName: Environment name
+  value: ''

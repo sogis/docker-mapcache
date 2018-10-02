@@ -30,6 +30,8 @@ oc project mapcache
 oc process -f docker-mapcache/openshift/seeder-cronjob-template.yaml \
   -p PVC_NAME=gditest-mapcache \
   -p ZOOM_LEVELS=11,14 \
+  -p SCHEDULE='00 04 * * *' \
+  -p ENVIRONMENT_NAME=test \
   | oc create -f -
 ```
 
@@ -45,18 +47,21 @@ oc process -f docker-mapcache/openshift/seeder-job-template.yaml \
   -p PVC_NAME=gditest-mapcache \
   -p VARIANT=farbig \
   -p ZOOM_LEVELS=0,10 \
+  -p ENVIRONMENT_NAME=test \
   | oc create -f -
 oc delete $(oc get -l job-name=seeder-static-sw job -o name) && \
 oc process -f docker-mapcache/openshift/seeder-job-template.yaml \
   -p PVC_NAME=gditest-mapcache \
   -p VARIANT=sw \
   -p ZOOM_LEVELS=0,10 \
+  -p ENVIRONMENT_NAME=test \
   | oc create -f -
 oc delete $(oc get -l job-name=seeder-static-ortho job -o name) && \
 oc process -f docker-mapcache/openshift/seeder-job-template.yaml \
   -p PVC_NAME=gditest-mapcache \
   -p VARIANT=ortho \
   -p ZOOM_LEVELS=0,14 \
+  -p ENVIRONMENT_NAME=test \
   | oc create -f -
 ```
 
