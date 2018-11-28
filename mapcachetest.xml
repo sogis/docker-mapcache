@@ -41,7 +41,7 @@
       </params>
     </getmap>
     <http>
-      <url>https://geo-t.so.ch/api/wms</url>
+      <url>http://seeder.agi-mapcache-test.svc/ows/somap</url>
       <connection_timeout>60</connection_timeout>
     </http>
   </source>
@@ -54,7 +54,7 @@
       </params>
   </getmap>
     <http>
-      <url>https://geo-t.so.ch/api/wms</url>
+      <url>http://seeder.agi-mapcache-test.svc/ows/somap</url>
       <connection_timeout>60</connection_timeout>
     </http>
   </source>
@@ -67,7 +67,7 @@
       </params>
     </getmap>
     <http>
-      <url>https://geo-t.so.ch/api/wms</url>
+      <url>http://seeder.agi-mapcache-test.svc/ows/somap</url>
       <connection_timeout>60</connection_timeout>
     </http>
   </source>
