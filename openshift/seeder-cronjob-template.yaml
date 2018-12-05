@@ -3,7 +3,7 @@ kind: Template
 metadata:
   name: seeder-cronjob-template
 objects:
-- apiVersion: batch/v2alpha1
+- apiVersion: batch/v1beta1
   kind: CronJob
   metadata:
     name: seeder
@@ -26,12 +26,15 @@ objects:
               - "mapcache_seed -c /mapcache/mapcache${ENVIRONMENT_NAME}.xml -t ch.so.agi.hintergrundkarte_sw -f -z ${ZOOM_LEVELS} -n 4 -d /mapcache/wmts-seeding-perimeter.gpkg -l kanton1000m && mapcache_seed -c /mapcache/mapcache${ENVIRONMENT_NAME}.xml -t ch.so.agi.hintergrundkarte_farbig -f -z ${ZOOM_LEVELS} -n 4 -d /mapcache/wmts-seeding-perimeter.gpkg -l kanton1000m"
               volumeMounts:
               - mountPath: /tiles
-                name: mapcache-tiles
+                name: mapcache-tiles              
             restartPolicy: Never
             volumes:
             - name: mapcache-tiles
               persistentVolumeClaim:
                 claimName: ${PVC_NAME}
+            - name: qgs-resources
+              persistentVolumeClaim:
+                claimName: qgs-resources-claim
 parameters:
 - name: PVC_NAME
   description: Persistent Volume Claim to be added to the container
