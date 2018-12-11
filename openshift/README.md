@@ -35,6 +35,18 @@ oc process -f docker-mapcache/openshift/seeder-cronjob-template.yaml \
   | oc create -f -
 ```
 
+## For the seeder Jobs we use a separate QGIS-Server Pod
+
+Run the following commands to create the QGIS Server Pod
+```
+git clone https://github.com/sogis/docker-mapcache.git
+oc project agi-mapcache-test
+oc process -f docker-mapacache/openshift/seeder-qgis-server.yaml \
+  -p NAMESPACE=agi-mapcache-test \
+  -p DB_SERVER=geodb-t.rootso.org \
+  -p PW_OGC_SERVER=qR6r4KduYNV7R5u4YOME \
+  | oc create -f -
+```
 
 ## Run MapCache seeder Jobs that need to run on demand only
 
