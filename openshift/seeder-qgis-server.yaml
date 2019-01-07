@@ -47,17 +47,6 @@ objects:
   status:
     loadBalancer: {}
 - apiVersion: v1
-  kind: PersistentVolumeClaim
-  metadata:
-    name: "qgs-resources-claim"
-  spec:
-    accessModes:
-    - ReadWriteOnce
-    resources:
-      requests:
-        storage: 3Gi
-  status: {}
-- apiVersion: v1
   kind: DeploymentConfig
   metadata:
     name: qgis-server
