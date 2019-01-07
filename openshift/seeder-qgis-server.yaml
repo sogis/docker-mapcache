@@ -99,6 +99,8 @@ objects:
           volumeMounts:
           - mountPath: /data
             name: qgs-resources
+          - mountPath: /geodata
+            name: datensogispicmir
           - mountPath: /etc/postgresql-common
             name: qgis-server-config-claim
           restartPolicy: Never
@@ -112,4 +114,7 @@ objects:
           name: qgis-server-config-claim
         - name: qgs-resources
           persistentVolumeClaim:
-            claimName: qgs-resources-claim
+            claimName: qgs-resources-claim1
+        - name: datensogispicmir
+          persistentVolumeClaim:
+            claimName: datensogispicmir-claim2
