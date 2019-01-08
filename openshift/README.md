@@ -41,6 +41,7 @@ Run the following commands to create the QGIS Server Pod
 ```
 git clone https://github.com/sogis/docker-mapcache.git
 oc project agi-mapcache-test
+oc policy add-role-to-user system:image-puller system:serviceaccount:agi-mapcache-test:default -n gdi
 oc process -f docker-mapcache/openshift/seeder-qgis-server.yaml \
   -p NAMESPACE=agi-mapcache-test \
   -p DB_SERVER=geodb-t.rootso.org \
