@@ -67,7 +67,7 @@
       </params>
     </getmap>
     <http>
-      <url>https://qgis-server.agi-mapcache-production.svc/ows/somap</url>
+      <url>http://qgis-server.agi-mapcache-production.svc/ows/somap</url>
       <connection_timeout>60</connection_timeout>
     </http>
   </source>
