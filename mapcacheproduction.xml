@@ -36,7 +36,7 @@
   <source name="ch.so.agi.hintergrundkarte_ortho" type="wms">
     <getmap>
       <params>
-        <FORMAT>image/png</FORMAT>
+        <FORMAT>image/jpeg</FORMAT>
         <LAYERS>ch.so.agi.hintergrundkarte_ortho</LAYERS>
       </params>
     </getmap>
