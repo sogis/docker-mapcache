@@ -75,7 +75,11 @@ objects:
             protocol: TCP 
           resources:
             limits:
-              memory: 4Gi 
+              cpu: '1'
+              memory: 3Gi
+            requests:
+              cpu: 100m
+              memory: 5Mi 
           selector:
             parent: qgis-server
           env:
