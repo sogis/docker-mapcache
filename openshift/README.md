@@ -45,7 +45,7 @@ oc policy add-role-to-user system:image-puller system:serviceaccount:agi-mapcach
 oc process -f docker-mapcache/openshift/seeder-qgis-server.yaml \
   -p NAMESPACE=agi-mapcache-test \
   -p DB_SERVER=geodb-t.rootso.org \
-  -p PW_OGC_SERVER=qR6r4KduYNV7R5u4YOME \
+  -p PW_OGC_SERVER=password \
   | oc create -f -
 ```
 
