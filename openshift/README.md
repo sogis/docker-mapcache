@@ -30,7 +30,7 @@ oc project mapcache
 oc process -f docker-mapcache/openshift/seeder-cronjob-template.yaml \
   -p PVC_NAME=gditest-mapcache \
   -p ZOOM_LEVELS=11,14 \
-  -p SCHEDULE='00 04 * * *' \
+  -p SCHEDULE='00 03 * * *' \
   -p ENVIRONMENT_NAME=test \
   | oc create -f -
 ```
