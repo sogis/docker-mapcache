@@ -109,10 +109,10 @@
   </tileset>
 
   <default_format>JPEG</default_format>
-  <service type="wms" enabled="false">
+  <service type="wms" enabled="true">
     <full_wms>assemble</full_wms>
     <resample_mode>bilinear</resample_mode>
-    <format>JPEG</format>
+    <format allow_client_override="true">JPEG</format>
     <maxsize>4096</maxsize>
   </service>
   <service type="wmts" enabled="true"/>
