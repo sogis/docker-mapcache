@@ -121,7 +121,7 @@
   <service type="gmaps" enabled="false"/>
   <service type="ve" enabled="false"/>
   <service type="mapguide" enabled="false"/>
-  <service type="demo" enabled="true"/>
+  <service type="demo" enabled="false"/>
   <errors>report</errors>
   <locker type="disk">
     <directory>/tmp</directory>
