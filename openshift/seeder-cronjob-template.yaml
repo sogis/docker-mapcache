@@ -23,7 +23,7 @@ objects:
               - /bin/bash
               args:
               - "-c"
-              - "mapcache_seed -c /mapcache/mapcache${ENVIRONMENT_NAME}.xml -t ch.so.agi.hintergrundkarte_sw -f -z ${ZOOM_LEVELS} -n 4 -d PG:'service=sogis_webmapping' -s 'SELECT ST_Union(geometrie) as geometrie FROM agi_mopublic_pub.mopublic_gemeindegrenze WHERE importdatum = (SELECT max(importdatum) FROM agi_mopublic_pub.mopublic_gemeindegrenze) GROUP BY importdatum' -l kanton1000m && mapcache_seed -c /mapcache/mapcache${ENVIRONMENT_NAME}.xml -t ch.so.agi.hintergrundkarte_farbig -f -z ${ZOOM_LEVELS} -n 4 -d PG:'service=sogis_webmapping' -s 'SELECT ST_Union(geometrie) as geometrie FROM agi_mopublic_pub.mopublic_gemeindegrenze WHERE importdatum = (SELECT max(importdatum) FROM agi_mopublic_pub.mopublic_gemeindegrenze) GROUP BY importdatum' -l kanton1000m"
+              - "mapcache_seed -c /mapcache/mapcache${ENVIRONMENT_NAME}.xml -t ch.so.agi.hintergrundkarte_sw -f -z ${ZOOM_LEVELS} -n 4 -d PG:'service=sogis_webmapping' -s 'SELECT ST_Union(geometrie) as geometrie FROM agi_mopublic_pub.mopublic_gemeindegrenze WHERE importdatum = (SELECT max(importdatum) FROM agi_mopublic_pub.mopublic_gemeindegrenze) GROUP BY importdatum' && mapcache_seed -c /mapcache/mapcache${ENVIRONMENT_NAME}.xml -t ch.so.agi.hintergrundkarte_farbig -f -z ${ZOOM_LEVELS} -n 4 -d PG:'service=sogis_webmapping' -s 'SELECT ST_Union(geometrie) as geometrie FROM agi_mopublic_pub.mopublic_gemeindegrenze WHERE importdatum = (SELECT max(importdatum) FROM agi_mopublic_pub.mopublic_gemeindegrenze) GROUP BY importdatum'"
               volumeMounts:
               - mountPath: /tiles
                 name: mapcache-tiles 
