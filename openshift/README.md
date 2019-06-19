@@ -32,6 +32,10 @@ oc process -f docker-mapcache/openshift/seeder-cronjob-template.yaml \
   -p ZOOM_LEVELS=11,14 \
   -p SCHEDULE='00 03 * * *' \
   -p ENVIRONMENT_NAME=test \
+  -p PGHOST=geodb-t.rootso.org \
+  -p PGDATABASE=pub \
+  -p PGUSER=ogc_server \
+  -p PGPASSWORD=xy \
   | oc create -f -
 ```
 
