@@ -36,7 +36,7 @@ oc process -f docker-mapcache/openshift/seeder-cronjob-template.yaml \
   -p PGDATABASE=pub \
   -p PGUSER=ogc_server \
   -p PGPASSWORD=xy \
-  | oc create -f -
+  | oc apply -f -
 ```
 
 ## For the seeder Jobs we use a separate QGIS-Server Pod
