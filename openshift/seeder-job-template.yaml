@@ -30,6 +30,13 @@ objects:
           - /mapcache/wmts-seeding-perimeter.gpkg
           - -l
           - kanton1000m
+          resources:
+            limits:
+              cpu: ${CPU_LIMIT}
+              memory: ${MEMORY_LIMIT}
+            requests:
+              cpu: ${CPU_REQUEST}
+              memory: ${MEMORY_REQUEST}
           volumeMounts:
           - mountPath: /tiles
             name: mapcache-tiles
@@ -55,3 +62,15 @@ parameters:
   description: Name of the environment in which the container is running (e.g. test or production)
   displayName: Environment name
   value: ''
+- name: CPU_REQUEST
+  description: "The minimum amount of CPU the container is guaranteed."
+  value: 500m
+- name: CPU_LIMIT
+  description: "The maximum amount of CPU the container is allowed to use when running."
+  value: "1"
+- name: MEMORY_REQUEST
+  description: "The minimum amount of memory the container is guaranteed."
+  value: 175Mi
+- name: MEMORY_LIMIT
+  description: "The maximum amount of memory the container is allowed to use when running."
+  value: 300Mi
