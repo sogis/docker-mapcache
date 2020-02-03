@@ -33,6 +33,13 @@ objects:
                 value: ${PGUSER}
               - name: PGPASSWORD
                 value: ${PGPASSWORD}
+              resources:
+                limits:
+                  cpu: ${CPU_LIMIT}
+                  memory: ${MEMORY_LIMIT}
+                requests:
+                  cpu: ${CPU_REQUEST}
+                  memory: ${MEMORY_REQUEST}
               volumeMounts:
               - mountPath: /tiles
                 name: mapcache-tiles 
@@ -70,3 +77,15 @@ parameters:
 - name: PGPASSWORD
   description: Password of the DB user
   displayName: DB password
+- name: CPU_REQUEST
+  description: "The minimum amount of CPU the container is guaranteed."
+  value: 500m
+- name: CPU_LIMIT
+  description: "The maximum amount of CPU the container is allowed to use when running."
+  value: "1"
+- name: MEMORY_REQUEST
+  description: "The minimum amount of memory the container is guaranteed."
+  value: 175Mi
+- name: MEMORY_LIMIT
+  description: "The maximum amount of memory the container is allowed to use when running."
+  value: 300Mi
