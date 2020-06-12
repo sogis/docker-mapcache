@@ -1,0 +1,27 @@
+version: '3'
+services:
+  seeder:
+    image: sogis/docker-mapcache:latest
+    environment:
+      ENVIRONMENT: 'seed'
+    ports:
+      - "8080:8080"
+    volumes:
+      - ${PWD}/mapcacheseed.xml:/mapcache/mapcacheseed.xml
+      - ${TILES_PATH}:/tiles
+    depends_on:
+      - wms
+  wms:
+    image: sogis/qgis-server-base:3.10
+    environment:
+      QGIS_FCGI_MIN_PROCESSES: 4
+      QGIS_FCGI_MAX_PROCESSES: 4
+    ports:
+      - "8081:80"
+    volumes:
+      - ${PWD}/qgs:/data
+      - ${GEODATA_PATH:-./geodata}:/geodata
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/qgis/ch.so.agi.hintergrundkarte_sw"]
+      interval: 30s
+      timeout: 3s
