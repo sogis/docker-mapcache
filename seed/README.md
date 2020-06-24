@@ -1,11 +1,11 @@
 # WMTS-Kacheln seeden
 
-Mit dieser Anleitung und der dazugehörigen Umgebung (Docker Compose) können WMTS-Kacheln auf einem anderen System als auf dem produktiven WMTS geseedet werden (z.B. auf der lokalen Maschine). Die fertigen Kacheln müssen danach nur noch auf das produktive System kopiert werden.
+Mit dieser Anleitung und der dazugehörigen Umgebung (_Docker Compose_) können WMTS-Kacheln auf einem anderen System als auf dem produktiven WMTS geseedet werden (z.B. auf der lokalen Maschine). Die fertigen Kacheln müssen danach nur noch auf das produktive System kopiert werden.
 
 
 ## Bereitstellen der Geodaen auf einer lokalen Maschine im AGI
 
-Zunächst muss man entscheiden, wo auf dem lokalen Rechner die Daten abgelegt werden sollen. Dieser Pfad muss in der Umgebungsvariable GEODATA_PATH gespeichert und danach das entsprechende Verzeichnis angelegt werden, z.B.:
+Zunächst muss man entscheiden, wo auf dem lokalen Rechner die Daten abgelegt werden sollen. Dieser Pfad muss in der Umgebungsvariable `GEODATA_PATH` gespeichert und danach das entsprechende Verzeichnis angelegt werden, z.B.:
 
 ```
 export GEODATA_PATH=$HOME/geodata
@@ -32,7 +32,7 @@ export GEODATA_PATH=$HOME/geodata
 mkdir $GEODATA_PATH
 ```
 
-Oder man packt die Daten in ein Archiv und überträgt sie irgendwie übers Internet. (Die Landeskarten sind aber ca. 12GB gross.)
+Oder man packt die Daten in ein Archiv und überträgt sie übers Internet. (Die Landeskarten sind aber ca. 12GB gross.)
 
 Packen auf der AGI-Maschine:
 
@@ -40,8 +40,8 @@ Packen auf der AGI-Maschine:
 cd $GEODATA_PATH
 tar -czf lk.tar.gz ch.swisstopo.lk*
 tar -czf maske.tar.gz ch.so.agi.hintergrundkarte/maske.tif
-hoheitsgrenzen_kantonsgrenze.gpkg muss nicht gepackt werden
 ```
+(hoheitsgrenzen_kantonsgrenze.gpkg muss nicht gepackt werden)
 
 Entpacken auf der externen Maschine:
 
@@ -90,7 +90,7 @@ sudo ln -s -t / $GEODATA_PATH geodata
 Nun können die .qgs-Dokumente im lokalen QGIS nach Bedarf editiert werden. Zu beachten:
 * Die Pfade zu den Geodaten müssen absolut gespeichert werden (diese Einstellung ist unter _Project > Properties / General_)
 * Die Geodaten müssen über den soeben angelegten symbolischen Link `/geodata` geladen werden
-* Es soll die aktuelle QGIS-LTR-Version verwendet werden; idealerweise soll sie mit der in docker-compose.yml für QGIS-Server verwendeten Version übereinstimmen
+* Es soll die aktuelle QGIS-LTR-Version verwendet werden; idealerweise soll sie mit der in `docker-compose.yml` für QGIS-Server verwendeten Version übereinstimmen
 
 ### Seeden
 
@@ -109,5 +109,5 @@ Falls man noch weitere Änderungen an den .qgs-Dokumenten machen muss, führt ma
 ### Information
 
 Wenn die Docker-Container laufen, sind die Dienste unter folgenden URLs erreichbar:
-WMTS: http://localhost:8080/mapcache/wmts/1.0.0/WMTSCapabilities.xml
-WMS: http://localhost:8081/qgis/ch.so.agi.hintergrundkarte_sw?SERVICE=WMS&REQUEST=GetCapabilities
+* WMTS: http://localhost:8080/mapcache/wmts/1.0.0/WMTSCapabilities.xml
+* WMS: http://localhost:8081/qgis/ch.so.agi.hintergrundkarte_sw?SERVICE=WMS&REQUEST=GetCapabilities
