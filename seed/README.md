@@ -18,6 +18,8 @@ Die benötigten Geodaten kopiert man mit `scp` hierher bzw. generiert man mit og
 scp -rp USERNAME@UTIL-SERVERNAME:/opt/sogis_pic/geodata/ch.swisstopo.lk* $GEODATA_PATH
 scp -rp USERNAME@UTIL-SERVERNAME:/opt/sogis_pic/geodata/ch.so.agi.hintergrundkarte $GEODATA_PATH
 ogr2ogr -f GPKG -overwrite $GEODATA_PATH/hoheitsgrenzen_kantonsgrenze.gpkg PG:'host=geodb.rootso.org dbname=pub user=xy password=xy' -nln hoheitsgrenzen_kantonsgrenze agi_hoheitsgrenzen_pub.hoheitsgrenzen_kantonsgrenze
+scp -rp USERNAME@UTIL-SERVERNAME:/opt/sogis_pic/geodata/ch.swisstopo.swissimage_2018.rgb $GEODATA_PATH
+scp -rp USERNAME@UTIL-SERVERNAME:/opt/sogis_pic/geodata/ch.swisstopo.sentinel_2018 $GEODATA_PATH
 ```
 
 Nun kann man gemäss der Anleitung im Abschnit _Kacheln erstellen (seeden)_ mit dem Seeden starten.
@@ -32,7 +34,7 @@ export GEODATA_PATH=$HOME/geodata
 mkdir $GEODATA_PATH
 ```
 
-Oder man packt die Daten in ein Archiv und überträgt sie übers Internet. (Die Landeskarten sind aber ca. 12GB gross.)
+Oder man packt die Daten in ein Archiv und überträgt sie übers Internet. (Die Landeskarten sind allerdings ca. 12GB gross, die Orthofotos 26GB.)
 
 Packen auf der AGI-Maschine:
 
@@ -40,8 +42,10 @@ Packen auf der AGI-Maschine:
 cd $GEODATA_PATH
 tar -czf lk.tar.gz ch.swisstopo.lk*
 tar -czf maske.tar.gz ch.so.agi.hintergrundkarte/maske.tif
+tar -czf ch.swisstopo.swissimage_2018.rgb.tar.gz ch.swisstopo.swissimage_2018.rgb
+tar -czf ch.swisstopo.sentinel_2018.tar.gz ch.swisstopo.sentinel_2018
 ```
-(hoheitsgrenzen_kantonsgrenze.gpkg muss nicht gepackt werden)
+(`hoheitsgrenzen_kantonsgrenze.gpkg` muss nicht gepackt werden, und `ch.swisstopo.sentinel_2018` packen wir nur deshalb, weil beim Entpacken praktischerweise auch der richtige Unterordner angelegt wird.)
 
 Entpacken auf der externen Maschine:
 
@@ -51,6 +55,8 @@ mkdir $GEODATA_PATH
 cd $GEODATA_PATH
 tar -xzf lk.tar.gz
 tar -xzf maske.tar.gz
+tar -xzf ch.swisstopo.swissimage_2018.rgb.tar.gz
+tar -xzf ch.swisstopo.sentinel_2018.tar.gz
 ```
 
 
