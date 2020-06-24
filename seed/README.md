@@ -84,7 +84,7 @@ Falls vor dem Seeden Änderungen an .qgs-Dokumenten notwendig sind, muss zunäch
 
 ```
 export GEODATA_PATH=$HOME/geodata
-sudo ln -s -t / $GEODATA_PATH geodata
+sudo ln -s -n -f $GEODATA_PATH /geodata
 ```
 
 Nun können die .qgs-Dokumente im lokalen QGIS nach Bedarf editiert werden. Zu beachten:
