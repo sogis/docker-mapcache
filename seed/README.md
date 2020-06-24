@@ -109,6 +109,7 @@ In einem anderen Terminal ausführen:
 ```
 docker exec -it seed_seeder_1 mapcache_seed -c /mapcache/mapcacheseed.xml -t ch.so.agi.hintergrundkarte_sw -f -z 0,10 -n 4
 docker exec -it seed_seeder_1 mapcache_seed -c /mapcache/mapcacheseed.xml -t ch.so.agi.hintergrundkarte_farbig -f -z 0,10 -n 4
+docker exec -it seed_seeder_1 mapcache_seed -c /mapcache/mapcacheseed.xml -t ch.so.agi.hintergrundkarte_ortho -f -z 0,14 -n 4
 ```
 
 Falls man noch weitere Änderungen an den .qgs-Dokumenten machen muss, führt man sicherheitshalber vor dem nächsten `docker-compose up` ein `docker-compose down` aus, damit die Änderungen übernommen werden.
