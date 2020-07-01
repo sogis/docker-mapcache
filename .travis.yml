@@ -8,7 +8,7 @@ env:
 
 script:
   - docker build -t $DOCKER_ACCOUNT/$DOCKER_REPO:latest -t $DOCKER_ACCOUNT/$DOCKER_REPO:$TRAVIS_BUILD_NUMBER .
-  - docker run -e ENVIRONMENT='' -p 8080:8080 sogis/docker-mapcache:latest
+  - docker run -d --rm -e ENVIRONMENT='' -p 8080:8080 sogis/docker-mapcache:latest
   - curl -f http://localhost:8080/mapcache/wmts/1.0.0/WMTSCapabilities.xml
   - curl -f --output /tmp/tile.png http://localhost:8080/mapcache/wmts/1.0.0/ch.so.agi.hintergrundkarte_sw/default/2056/5/4/7.png
 
