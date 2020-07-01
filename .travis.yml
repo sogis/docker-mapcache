@@ -9,9 +9,8 @@ env:
 script:
   - docker pull $DOCKER_ACCOUNT/$DOCKER_REPO:latest
   - docker build -t $DOCKER_ACCOUNT/$DOCKER_REPO:latest -t $DOCKER_ACCOUNT/$DOCKER_REPO:$TRAVIS_BUILD_NUMBER .
-  - docker run -d --rm -e ENVIRONMENT='' -p 8080:8080 sogis/docker-mapcache:latest
-  - curl -f 'http://localhost:8080/mapcache/wmts/1.0.0/WMTSCapabilities.xml'
-  - curl -f --output /tmp/tile.png 'http://localhost:8080/mapcache/wmts/1.0.0/ch.so.agi.hintergrundkarte_sw/default/2056/5/4/7.png'
+  - docker-compose -f docker-compose.test.yml build
+  - docker-compose -f docker-compose.test.yml run sut
 
 deploy:
   provider: script
