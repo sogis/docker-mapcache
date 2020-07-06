@@ -101,7 +101,7 @@ Nun können die .qgs-Dokumente im lokalen QGIS nach Bedarf editiert werden. Zu b
 ### Seeden
 
 ```
-docker-compose up
+docker-compose pull && docker-compose up
 ```
 
 In einem anderen Terminal ausführen:
