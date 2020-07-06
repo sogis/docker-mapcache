@@ -114,6 +114,20 @@ docker exec -it seed_seeder_1 mapcache_seed -c /mapcache/mapcacheseed.xml -t ch.
 
 Falls man noch weitere Änderungen an den .qgs-Dokumenten machen muss, führt man sicherheitshalber vor dem nächsten `docker-compose up` ein `docker-compose down` aus, damit die Änderungen übernommen werden.
 
+### Kacheln in OpenShift publizieren
+
+Die mit *docker-compose* gestarteten Container stoppen durch Drücken von `Ctrl-C`.
+
+Danach sich an OpenShift anmelden und mit folgenden Befehlsvorlagen die Kacheln auf einen der *MapCache*-Pods kopieren und **alle** *MapCache*-Pods neu starten mit `oc delete pod ...`. Der Neustart ist nötig, damit Dateien, auf die der Service während des Kopierens noch zugegriffen hat, freigegeben werden.
+
+```
+oc rsync $TILES_PATH/ docker-mapcache-65-srz54:/tiles --include=ch.so.agi.hintergrundkarte_sw-*
+oc rsync $TILES_PATH/ docker-mapcache-65-srz54:/tiles --include=ch.so.agi.hintergrundkarte_farbig-*
+oc rsync $TILES_PATH/ docker-mapcache-65-srz54:/tiles --include=ch.so.agi.hintergrundkarte_ortho-*
+oc delete pod docker-mapcache-65-srz54
+oc delete pod docker-mapcache-65-vm8jg
+```
+
 ### Information
 
 Wenn die Docker-Container laufen, sind die Dienste unter folgenden URLs erreichbar:
