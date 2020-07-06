@@ -67,8 +67,8 @@ tar -xzf ch.swisstopo.sentinel_2018.tar.gz
 Git-Repository auschecken und ins `seed`-Unterverzeichnis wechseln:
 
 ```
-git clone https://github.com/sogis/docker-mapcache.git
-cd docker-mapcache/seed
+git clone https://github.com/sogis/docker-mapcache.git && cd docker-mapcache
+cd seed
 ```
 
 Definieren, wo die Geodaten liegen und wo die Kacheln erstellt werden sollen:
