@@ -21,7 +21,3 @@ services:
     volumes:
       - ${PWD}/qgs:/data
       - ${GEODATA_PATH:-./geodata}:/geodata
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost/qgis/ch.so.agi.hintergrundkarte_sw"]
-      interval: 30s
-      timeout: 3s
