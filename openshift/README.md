@@ -4,7 +4,7 @@
 
 Run the following commands to set up MapCache:
 ```
-oc new-project mapcache
+oc new-project mapcache-test
 oc new-app sogis/docker-mapcache
 oc expose service docker-mapcache --hostname=geo-wmts-t.so.ch
 oc set volume dc/docker-mapcache --remove --name=docker-mapcache-volume-1
@@ -29,7 +29,7 @@ http://geo-wmts-t.so.ch/mapcache/wmts/1.0.0/WMTSCapabilities.xml
 Run the following commands to create an OpenShift Cron Job which regularly updates a part of the MapCache tiles:
 ```
 git clone https://github.com/sogis/docker-mapcache.git && cd docker-mapcache
-oc project mapcache
+oc project mapcache-test
 oc process -f openshift/seeder-cronjob-template.yaml \
   -p PVC_NAME=gditest-mapcache-lowback \
   -p ZOOM_LEVELS=11,14 \
@@ -61,7 +61,7 @@ oc process -f openshift/seeder-qgis-server.yaml \
 Run the following commands to directly run OpenShift Jobs that update the "static" part of the MapCache tiles:
 ```
 git clone https://github.com/sogis/docker-mapcache.git && cd docker-mapcache
-oc project mapcache
+oc project mapcache-test
 oc delete $(oc get -l job-name=seeder-static-farbig job -o name) && \
 oc process -f openshift/seeder-job-template.yaml \
   -p PVC_NAME=gditest-mapcache-lowback \
