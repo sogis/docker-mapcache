@@ -17,6 +17,7 @@ on:
   pull_request:
 
 env:
+  DOCKER_NAMESPACE: schmandr
   IMAGE_NAME: mapcache
 
 jobs:
@@ -57,7 +58,7 @@ jobs:
 
       - name: Push image
         run: |
-          DOCKER_REPOSITORY=schmandr/$IMAGE_NAME
+          DOCKER_REPOSITORY=$DOCKER_NAMESPACE/$IMAGE_NAME
 
           docker tag $IMAGE_NAME $DOCKER_REPOSITORY:latest
           docker push $DOCKER_REPOSITORY
