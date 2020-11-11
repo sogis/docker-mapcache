@@ -61,4 +61,5 @@ jobs:
           DOCKER_REPOSITORY=$DOCKER_NAMESPACE/$IMAGE_NAME
 
           docker tag $IMAGE_NAME $DOCKER_REPOSITORY:latest
+          docker tag $IMAGE_NAME $DOCKER_REPOSITORY:$GITHUB_RUN_NUMBER
           docker push $DOCKER_REPOSITORY
