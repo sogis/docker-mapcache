@@ -5,6 +5,7 @@ env:
   global:
     - DOCKER_ACCOUNT=sogis
     - DOCKER_REPO=docker-mapcache
+    - IMAGE_NAME=$DOCKER_ACCOUNT/$DOCKER_REPO:latest
 
 script:
   - docker pull $DOCKER_ACCOUNT/$DOCKER_REPO:latest
