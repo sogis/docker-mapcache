@@ -37,9 +37,6 @@ jobs:
             docker build . --file Dockerfile
           fi
 
-      - name: Debug output
-        run: docker image ls --digests $IMAGE_NAME
-
   # Push image to GitHub Packages.
   # See also https://docs.docker.com/docker-hub/builds/
   push:
@@ -52,14 +49,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Debug output
-        run: docker image ls --digests $IMAGE_NAME
-
       - name: Build image
         run: docker build . --file Dockerfile --tag $IMAGE_NAME
-
-      - name: Debug output
-        run: docker image ls --digests $IMAGE_NAME
 
       - name: Log into registry
         run: echo "${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}" | docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} --password-stdin
