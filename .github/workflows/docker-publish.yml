@@ -48,6 +48,9 @@ jobs:
     if: github.event_name == 'push'
 
     steps:
+      - name: Debug output
+        run: docker image ls
+
       - name: Log into registry
         run: echo "${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}" | docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} --password-stdin
 
