@@ -6,7 +6,7 @@ services:
     depends_on:
       - mapcache
   mapcache:
-    image: ${IMAGE_NAME:-sogis/docker-mapcache:latest}
+    image: ${IMAGE_NAME}
     environment:
       ENVIRONMENT: ''
     ports:
