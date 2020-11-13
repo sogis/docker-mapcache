@@ -82,7 +82,7 @@
     <format>myjpeg</format>
     <metatile>8 8</metatile>
     <metabuffer>0</metabuffer>
-    <expires>25200</expires>
+    <expires>28800</expires>
   </tileset>
 
   <tileset name="ch.so.agi.hintergrundkarte_farbig">
@@ -92,7 +92,7 @@
     <format>PNG</format>
     <metatile>8 8</metatile>
     <metabuffer>20</metabuffer>
-    <expires>25200</expires>
+    <expires>28800</expires>
   </tileset>
 
   <tileset name="ch.so.agi.hintergrundkarte_sw">
@@ -102,7 +102,7 @@
     <format>PNG</format>
     <metatile>8 8</metatile>
     <metabuffer>20</metabuffer>
-    <expires>25200</expires>
+    <expires>28800</expires>
   </tileset>
 
   <default_format>JPEG</default_format>
