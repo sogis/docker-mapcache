@@ -17,8 +17,8 @@ on:
   pull_request:
 
 env:
-  DOCKER_NAMESPACE: schmandr
-  IMAGE_NAME: mapcache
+  DOCKER_NAMESPACE: sogis
+  IMAGE_NAME: docker-mapcache
 
 jobs:
   # Run tests.
