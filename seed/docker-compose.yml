@@ -21,3 +21,34 @@ services:
     volumes:
       - ${PWD}/qgs:/data
       - ${GEODATA_PATH:-./geodata}:/geodata
+  pub-db:
+    build: .
+    image: sogis/postgis-db:localbuild
+    environment:
+      PG_DATABASE: pub
+      PG_LOCALE: de_CH.UTF-8
+      PG_PRIMARY_PORT: 5432
+      PG_MODE: primary
+      PG_USER: admin
+      PG_PASSWORD: admin
+      PG_PRIMARY_USER: repl
+      PG_PRIMARY_PASSWORD: repl
+      PG_ROOT_PASSWORD: secret
+    ports:
+      - "54322:5432"
+    volumes:
+      - ./setup.sql:/pgconf/setup.sql
+      - sshd_pub:/sshd
+      - pgconf_pub:/pgconf
+      - pgdata_pub:/pgdata
+      - pgwal_pub:/pgwal
+      - recover_pub:/recover
+      - backrestrepo_pub:/backrestrepo
+    hostname: primary-pub
+volumes:
+  sshd_pub:
+  pgconf_pub:
+  pgdata_pub:
+  pgwal_pub:
+  recover_pub:
+  backrestrepo_pub:

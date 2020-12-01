@@ -22,6 +22,15 @@ scp -rp USERNAME@UTIL-SERVERNAME:/opt/sogis_pic/geodata/ch.swisstopo.swissimage_
 scp -rp USERNAME@UTIL-SERVERNAME:/opt/sogis_pic/geodata/ch.swisstopo.sentinel_2018 $GEODATA_PATH
 ```
 
+Zudem für die Vektordaten der Amtlichen Vermessung:
+
+```
+DBHOST=xy
+java -jar ili2pg-4.3.1.jar --export --dbschema agi_mopublic_pub --models SO_AGI_MOpublic_20190424 --dbhost $DBHOST --dbdatabase pub --dbusr $USER --dbpwd $(awk -v dbhost=$DBHOST -F ':' '$1~dbhost{print $5}' ~/.pgpass) --dbparams ~/.ili2pg_dbparams --disableValidation $GEODATA_PATH/agi_mopublic_pub.xtf
+```
+
+Danach müssen noch die Schritte, die unter _Importieren der Vektordaten in die lokale DB_ im Abschnitt _Bereitstellen der Geodaten auf einer beliebigen lokalen Maschine_ beschrieben sind, ausgeführt werden, um die Daten in eine lokale DB zu importieren. Dies ist aber nicht nötig, falls man nicht auf einer lokalen Maschine im AGI seeden möchte, sondern die Daten hier nur bereitstellt und schliesslich auf einer beliebigen lokalen Maschine seeden wird.)
+
 Nun kann man gemäss der Anleitung im Abschnit _Kacheln erstellen (seeden)_ mit dem Seeden starten.
 
 
@@ -44,6 +53,8 @@ tar -czf lk.tar.gz ch.swisstopo.lk*
 tar -czf maske.tar.gz ch.so.agi.hintergrundkarte/maske.tif
 tar -czf ch.swisstopo.swissimage_2018.rgb.tar.gz ch.swisstopo.swissimage_2018.rgb
 tar -czf ch.swisstopo.sentinel_2018.tar.gz ch.swisstopo.sentinel_2018
+
+zip agi_mopublic_pub.xtf.zip agi_mopublic_pub.xtf
 ```
 (`hoheitsgrenzen_kantonsgrenze.gpkg` muss nicht gepackt werden, und `ch.swisstopo.sentinel_2018` packen wir nur deshalb, weil beim Entpacken praktischerweise auch der richtige Unterordner angelegt wird.)
 
@@ -57,8 +68,30 @@ tar -xzf lk.tar.gz
 tar -xzf maske.tar.gz
 tar -xzf ch.swisstopo.swissimage_2018.rgb.tar.gz
 tar -xzf ch.swisstopo.sentinel_2018.tar.gz
+
+unzip agi_mopublic_pub.xtf.zip
 ```
 
+Importieren der Vektordaten in die lokale DB:
+
+```
+cd seed
+# Der Pfad, wo die Kacheln erstellt werden sollen, muss bereits festgelegt werden, z.B.
+export TILES_PATH=/tmp/tiles
+docker-compose pull && docker-compose up
+
+java -jar ili2pg-4.3.1.jar \
+--dbhost localhost --dbport 54322 --dbdatabase pub --dbusr admin --dbpwd admin \
+--schemaimport --dbschema agi_mopublic_pub --models SO_AGI_MOpublic_20190424 \
+--defaultSrsCode 2056 --strokeArcs --createGeomIdx --createFk --createFkIdx --createEnumTabs --beautifyEnumDispName --createMetaInfo --createUnique --createNumChecks --nameByTopic
+
+psql -h localhost -p 54322 -d pub -U admin \
+-c "GRANT USAGE ON SCHEMA agi_mopublic_pub TO gretl; GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA agi_mopublic_pub TO gretl; GRANT USAGE ON ALL SEQUENCES IN SCHEMA agi_mopublic_pub TO gretl;"
+
+java -jar ili2pg-4.3.1.jar \
+--dbhost localhost --dbport 54322 --dbdatabase pub --dbusr gretl --dbpwd gretl \
+--import --dbschema agi_mopublic_pub --models SO_AGI_MOpublic_20190424 --disableValidation $GEODATA_PATH/agi_mopublic_pub.xtf
+```
 
 ## Kacheln erstellen (seeden)
 
