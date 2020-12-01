@@ -19,6 +19,7 @@ services:
     ports:
       - "8081:80"
     volumes:
+      - ${PWD}/pg_service.conf:/etc/postgresql-common/pg_service.conf
       - ${PWD}/qgs:/data
       - ${GEODATA_PATH:-./geodata}:/geodata
   pub-db:
