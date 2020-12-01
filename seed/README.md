@@ -126,6 +126,13 @@ export GEODATA_PATH=$HOME/geodata
 sudo ln -s -n -f $GEODATA_PATH /geodata
 ```
 
+Zudem muss die Datei `pg_service.conf` im Home-Verzeichnis abgelegt werden:
+
+```
+cp -i pg_service.conf ~/.pg_service.conf
+```
+
+
 Nun können die .qgs-Dokumente im lokalen QGIS nach Bedarf editiert werden. Zu beachten:
 * Die Pfade zu den Geodaten müssen absolut gespeichert werden (diese Einstellung ist unter _Project > Properties / General_)
 * Die Geodaten müssen über den soeben angelegten symbolischen Link `/geodata` geladen werden
