@@ -70,31 +70,23 @@ oc process -f openshift/seeder-cronjob-template.yaml \
 
 ## Run MapCache seeder Jobs that need to run on demand only
 
-Run the following commands to directly run OpenShift Jobs that update the "static" part of the MapCache tiles:
+The *hintergrundkarte_ortho* tile set and the zoom levels 0 to 10 of the *ch.so.agi.hintergrundkarte_farbig* and the *ch.so.agi.hintergrundkarte_sw* tile set should be seeded on a local machine. Please refer to the instructions in the *seed* folder.
+
+The zoom levels 11 to 14 of the *ch.so.agi.hintergrundkarte_farbig* and *ch.so.agi.hintergrundkarte_sw* tile sets can be seeded using the following commands:
 ```
 git clone https://github.com/sogis/docker-mapcache.git && cd docker-mapcache
 oc project mapcache-test
-oc delete $(oc get -l job-name=seeder-static-farbig job -o name) && \
 oc process -f openshift/seeder-job-template.yaml \
   -p PVC_NAME=gditest-mapcache-lowback \
   -p VARIANT=farbig \
-  -p ZOOM_LEVELS=0,10 \
+  -p ZOOM_LEVELS=11,14 \
   -p ENVIRONMENT_NAME=test \
-  | oc create -f -
-oc delete $(oc get -l job-name=seeder-static-sw job -o name) && \
+  | oc apply -f -
 oc process -f openshift/seeder-job-template.yaml \
   -p PVC_NAME=gditest-mapcache-lowback \
   -p VARIANT=sw \
-  -p ZOOM_LEVELS=0,10 \
+  -p ZOOM_LEVELS=10,14 \
   -p ENVIRONMENT_NAME=test \
-  | oc create -f -
-oc delete $(oc get -l job-name=seeder-static-ortho job -o name) && \
-oc process -f openshift/seeder-job-template.yaml \
-  -p PVC_NAME=gditest-mapcache-lowback \
-  -p VARIANT=ortho \
-  -p ZOOM_LEVELS=0,14 \
-  -p ENVIRONMENT_NAME=test \
-  | oc create -f -
+  | oc apply -f -
 ```
-
-(On the very first run after generating the OpenShift project, just run the `oc process ...` commands and omit the `oc delete ...` commands, as there are no existing jobs to delete yet.)
+(If any of these jobs already exists, you might need to delete it using the command `oc delete job JOB-NAME`.)
