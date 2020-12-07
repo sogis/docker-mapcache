@@ -6,14 +6,14 @@ objects:
 - apiVersion: batch/v1
   kind: Job
   metadata:
-    name: seeder-static-${VARIANT}
+    name: seeder-manual-${VARIANT}
   spec:
     template:
       metadata:
-        name: seeder-static-${VARIANT}
+        name: seeder-manual-${VARIANT}
       spec:
         containers:
-        - name: seeder-static-${VARIANT}
+        - name: seeder-manual-${VARIANT}
           image: sogis/docker-mapcache
           command:
           - mapcache_seed
