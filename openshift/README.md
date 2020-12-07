@@ -44,7 +44,7 @@ oc process -f openshift/qgis-server_deploymentconfig.yaml \
   -p TAG=latest \
   -p REPLICAS=1 \
   -p CPU_REQUEST=1 \
-  -p CPU_LIMIT=4 \
+  -p CPU_LIMIT=2 \
   -p MEMORY_REQUEST=2 \
   -p MEMORY_LIMIT=4 \
   | oc apply -f -
