@@ -32,7 +32,7 @@ objects:
   kind: Secret
   metadata:
     labels:
-      app: mapcache
+      app: qgis-server
       service: qgis-server
     name: qgis-server-pg-config
 - apiVersion: v1
@@ -40,7 +40,7 @@ objects:
   metadata:
     labels:
       service: qgis-server
-      app: mapcache
+      app: qgis-server
     name: qgis-server
   spec:
     ports:
@@ -50,6 +50,6 @@ objects:
       targetPort: 80
     selector:
       service: qgis-server
-      app: mapcache
+      app: qgis-server
     sessionAffinity: None
     type: ClusterIP

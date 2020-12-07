@@ -31,7 +31,7 @@ parameters:
   - description: Memory Limit
     name: MEMORY_LIMIT
 labels:
-  app: mapcache
+  app: qgis-server
 objects:
 - apiVersion: v1
   kind: DeploymentConfig
@@ -41,7 +41,7 @@ objects:
     generation: 1
     labels:
       service: qgis-server
-      app: mapcache
+      app: qgis-server
     name: qgis-server
   spec:
     replicas: ${{REPLICAS}}
@@ -63,7 +63,7 @@ objects:
           openshift.io/generated-by: OpenShiftWebConsole
         labels:
           service: qgis-server
-          app: mapcache
+          app: qgis-server
       spec:
         containers:
         - env:
