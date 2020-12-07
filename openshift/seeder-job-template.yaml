@@ -26,10 +26,6 @@ objects:
           - ${ZOOM_LEVELS}
           - -n
           - "4"
-          - -d
-          - /mapcache/wmts-seeding-perimeter.gpkg
-          - -l
-          - kanton1000m
           resources:
             limits:
               cpu: ${CPU_LIMIT}
