@@ -23,6 +23,32 @@ Check the deployment:
 http://geo-wmts-t.so.ch/mapcache/wmts/1.0.0/WMTSCapabilities.xml
 ```
 
+## Set up a separate QGIS Server for seeding
+
+Run the following commands to create a QGIS Server Deployment Configuration; the templates are based on those in https://github.com/sogis/pipelines/tree/master/api_webgisclient/qgis-server, and they are additionally modified so that they use the Image Registry of a different OpenShift project:
+```
+git clone https://github.com/sogis/docker-mapcache.git && cd docker-mapcache
+oc project agi-mapcache-test
+oc policy add-role-to-user system:image-puller system:serviceaccount:agi-mapcache-test:default --rolebinding-name puller-agi-mapcache-test -n gdi-test
+# Command to use for production environment:
+# oc policy add-role-to-user system:image-puller system:serviceaccount:agi-mapcache-production:default --rolebinding-name puller-agi-mapcache-production -n gdi
+oc process -f openshift/qgis-server_resources.yaml \
+  -p DB_SERVER=xy \
+  -p DB_PUB=xy \
+  -p USER_OGC_SERVER=xy \
+  -p PW_OGC_SERVER=xy \
+  | oc apply -f -
+oc process -f openshift/qgis-server_deploymentconfig.yaml \
+  -p ENVIRONMENT=test \
+  -p NAMESPACE=gdi-test \
+  -p TAG=2.0.13 \
+  -p REPLICAS=1 \
+  -p CPU_REQUEST=0.5 \
+  -p CPU_LIMIT=2 \
+  -p MEMORY_REQUEST=2Gi \
+  -p MEMORY_LIMIT=4Gi \
+  | oc apply -f -
+```
 
 ## Set up MapCache seeder Cron Job
 
@@ -40,20 +66,6 @@ oc process -f openshift/seeder-cronjob-template.yaml \
   -p PGUSER=ogc_server \
   -p PGPASSWORD=xy \
   | oc apply -f -
-```
-
-## For the seeder Jobs we use a separate QGIS-Server Pod
-
-Run the following commands to create the QGIS Server Pod
-```
-git clone https://github.com/sogis/docker-mapcache.git && cd docker-mapcache
-oc project agi-mapcache-test
-oc policy add-role-to-user system:image-puller system:serviceaccount:agi-mapcache-test:default -n gdi
-oc process -f openshift/seeder-qgis-server.yaml \
-  -p NAMESPACE=agi-mapcache-test \
-  -p DB_SERVER=geodb-t.rootso.org \
-  -p PW_OGC_SERVER=password \
-  | oc create -f -
 ```
 
 ## Run MapCache seeder Jobs that need to run on demand only
