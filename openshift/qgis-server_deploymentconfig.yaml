@@ -142,7 +142,7 @@ objects:
       imageChangeParams:
         automatic: true
         containerNames:
-        - qgis-server
+        - sogis-qgis-server
         from:
           kind: ImageStreamTag
           name: qgis-server:${TAG}
