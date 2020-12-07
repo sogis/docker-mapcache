@@ -72,7 +72,7 @@ oc process -f openshift/seeder-cronjob-template.yaml \
 
 The *hintergrundkarte_ortho* tile set and the zoom levels 0 to 10 of the *ch.so.agi.hintergrundkarte_farbig* and the *ch.so.agi.hintergrundkarte_sw* tile set should be seeded on a local machine. Please refer to the instructions in the *seed* folder.
 
-The zoom levels 11 to 14 of the *ch.so.agi.hintergrundkarte_farbig* and *ch.so.agi.hintergrundkarte_sw* tile sets can be seeded using the following commands:
+For manual seeding of the zoom levels 11 to 14 of the *ch.so.agi.hintergrundkarte_farbig* and *ch.so.agi.hintergrundkarte_sw* tile sets, use the following commands:
 ```
 git clone https://github.com/sogis/docker-mapcache.git && cd docker-mapcache
 oc project mapcache-test
