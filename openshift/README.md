@@ -43,7 +43,7 @@ oc process -f openshift/qgis-server_deploymentconfig.yaml \
   -p NAMESPACE=gdi-test \
   -p TAG=2.0.13 \
   -p REPLICAS=1 \
-  -p CPU_REQUEST=1 \
+  -p CPU_REQUEST=0.5 \
   -p CPU_LIMIT=2 \
   -p MEMORY_REQUEST=2Gi \
   -p MEMORY_LIMIT=4Gi \
