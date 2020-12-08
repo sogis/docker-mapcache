@@ -118,7 +118,7 @@ Falls man noch weitere Änderungen an den .qgs-Dokumenten machen muss, führt ma
 
 Die mit *docker-compose* gestarteten Container stoppen durch Drücken von `Ctrl-C`.
 
-Danach sich an OpenShift anmelden und, nachdem man den Inhalt des $TILES_PATH überprüft hat, mit folgenden Befehlsvorlagen die Kacheln auf einen der *MapCache*-Pods kopieren. Danach **alle** *MapCache*-Pods neu starten mit `oc delete pod ...`. Der Neustart ist nötig, damit Dateien, auf die der Service während des Kopierens noch zugegriffen hat, freigegeben werden.
+Danach sich an OpenShift anmelden und, nachdem man den Inhalt des `$TILES_PATH` überprüft hat, mit folgenden Befehlsvorlagen die Kacheln auf einen der *MapCache*-Pods kopieren. Danach **alle** *MapCache*-Pods neu starten mit `oc delete pod ...`. Der Neustart ist nötig, damit Dateien, auf die der Service während des Kopierens noch zugegriffen hat, freigegeben werden.
 
 ```
 oc rsync $TILES_PATH/ docker-mapcache-65-srz54:/tiles
