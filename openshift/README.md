@@ -85,7 +85,7 @@ oc process -f openshift/seeder-job-template.yaml \
 oc process -f openshift/seeder-job-template.yaml \
   -p PVC_NAME=gditest-mapcache-lowback \
   -p VARIANT=sw \
-  -p ZOOM_LEVELS=10,14 \
+  -p ZOOM_LEVELS=11,14 \
   -p ENVIRONMENT_NAME=test \
   | oc apply -f -
 ```
