@@ -81,12 +81,12 @@ oc process -f openshift/seeder-job-template.yaml \
   -p VARIANT=farbig \
   -p ZOOM_LEVELS=11,14 \
   -p ENVIRONMENT_NAME=test \
-  | oc apply -f -
+  | oc create -f -
 oc process -f openshift/seeder-job-template.yaml \
   -p PVC_NAME=gditest-mapcache-lowback \
   -p VARIANT=sw \
   -p ZOOM_LEVELS=11,14 \
   -p ENVIRONMENT_NAME=test \
-  | oc apply -f -
+  | oc create -f -
 ```
 (If any of these jobs already exists, you might need to delete it using the command `oc delete job JOB-NAME`.)
