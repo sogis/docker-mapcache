@@ -78,7 +78,7 @@ objects:
           livenessProbe:
             failureThreshold: 3
             httpGet:
-              path: ows/somap?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities
+              path: index.html
               port: 80
               scheme: HTTP
             initialDelaySeconds: 1
@@ -92,7 +92,7 @@ objects:
           readinessProbe:
             failureThreshold: 1
             httpGet:
-              path: ows/somap?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities
+              path: index.html
               port: 80
               scheme: HTTP
             initialDelaySeconds: 1
