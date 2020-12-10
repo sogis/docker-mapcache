@@ -41,7 +41,7 @@ oc process -f openshift/qgis-server_resources.yaml \
 oc process -f openshift/qgis-server_deploymentconfig.yaml \
   -p ENVIRONMENT=test \
   -p NAMESPACE=gdi-test \
-  -p TAG=2.0.13 \
+  -p TAG=latest \
   -p REPLICAS=1 \
   -p CPU_REQUEST=0.5 \
   -p CPU_LIMIT=2 \
