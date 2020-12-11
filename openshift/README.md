@@ -37,7 +37,6 @@ http://geo-wmts-t.so.ch/mapcache/wmts/1.0.0/WMTSCapabilities.xml
 
 Run the following commands to create a QGIS Server Deployment Configuration; the templates are based on those in https://github.com/sogis/pipelines/tree/master/api_webgisclient/qgis-server, and they are additionally modified so that they use the Image Registry of a different OpenShift project:
 ```
-git clone https://github.com/sogis/docker-mapcache.git && cd docker-mapcache
 oc project agi-mapcache-test
 oc policy add-role-to-user system:image-puller system:serviceaccount:agi-mapcache-test:default --rolebinding-name puller-agi-mapcache-test -n gdi-test
 # Command to use for production environment:
@@ -64,14 +63,13 @@ oc process -f openshift/qgis-server_deploymentconfig.yaml \
 
 Run the following commands to create an OpenShift Cron Job which regularly updates a part of the MapCache tiles:
 ```
-git clone https://github.com/sogis/docker-mapcache.git && cd docker-mapcache
-oc project mapcache-test
+oc project agi-mapcache-test
 oc process -f openshift/seeder-cronjob-template.yaml \
   -p PVC_NAME=gditest-mapcache-lowback \
   -p ZOOM_LEVELS=11,14 \
   -p SCHEDULE='00 03 * * *' \
   -p ENVIRONMENT_NAME=test \
-  -p PGHOST=geodb-t.rootso.org \
+  -p PGHOST=xy \
   -p PGDATABASE=pub \
   -p PGUSER=ogc_server \
   -p PGPASSWORD=xy \
@@ -84,8 +82,7 @@ The *hintergrundkarte_ortho* tile set and the zoom levels 0 to 10 of the *ch.so.
 
 For manual seeding of the zoom levels 11 to 14 of the *ch.so.agi.hintergrundkarte_farbig* and *ch.so.agi.hintergrundkarte_sw* tile sets, use the following commands:
 ```
-git clone https://github.com/sogis/docker-mapcache.git && cd docker-mapcache
-oc project mapcache-test
+oc project agi-mapcache-test
 oc process -f openshift/seeder-job-template.yaml \
   -p PVC_NAME=gditest-mapcache-lowback \
   -p VARIANT=farbig \
