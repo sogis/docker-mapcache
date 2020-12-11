@@ -2,20 +2,30 @@
 
 ## Set up MapCache
 
-Run the following commands to set up MapCache:
+A persistent volume claim for storing the tiles must exist already.
+
+Optional: Specify Docker Hub credentials to use for pulling image:
 ```
-oc new-project mapcache-test
-oc new-app sogis/docker-mapcache
-oc expose service docker-mapcache --hostname=geo-wmts-t.so.ch
-oc set volume dc/docker-mapcache --remove --name=docker-mapcache-volume-1
-oc set volume dc/docker-mapcache --add -t pvc --claim-name=gditest-mapcache-lowback --mount-path=/tiles --name docker-mapcache-tiles # adapt claim-name to your needs; it must exist already
-oc set env dc/docker-mapcache ENVIRONMENT=test
-oc set resources dc docker-mapcache --requests=cpu=10m,memory=200Mi --limits=cpu=50m,memory=600Mi
+oc project agi-mapcache-test
 oc create secret docker-registry sogis-pull-secret --docker-username=xx --docker-password=yy
 oc secrets link default sogis-pull-secret --for=pull
-oc scale --replicas=2 dc/docker-mapcache
-# if you wish:
-oc tag --source=docker sogis/docker-mapcache:latest docker-mapcache:latest --scheduled=true
+```
+
+Deploy MapCache and create service and route:
+```
+oc project agi-mapcache-test
+oc process -f openshift/mapcache_template.yaml \
+  -p TAG=latest \
+  -p IMPORT_POLICY_SCHEDULED=true \
+  -p REPLICA_COUNT=1 \
+  -p ENVIRONMENT=test \
+  -p TILES_PVC_NAME=gditest-mapcache-lowback \
+  -p HOSTNAME=geo-wmts-t.so.ch \
+  -p CPU_REQUEST=250m \
+  -p CPU_LIMIT=1 \
+  -p MEMORY_REQUEST=200Mi \
+  -p MEMORY_LIMIT=600Mi \
+  | oc apply -f -
 ```
 
 Check the deployment:
