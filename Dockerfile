@@ -1,7 +1,8 @@
-FROM debian:buster
+FROM debian:buster-backports
 
 RUN apt-get update && \
-    apt-get install --assume-yes --no-install-recommends apache2 libapache2-mod-mapcache mapcache-tools ca-certificates rsync && \
+    apt-get install --assume-yes --no-install-recommends apache2 ca-certificates rsync && \
+    apt-get install --assume-yes --no-install-recommends -t buster-backports libapache2-mod-mapcache mapcache-tools && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
