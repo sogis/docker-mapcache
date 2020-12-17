@@ -8,7 +8,5 @@ services:
   mapcache:
     build: .
     image: ${IMAGE_NAME}
-    environment:
-      ENVIRONMENT: ''
     ports:
       - "8080:8080"
