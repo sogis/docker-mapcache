@@ -3,12 +3,20 @@
 ## Build 
 
 ```
-docker build -t sogis/mapcache:latest .
+docker build -t sogis/docker-mapcache:latest .
 ```
 
 ## Run
+
 ```
-docker run -e ENVIRONMENT='' -p 8281:8080 -v /tmp:/tiles --rm --name mapcache sogis/mapcache
+docker run -p 8281:8080 -v /tmp/tiles:/tiles --rm --name mapcache sogis/docker-mapcache:latest
+```
+
+The following environment variables may be passed:
+```
+-e SERVICE_URL=https://geo-t.so.ch/api # The base URL of the MapCache service
+-e SOURCE_URL=https://geo-t.so.ch/api/wms # The base URL of the source WMS
+-e DEMO_SERVICE_ENABLED=true # Enable the MapCache demo service (a basic map viewer)
 ```
 
 Log into container:
@@ -16,16 +24,11 @@ Log into container:
 bash -c "clear && docker exec -it mapcache /bin/bash"
 ```
 
-Seeding:
-```
-docker exec -it mapcache mapcache_seed -c /mapcache/mapcache.xml -t ch.so.agi.hintergrundkarte_farbig -f -z 11,11 -n 4 -d /mapcache/wmts-seeding-perimeter.gpkg -l kanton1000m
-```
-
 WMTSCapabilities.xml:
 ```
 http://localhost:8281/mapcache/wmts/1.0.0/WMTSCapabilities.xml
 ```
 
-## Run in OpenShift
+## Seeding
 
-See the *openshift* folder for documentation on running *docker-mapcache* in OpenShift and on creating OpenShift Cron Jobs for tile seeding.
+Please refer to the instructions in the _seed_ folder.

@@ -100,25 +100,32 @@ Nun können die .qgs-Dokumente im lokalen QGIS nach Bedarf editiert werden. Zu b
 
 ### Seeden
 
-```
-docker-compose pull && docker-compose up
-```
-
-In einem anderen Terminal ausführen:
+Die aktuellsten Images pullen:
 
 ```
-docker exec -it seed_seeder_1 mapcache_seed -c /mapcache/mapcacheseed.xml -t ch.so.agi.hintergrundkarte_sw -f -z 0,10 -n 4
-docker exec -it seed_seeder_1 mapcache_seed -c /mapcache/mapcacheseed.xml -t ch.so.agi.hintergrundkarte_farbig -f -z 0,10 -n 4
-docker exec -it seed_seeder_1 mapcache_seed -c /mapcache/mapcacheseed.xml -t ch.so.agi.hintergrundkarte_ortho -f -z 0,14 -n 4
+docker-compose pull
 ```
 
-Falls man noch weitere Änderungen an den .qgs-Dokumenten machen muss, führt man sicherheitshalber vor dem nächsten `docker-compose up` ein `docker-compose down` aus, damit die Änderungen übernommen werden.
+Seeden nach Bedarf:
+
+```
+docker-compose run --rm --service-ports -e SOURCE_URL=http://wms/qgis/ch.so.agi.hintergrundkarte_sw seeder mapcache_seed -c /mapcache/mapcache.xml -t ch.so.agi.hintergrundkarte_sw -f -z 0,10 -n 4
+docker-compose run --rm --service-ports -e SOURCE_URL=http://wms/qgis/ch.so.agi.hintergrundkarte_farbig seeder mapcache_seed -c /mapcache/mapcache.xml -t ch.so.agi.hintergrundkarte_farbig -f -z 0,10 -n 4
+docker-compose run --rm --service-ports -e SOURCE_URL=http://wms/qgis/ch.so.agi.hintergrundkarte_ortho seeder mapcache_seed -c /mapcache/mapcache.xml -t ch.so.agi.hintergrundkarte_ortho -f -z 0,10 -n 4
+```
+
+Alles stoppen:
+
+```
+docker-compose down
+```
+
+
+Falls man noch weitere Änderungen an den .qgs-Dokumenten machen muss, führt man sicherheitshalber vor dem nächsten `docker-compose run` ein `docker-compose down` aus, damit die Änderungen übernommen werden.
 
 ### Kacheln in OpenShift publizieren
 
-Die mit *docker-compose* gestarteten Container stoppen durch Drücken von `Ctrl-C`.
-
-Danach sich an OpenShift anmelden und, nachdem man den Inhalt des `$TILES_PATH` überprüft hat, mit folgenden Befehlsvorlagen die Kacheln auf einen der *MapCache*-Pods kopieren. Danach **alle** *MapCache*-Pods neu starten mit `oc delete pod ...`. Der Neustart ist nötig, damit Dateien, auf die der Service während des Kopierens noch zugegriffen hat, freigegeben werden.
+Zunächst muss der Inhalt des `$TILES_PATH` kurz überprüft werden. Danach meldet man sich an OpenShift an und kopiert mit folgenden Befehlsvorlagen die Kacheln auf einen der *MapCache*-Pods. Danach müssen **alle** *MapCache*-Pods neu gestartet werden, z.B. mit `oc delete pod ...`. Der Neustart ist nötig, damit Dateien, auf die der Service während des Kopierens noch zugegriffen hat, freigegeben werden.
 
 ```
 oc rsync $TILES_PATH/ docker-mapcache-65-srz54:/tiles
@@ -128,6 +135,7 @@ oc delete pod docker-mapcache-65-vm8jg
 
 ### Information
 
-Wenn die Docker-Container laufen, sind die Dienste unter folgenden URLs erreichbar:
-* WMTS: http://localhost:8080/mapcache/wmts/1.0.0/WMTSCapabilities.xml
-* WMS: http://localhost:8081/qgis/ch.so.agi.hintergrundkarte_sw?SERVICE=WMS&REQUEST=GetCapabilities
+Der MapCache-Service ist während des Seedens nicht verfügbar.
+Um das Resultat zu prüfen, kann man den Befehl im Readme dieses Repositories im Abschnitt _Run_ verwenden.
+Der WMS (QGIS Server) ist aber unter der folgenden URL erreichbar, wenn die Docker-Container laufen:
+http://localhost:8081/qgis/ch.so.agi.hintergrundkarte_sw?SERVICE=WMS&REQUEST=GetCapabilities
