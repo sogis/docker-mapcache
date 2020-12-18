@@ -4,8 +4,6 @@ services:
     image: sogis/docker-mapcache:latest
     environment:
       DEMO_SERVICE_ENABLED: 'true'
-    ports:
-      - "8080:8080"
     volumes:
       - ${TILES_PATH}:/tiles
     depends_on:
