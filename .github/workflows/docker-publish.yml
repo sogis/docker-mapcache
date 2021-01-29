@@ -18,48 +18,27 @@ on:
 
 env:
   DOCKER_NAMESPACE: sogis
-  IMAGE_NAME: docker-mapcache
+  DOCKER_IMAGE: docker-mapcache
 
 jobs:
-  # Run tests.
-  # See also https://docs.docker.com/docker-hub/builds/automated-testing/
-  test:
+  build:
     runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Run tests
-        run: |
-          if [ -f docker-compose.test.yml ]; then
-            docker-compose --file docker-compose.test.yml build
-            docker-compose --file docker-compose.test.yml run sut
-          else
-            docker build . --file Dockerfile
-          fi
-
-  # Push image to GitHub Packages.
-  # See also https://docs.docker.com/docker-hub/builds/
-  push:
-    # Ensure test job passes before pushing image.
-    needs: test
-
-    runs-on: ubuntu-latest
-    if: github.event_name == 'push'
 
     steps:
       - uses: actions/checkout@v2
 
       - name: Build image
-        run: docker build . --file Dockerfile --tag $IMAGE_NAME
+        run: docker build --tag $DOCKER_NAMESPACE/$DOCKER_IMAGE:latest --tag $DOCKER_NAMESPACE/$DOCKER_IMAGE:$GITHUB_RUN_NUMBER .
 
-      - name: Log into registry
+      - name: Test image
+        run: |
+          docker-compose --file docker-compose.test.yml build
+          docker-compose --file docker-compose.test.yml run sut
+
+      - name: Log into Docker registry
+        if: github.event_name == 'push'
         run: echo "${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}" | docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} --password-stdin
 
       - name: Push image
-        run: |
-          DOCKER_REPOSITORY=$DOCKER_NAMESPACE/$IMAGE_NAME
-
-          docker tag $IMAGE_NAME $DOCKER_REPOSITORY:latest
-          docker tag $IMAGE_NAME $DOCKER_REPOSITORY:$GITHUB_RUN_NUMBER
-          docker push $DOCKER_REPOSITORY
+        if: github.event_name == 'push'
+        run: docker push $DOCKER_NAMESPACE/$DOCKER_IMAGE
