@@ -3,12 +3,12 @@
 ## Build 
 
 ```
-docker build -t sogis/mapcache:latest .
+docker build -t sogis/docker-mapcache .
 ```
 
 ## Run
 ```
-docker run -e ENVIRONMENT='' -p 8281:8080 -v /tmp:/tiles --rm --name mapcache sogis/mapcache
+docker run -e ENVIRONMENT='' -p 8281:8080 -v /tmp:/tiles --rm --name mapcache sogis/docker-mapcache
 ```
 
 Log into container:
