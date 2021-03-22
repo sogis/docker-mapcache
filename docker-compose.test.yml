@@ -7,7 +7,5 @@ services:
       - mapcache
   mapcache:
     image: $DOCKER_NAMESPACE/$DOCKER_IMAGE:latest
-    environment:
-      ENVIRONMENT: ''
     ports:
       - "8080:8080"

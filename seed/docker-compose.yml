@@ -3,11 +3,8 @@ services:
   seeder:
     image: sogis/docker-mapcache:latest
     environment:
-      ENVIRONMENT: 'seed'
-    ports:
-      - "8080:8080"
+      DEMO_SERVICE_ENABLED: 'true'
     volumes:
-      - ${PWD}/mapcacheseed.xml:/mapcache/mapcacheseed.xml
       - ${TILES_PATH}:/tiles
     depends_on:
       - wms
