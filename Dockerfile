@@ -11,8 +11,8 @@ RUN mkdir -p /var/run/apache2 && \
     chmod --recursive g+w /var/log/apache2 /var/run/apache2 && \
     sed -i -e 's/Listen 80/Listen 8080/' /etc/apache2/ports.conf
 # Truncate Apache access logs after a certain time using rotatelogs, and send error messages to standard output
-RUN sed -i -E -e 's/^(CustomLog) (\S*) (\S*)/\1 "|\/usr\/bin\/rotatelogs -t \2 604800" \3/' \
-    -e '2 a ErrorLog "|\/bin\/cat"' \
+RUN sed -i -E -e 's/^(CustomLog) (\S*) (\S*)/\1 "|\/usr\/bin\/rotatelogs -n 3 \2 86400" \3/' \
+    -e '3 i ErrorLog "|\/bin\/cat"' \
     /etc/apache2/conf-available/other-vhosts-access-log.conf
 
 # Configure and enable MapCache

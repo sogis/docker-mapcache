@@ -3,7 +3,7 @@
 ## Build 
 
 ```
-docker build -t sogis/docker-mapcache:latest .
+docker build -t sogis/docker-mapcache .
 ```
 
 ## Run

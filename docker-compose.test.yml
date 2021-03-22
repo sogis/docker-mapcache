@@ -6,7 +6,6 @@ services:
     depends_on:
       - mapcache
   mapcache:
-    build: .
-    image: ${IMAGE_NAME}
+    image: $DOCKER_NAMESPACE/$DOCKER_IMAGE:latest
     ports:
       - "8080:8080"
