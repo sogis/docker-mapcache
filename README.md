@@ -29,6 +29,21 @@ WMTSCapabilities.xml:
 http://localhost:8281/mapcache/wmts/1.0.0/WMTSCapabilities.xml
 ```
 
+Demo map (if enabled):
+```
+http://localhost:8281/mapcache/demo
+```
+
+Troubleshooting:
+
+If MapCache logs messages like
+`sqlite backend failed to open db /tiles/xy.db: unable to open database file`,
+then it maybe doesn't have write permission on the tiles host directory.
+In this case run the following command on the host machine:
+```
+sudo chmod g+w /tmp/tiles/
+```
+
 ## Seeding
 
 Please refer to the instructions in the _seed_ folder.
