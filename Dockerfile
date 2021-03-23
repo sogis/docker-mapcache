@@ -16,10 +16,10 @@ RUN sed -i -E -e 's/^(CustomLog) (\S*) (\S*)/\1 "|\/usr\/bin\/rotatelogs -n 3 \2
     /etc/apache2/conf-available/other-vhosts-access-log.conf
 
 # Configure and enable MapCache
-COPY setup_configfile.sh /tmp
-RUN chmod g+x /tmp/setup_configfile.sh
 RUN mkdir /mapcache /tiles && \
     chmod g+w /mapcache /tiles
+COPY setup_configfile.sh /mapcache
+RUN chmod g+x /mapcache/setup_configfile.sh
 COPY mapcache.xml /mapcache/
 COPY wmts-seeding-perimeter.gpkg /mapcache/
 RUN chmod --recursive g+w /mapcache
@@ -32,6 +32,6 @@ EXPOSE 8080
 
 USER 1001
 
-ENTRYPOINT ["/tmp/setup_configfile.sh"]
+ENTRYPOINT ["/mapcache/setup_configfile.sh"]
 
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
