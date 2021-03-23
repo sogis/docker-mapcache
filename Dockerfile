@@ -18,11 +18,9 @@ RUN sed -i -E -e 's/^(CustomLog) (\S*) (\S*)/\1 "|\/usr\/bin\/rotatelogs -n 3 \2
 # Configure and enable MapCache
 RUN mkdir /mapcache /tiles && \
     chmod g+w /mapcache /tiles
-COPY setup_configfile.sh /mapcache
-RUN chmod g+x /mapcache/setup_configfile.sh
-COPY mapcache.xml /mapcache/
-COPY wmts-seeding-perimeter.gpkg /mapcache/
-RUN chmod --recursive g+w /mapcache
+COPY wmts-seeding-perimeter.gpkg setup_configfile.sh mapcache.xml /mapcache/
+RUN chmod g+w /mapcache/wmts-seeding-perimeter.gpkg /mapcache/mapcache.xml && \
+    chmod g-w+x /mapcache/setup_configfile.sh
 COPY mapcache.conf /etc/apache2/sites-available/mapcache.conf
 RUN a2ensite mapcache
 
