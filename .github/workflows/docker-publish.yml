@@ -36,9 +36,9 @@ jobs:
           docker-compose --file docker-compose.test.yml run sut
 
       - name: Log into Docker registry
-        if: github.event_name == 'push'
+        if: github.event_name != 'pull_request'
         run: echo "${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}" | docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} --password-stdin
 
       - name: Push image
-        if: github.event_name == 'push'
+        if: github.event_name != 'pull_request'
         run: docker push $DOCKER_NAMESPACE/$DOCKER_IMAGE:$GITHUB_RUN_NUMBER && docker push $DOCKER_NAMESPACE/$DOCKER_IMAGE:latest
