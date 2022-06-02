@@ -97,17 +97,39 @@ z.B. die Änderung eines Orthofoto-Standes mit folgedem Befehl:
 sed -E 's/(swissimage|orthofoto)_2018/\1_2021/g' qgs/ch.so.agi.hintergrundkarte_ortho.qgs
 ```
 
-Falls vor dem Seeden Änderungen an .qgs-Dokumenten notwendig sind, muss zunächst folgender symbolischer Link angelegt werden:
+Falls vor dem Seeden hingegen manuelle Änderungen
+an *.qgs*-Dokumenten notwendig sind,
+macht man dies in einer Vagrant-Box.
+Die Vagrant-Box legt man gemäss der Doku unter
+https://github.com/sogis/vagrant-ubuntu-18.04-qgis-3.16#use-box
+an (aber startet sie noch nicht).
+Zusätzlich müssen auch folgende Zeilen im Vagrantfile ergänzt werden
+(wobei der Pfad zu den *.qgs*-Dateien an den Pfad anzupassen ist,
+in welchem das *docker-mapcache*-Repo ausgecheckt ist):
+
+```
+config.vm.synced_folder "~/docker-mapcache/seed/qgs", "/home/vagrant/qgs"
+config.vm.synced_folder ENV['GEODATA_PATH'], "/geodata"
+```
+
+Dann startet man die Box mit
 
 ```
 export GEODATA_PATH=$HOME/geodata
-sudo ln -s -n -f $GEODATA_PATH /geodata
+vagrant up
 ```
 
-Nun können die .qgs-Dokumente im lokalen QGIS nach Bedarf editiert werden. Zu beachten:
-* Die Pfade zu den Geodaten müssen absolut gespeichert werden (diese Einstellung ist unter _Project > Properties / General_)
-* Die Geodaten müssen über den soeben angelegten symbolischen Link `/geodata` geladen werden
-* Es soll die aktuelle QGIS-LTR-Version verwendet werden; idealerweise soll sie mit der in `docker-compose.yml` für QGIS-Server verwendeten Version übereinstimmen
+QGIS startet man mit dem Befehl
+
+```
+vagrant ssh -c qgis
+```
+
+Nun können die *.qgs*-Dokumente nach Bedarf editiert werden.
+Zu beachten ist, dass die Pfade zu den Geodaten
+*absolut* gespeichert sein müssen.
+Diese Einstellung ist unter *Project > Properties / General* zu finden.
+(Der Pfad zu den geladenen Geodaten muss also mit `/geodata` beginnen.)
 
 ### Seeden
 
