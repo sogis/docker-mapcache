@@ -29,7 +29,7 @@ rsync -rpt $USER@UTIL-SERVERNAME:/opt/sogis_pic/geodata/ch.swisstopo.sentinel_20
 Nun kann man gemäss der Anleitung im Abschnit _Kacheln erstellen (seeden)_ mit dem Seeden starten.
 
 
-## Bereitstellen der Geodaten auf einer beliebigen lokalen Maschine
+### Optional: Bereitstellen der Geodaten auf einer beliebigen lokalen Maschine
 
 Falls man die Kacheln auf einer externen Maschine seeden möchte, muss man zunächst ebenfalls auf der AGI-Maschine die obigen Schritte ausführen, um die Geodaten auf die AGI-Maschine zu kopieren. Danach speichert man sie entweder auf einer externen Festplatte und transferiert sie auf die externe Maschine, wobei auch dort wieder ein `$GEODATA_PATH` angelegt werden muss, wohin man danach die Daten kopiert:
 
@@ -88,7 +88,7 @@ Verzeichnis für die Tiles anlegen und benötigte Berechtigungen setzen:
 mkdir $TILES_PATH && sudo chown 1001 $TILES_PATH
 ```
 
-### Bei Bedarf: Änderungen an .qgs-Dokumenten vornehmen
+#### Nur bei Bedarf: Änderungen an *.qgs*-Dokumenten vornehmen
 
 Einige Änderungen können möglicherweise mit einem Skript realisiert werden,
 z.B. die Änderung eines Orthofoto-Standes mit folgedem Befehl:
