@@ -29,12 +29,12 @@
     <layer-tree-layer name="ch.swisstopo.sentinel_2018" providerKey="gdal" source="/geodata/ch.swisstopo.sentinel_2018/ch.swisstopo.sentinel_2018.tif" legend_exp="" checked="Qt::Checked" expanded="1" id="ch_swisstopo_sentinel_2018_36ec34a0_0ab4_4b12_bb7a_f6984e7a3937">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer name="ch.swisstopo.orthofoto_2018.rgb" providerKey="gdal" source="/geodata/ch.swisstopo.swissimage_2018.rgb/ch.swisstopo.orthofoto_2018.rgb.vrt" legend_exp="" checked="Qt::Checked" expanded="1" id="ch_swisstopo_orthofoto_2018_rgb_12326aea_0f6c_42a5_ad49_99dc20e5475c">
+    <layer-tree-layer name="ch.swisstopo.orthofoto_2021.rgb" providerKey="gdal" source="/geodata/ch.swisstopo.swissimage_2021.rgb/ch.swisstopo.orthofoto_2021.rgb.vrt" legend_exp="" checked="Qt::Checked" expanded="1" id="ch_swisstopo_orthofoto_2021_rgb_12326aea_0f6c_42a5_ad49_99dc20e5475c">
       <customproperties/>
     </layer-tree-layer>
     <custom-order enabled="0">
       <item>ch_swisstopo_sentinel_2018_36ec34a0_0ab4_4b12_bb7a_f6984e7a3937</item>
-      <item>ch_swisstopo_orthofoto_2018_rgb_12326aea_0f6c_42a5_ad49_99dc20e5475c</item>
+      <item>ch_swisstopo_orthofoto_2021_rgb_12326aea_0f6c_42a5_ad49_99dc20e5475c</item>
       <item>hoheitsgrenzen_kantonsgrenze_603dbd89_0db2_4be5_ae9d_b053c06c7f14</item>
       <item>maske_1128ebb3_c2e8_4cd6_95bd_9ffc932da982</item>
     </custom-order>
@@ -87,9 +87,9 @@
         <legendlayerfile isInOverview="0" layerid="ch_swisstopo_sentinel_2018_36ec34a0_0ab4_4b12_bb7a_f6984e7a3937" visible="1"/>
       </filegroup>
     </legendlayer>
-    <legendlayer open="true" name="ch.swisstopo.orthofoto_2018.rgb" checked="Qt::Checked" drawingOrder="-1" showFeatureCount="0">
+    <legendlayer open="true" name="ch.swisstopo.orthofoto_2021.rgb" checked="Qt::Checked" drawingOrder="-1" showFeatureCount="0">
       <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="ch_swisstopo_orthofoto_2018_rgb_12326aea_0f6c_42a5_ad49_99dc20e5475c" visible="1"/>
+        <legendlayerfile isInOverview="0" layerid="ch_swisstopo_orthofoto_2021_rgb_12326aea_0f6c_42a5_ad49_99dc20e5475c" visible="1"/>
       </filegroup>
     </legendlayer>
   </legend>
@@ -178,12 +178,12 @@
         <xmax>2644999.99999999906867743</xmax>
         <ymax>1262000</ymax>
       </extent>
-      <id>ch_swisstopo_orthofoto_2018_rgb_12326aea_0f6c_42a5_ad49_99dc20e5475c</id>
-      <datasource>/geodata/ch.swisstopo.swissimage_2018.rgb/ch.swisstopo.orthofoto_2018.rgb.vrt</datasource>
+      <id>ch_swisstopo_orthofoto_2021_rgb_12326aea_0f6c_42a5_ad49_99dc20e5475c</id>
+      <datasource>/geodata/ch.swisstopo.swissimage_2021.rgb/ch.swisstopo.orthofoto_2021.rgb.vrt</datasource>
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>ch.swisstopo.orthofoto_2018.rgb</layername>
+      <layername>ch.swisstopo.orthofoto_2021.rgb</layername>
       <srs>
         <spatialrefsys>
           <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["Europe - Liechtenstein and Switzerland"],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
@@ -830,7 +830,7 @@ def my_form_open(dialog, layer, feature):
   </projectlayers>
   <layerorder>
     <layer id="ch_swisstopo_sentinel_2018_36ec34a0_0ab4_4b12_bb7a_f6984e7a3937"/>
-    <layer id="ch_swisstopo_orthofoto_2018_rgb_12326aea_0f6c_42a5_ad49_99dc20e5475c"/>
+    <layer id="ch_swisstopo_orthofoto_2021_rgb_12326aea_0f6c_42a5_ad49_99dc20e5475c"/>
     <layer id="hoheitsgrenzen_kantonsgrenze_603dbd89_0db2_4be5_ae9d_b053c06c7f14"/>
     <layer id="maske_1128ebb3_c2e8_4cd6_95bd_9ffc932da982"/>
   </layerorder>
