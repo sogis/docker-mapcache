@@ -102,6 +102,13 @@ Nun können die .qgs-Dokumente im lokalen QGIS nach Bedarf editiert werden. Zu b
 * Die Geodaten müssen über den soeben angelegten symbolischen Link `/geodata` geladen werden
 * Es soll die aktuelle QGIS-LTR-Version verwendet werden; idealerweise soll sie mit der in `docker-compose.yml` für QGIS-Server verwendeten Version übereinstimmen
 
+Einige Änderungen können möglicherweise mit einem Skript realisiert werden,
+z.B. die Änderung eines Orthofoto-Standes mit folgedem Befehl:
+
+```
+sed -E 's/(swissimage|orthofoto)_2018/\1_2021/g' qgs/ch.so.agi.hintergrundkarte_ortho.qgs
+```
+
 ### Seeden
 
 Die aktuellsten Images pullen:
