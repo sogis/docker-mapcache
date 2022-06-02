@@ -117,12 +117,18 @@ Die aktuellsten Images pullen:
 docker-compose pull
 ```
 
+Den WMS starten:
+
+```
+docker-compose up -d wms
+```
+
 Seeden nach Bedarf:
 
 ```
 docker-compose run --rm --service-ports -e SOURCE_URL=http://wms/qgis/ch.so.agi.hintergrundkarte_sw seeder mapcache_seed -c /mapcache/mapcache.xml -t ch.so.agi.hintergrundkarte_sw -f -z 0,10 -n 4
 docker-compose run --rm --service-ports -e SOURCE_URL=http://wms/qgis/ch.so.agi.hintergrundkarte_farbig seeder mapcache_seed -c /mapcache/mapcache.xml -t ch.so.agi.hintergrundkarte_farbig -f -z 0,10 -n 4
-docker-compose run --rm --service-ports -e SOURCE_URL=http://wms/qgis/ch.so.agi.hintergrundkarte_ortho seeder mapcache_seed -c /mapcache/mapcache.xml -t ch.so.agi.hintergrundkarte_ortho -f -z 0,10 -n 4
+docker-compose run --rm --service-ports -e SOURCE_URL=http://wms/qgis/ch.so.agi.hintergrundkarte_ortho seeder mapcache_seed -c /mapcache/mapcache.xml -t ch.so.agi.hintergrundkarte_ortho -f -z 0,14 -n 4
 ```
 
 Alles stoppen:
