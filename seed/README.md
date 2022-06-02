@@ -90,6 +90,13 @@ mkdir $TILES_PATH && sudo chown 1001 $TILES_PATH
 
 ### Bei Bedarf: Änderungen an .qgs-Dokumenten vornehmen
 
+Einige Änderungen können möglicherweise mit einem Skript realisiert werden,
+z.B. die Änderung eines Orthofoto-Standes mit folgedem Befehl:
+
+```
+sed -E 's/(swissimage|orthofoto)_2018/\1_2021/g' qgs/ch.so.agi.hintergrundkarte_ortho.qgs
+```
+
 Falls vor dem Seeden Änderungen an .qgs-Dokumenten notwendig sind, muss zunächst folgender symbolischer Link angelegt werden:
 
 ```
@@ -101,13 +108,6 @@ Nun können die .qgs-Dokumente im lokalen QGIS nach Bedarf editiert werden. Zu b
 * Die Pfade zu den Geodaten müssen absolut gespeichert werden (diese Einstellung ist unter _Project > Properties / General_)
 * Die Geodaten müssen über den soeben angelegten symbolischen Link `/geodata` geladen werden
 * Es soll die aktuelle QGIS-LTR-Version verwendet werden; idealerweise soll sie mit der in `docker-compose.yml` für QGIS-Server verwendeten Version übereinstimmen
-
-Einige Änderungen können möglicherweise mit einem Skript realisiert werden,
-z.B. die Änderung eines Orthofoto-Standes mit folgedem Befehl:
-
-```
-sed -E 's/(swissimage|orthofoto)_2018/\1_2021/g' qgs/ch.so.agi.hintergrundkarte_ortho.qgs
-```
 
 ### Seeden
 
