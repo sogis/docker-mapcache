@@ -99,17 +99,27 @@ sed -E 's/(swissimage|orthofoto)_2018/\1_2021/g' qgs/ch.so.agi.hintergrundkarte_
 
 Falls vor dem Seeden hingegen manuelle Änderungen
 an *.qgs*-Dokumenten notwendig sind,
-macht man dies in einer Vagrant-Box.
-Die Vagrant-Box legt man gemäss der Doku unter
-https://github.com/sogis/vagrant-ubuntu-18.04-qgis-3.16#use-box
-an (aber startet sie noch nicht).
-Zusätzlich müssen auch folgende Zeilen im Vagrantfile ergänzt werden
+macht man dies in der Vagrant-Box
+[sogis/ubuntu-qgis-3.16](https://app.vagrantup.com/sogis/boxes/ubuntu-qgis-3.16).
+(Weitere Dokumentation zu dieser Vagrant-Box unter
+https://github.com/sogis/vagrant-ubuntu-18.04-qgis-3.16#use-box.)
+
+Vagrant-Box initialisieren:
+
+```
+vagrant init sogis/ubuntu-qgis-3.16
+```
+
+Im Vagrantfile (wurde im aktuellen Verzeichnis angelegt)
+folgende Zeilen ergänzen
 (wobei der Pfad zu den *.qgs*-Dateien an den Pfad anzupassen ist,
 in welchem das *docker-mapcache*-Repo ausgecheckt ist):
 
 ```
 config.vm.synced_folder "~/docker-mapcache/seed/qgs", "/home/vagrant/qgs"
 config.vm.synced_folder ENV['GEODATA_PATH'], "/geodata"
+
+config.ssh.forward_x11 = true
 ```
 
 Dann startet man die Box mit
