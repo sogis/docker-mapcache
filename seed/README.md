@@ -177,9 +177,9 @@ Falls man noch weitere Änderungen an den .qgs-Dokumenten machen muss, führt ma
 Zunächst muss der Inhalt des `$TILES_PATH` kurz überprüft werden. Danach meldet man sich an OpenShift an und kopiert mit folgenden Befehlsvorlagen die Kacheln auf einen der *MapCache*-Pods. Danach müssen **alle** *MapCache*-Pods neu gestartet werden, z.B. mit `oc delete pod ...`. Der Neustart ist nötig, damit Dateien, auf die der Service während des Kopierens noch zugegriffen hat, freigegeben werden.
 
 ```
-oc rsync $TILES_PATH/ docker-mapcache-65-srz54:/tiles
-oc delete pod docker-mapcache-65-srz54
-oc delete pod docker-mapcache-65-vm8jg
+oc rsync --no-perms --progress $TILES_PATH/ mapcache-65-srz54:/tiles
+oc delete pod mapcache-65-srz54
+oc delete pod mapcache-65-vm8jg
 ```
 
 ### Information
