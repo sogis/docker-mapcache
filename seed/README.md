@@ -185,6 +185,7 @@ oc delete pod docker-mapcache-65-vm8jg
 ### Information
 
 Der MapCache-Service ist während des Seedens nicht verfügbar.
-Um das Resultat zu prüfen, kann man den Befehl im Readme dieses Repositories im Abschnitt _Run_ verwenden.
+Um das Resultat zu prüfen, kann man den
+[im allgemeinen README angegebenen Befehl](../README.md#run) verwenden.
 Der WMS (QGIS Server) ist aber unter der folgenden URL erreichbar, wenn die Docker-Container laufen:
 http://localhost:8081/qgis/ch.so.agi.hintergrundkarte_sw?SERVICE=WMS&REQUEST=GetCapabilities
