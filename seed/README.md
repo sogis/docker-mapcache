@@ -116,7 +116,7 @@ folgende Zeilen ergänzen
 in welchem das *docker-mapcache*-Repo ausgecheckt ist):
 
 ```
-config.vm.synced_folder "~/docker-mapcache/seed/qgs", "/home/vagrant/qgs"
+config.vm.synced_folder "./qgs", "/home/vagrant/qgs"
 config.vm.synced_folder ENV['GEODATA_PATH'], "/geodata"
 
 config.ssh.forward_x11 = true
