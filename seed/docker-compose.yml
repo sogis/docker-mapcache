@@ -9,7 +9,7 @@ services:
     depends_on:
       - wms
   wms:
-    image: sogis/qgis-server-base:3.10
+    image: sogis/qgis-server-base:3.16
     environment:
       QGIS_FCGI_MIN_PROCESSES: 4
       QGIS_FCGI_MAX_PROCESSES: 4
