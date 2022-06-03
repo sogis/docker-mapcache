@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis projectname="ch.so.agi.hintergrundkarte_ortho" version="3.10.7-A Coruña">
+<qgis projectname="ch.so.agi.hintergrundkarte_ortho" saveUser="vagrant" version="3.16.3-Hannover" saveUserFull="vagrant" saveDateTime="2022-06-03T15:27:38">
   <homePath path=""/>
   <title>ch.so.agi.hintergrundkarte_ortho</title>
   <autotransaction active="0"/>
@@ -7,29 +7,29 @@
   <trust active="0"/>
   <projectCrs>
     <spatialrefsys>
-      <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["Europe - Liechtenstein and Switzerland"],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
-      <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+      <wkt>PROJCS["CH1903+ / LV95",GEOGCS["CH1903+",DATUM["CH1903+",SPHEROID["Bessel 1841",6377397.155,299.1528128,AUTHORITY["EPSG","7004"]],TOWGS84[674.374,15.056,405.346,0,0,0,0],AUTHORITY["EPSG","6150"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4150"]],PROJECTION["Hotine_Oblique_Mercator_Azimuth_Center"],PARAMETER["latitude_of_center",46.95240555555556],PARAMETER["longitude_of_center",7.439583333333333],PARAMETER["azimuth",90],PARAMETER["rectified_grid_angle",90],PARAMETER["scale_factor",1],PARAMETER["false_easting",2600000],PARAMETER["false_northing",1200000],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","2056"]]</wkt>
+      <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
       <srsid>47</srsid>
       <srid>2056</srid>
       <authid>EPSG:2056</authid>
       <description>CH1903+ / LV95</description>
       <projectionacronym>somerc</projectionacronym>
-      <ellipsoidacronym>EPSG:7004</ellipsoidacronym>
+      <ellipsoidacronym>bessel</ellipsoidacronym>
       <geographicflag>false</geographicflag>
     </spatialrefsys>
   </projectCrs>
   <layer-tree-group>
     <customproperties/>
-    <layer-tree-layer name="maske" providerKey="gdal" source="/geodata/ch.so.agi.hintergrundkarte/maske.tif" legend_exp="" checked="Qt::Checked" expanded="0" id="maske_1128ebb3_c2e8_4cd6_95bd_9ffc932da982">
+    <layer-tree-layer source="/geodata/ch.so.agi.hintergrundkarte/maske.tif" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" expanded="0" providerKey="gdal" patch_size="0,0" name="maske" id="maske_1128ebb3_c2e8_4cd6_95bd_9ffc932da982">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer name="hoheitsgrenzen_kantonsgrenze" providerKey="ogr" source="/geodata/hoheitsgrenzen_kantonsgrenze.gpkg|layername=hoheitsgrenzen_kantonsgrenze" legend_exp="" checked="Qt::Checked" expanded="0" id="hoheitsgrenzen_kantonsgrenze_603dbd89_0db2_4be5_ae9d_b053c06c7f14">
+    <layer-tree-layer source="/geodata/hoheitsgrenzen_kantonsgrenze.gpkg|layername=hoheitsgrenzen_kantonsgrenze" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" expanded="0" providerKey="ogr" patch_size="0,0" name="hoheitsgrenzen_kantonsgrenze" id="hoheitsgrenzen_kantonsgrenze_603dbd89_0db2_4be5_ae9d_b053c06c7f14">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer name="ch.swisstopo.sentinel_2018" providerKey="gdal" source="/geodata/ch.swisstopo.sentinel_2018/ch.swisstopo.sentinel_2018.tif" legend_exp="" checked="Qt::Checked" expanded="1" id="ch_swisstopo_sentinel_2018_36ec34a0_0ab4_4b12_bb7a_f6984e7a3937">
+    <layer-tree-layer source="/geodata/ch.swisstopo.sentinel_2018/ch.swisstopo.sentinel_2018.tif" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" expanded="1" providerKey="gdal" patch_size="0,0" name="ch.swisstopo.sentinel_2018" id="ch_swisstopo_sentinel_2018_36ec34a0_0ab4_4b12_bb7a_f6984e7a3937">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer name="ch.swisstopo.orthofoto_2021.rgb" providerKey="gdal" source="/geodata/ch.swisstopo.swissimage_2021.rgb/ch.swisstopo.orthofoto_2021.rgb.vrt" legend_exp="" checked="Qt::Checked" expanded="1" id="ch_swisstopo_orthofoto_2021_rgb_12326aea_0f6c_42a5_ad49_99dc20e5475c">
+    <layer-tree-layer source="/geodata/ch.swisstopo.swissimage_2021.rgb/ch.swisstopo.orthofoto_2021.rgb.vrt" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" expanded="1" providerKey="gdal" patch_size="0,0" name="ch.swisstopo.orthofoto_2021.rgb" id="ch_swisstopo_orthofoto_2021_rgb_12326aea_0f6c_42a5_ad49_99dc20e5475c">
       <customproperties/>
     </layer-tree-layer>
     <custom-order enabled="0">
@@ -39,31 +39,31 @@
       <item>maske_1128ebb3_c2e8_4cd6_95bd_9ffc932da982</item>
     </custom-order>
   </layer-tree-group>
-  <snapping-settings tolerance="12" intersection-snapping="0" enabled="0" mode="2" type="1" unit="1">
+  <snapping-settings tolerance="12" scaleDependencyMode="0" minScale="0" unit="1" intersection-snapping="0" enabled="0" mode="2" type="1" self-snapping="0" maxScale="0">
     <individual-layer-settings>
-      <layer-setting units="1" tolerance="12" enabled="0" type="1" id="hoheitsgrenzen_kantonsgrenze_603dbd89_0db2_4be5_ae9d_b053c06c7f14"/>
+      <layer-setting tolerance="12" minScale="0" units="1" enabled="0" type="1" maxScale="0" id="hoheitsgrenzen_kantonsgrenze_603dbd89_0db2_4be5_ae9d_b053c06c7f14"/>
     </individual-layer-settings>
   </snapping-settings>
   <relations/>
   <mapcanvas annotationsVisible="1" name="theMapCanvas">
     <units>meters</units>
     <extent>
-      <xmin>2522848.88438486075028777</xmin>
-      <ymin>1135204.35099146887660027</ymin>
-      <xmax>2696627.21836923575028777</xmax>
-      <ymax>1349411.01798365637660027</ymax>
+      <xmin>2561243.8132220720872283</xmin>
+      <ymin>1185129.18744656466878951</ymin>
+      <xmax>2676076.4367779279127717</xmax>
+      <ymax>1289904.18755343533121049</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
       <spatialrefsys>
-        <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["Europe - Liechtenstein and Switzerland"],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
-        <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+        <wkt>PROJCS["CH1903+ / LV95",GEOGCS["CH1903+",DATUM["CH1903+",SPHEROID["Bessel 1841",6377397.155,299.1528128,AUTHORITY["EPSG","7004"]],TOWGS84[674.374,15.056,405.346,0,0,0,0],AUTHORITY["EPSG","6150"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4150"]],PROJECTION["Hotine_Oblique_Mercator_Azimuth_Center"],PARAMETER["latitude_of_center",46.95240555555556],PARAMETER["longitude_of_center",7.439583333333333],PARAMETER["azimuth",90],PARAMETER["rectified_grid_angle",90],PARAMETER["scale_factor",1],PARAMETER["false_easting",2600000],PARAMETER["false_northing",1200000],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","2056"]]</wkt>
+        <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
         <srsid>47</srsid>
         <srid>2056</srid>
         <authid>EPSG:2056</authid>
         <description>CH1903+ / LV95</description>
         <projectionacronym>somerc</projectionacronym>
-        <ellipsoidacronym>EPSG:7004</ellipsoidacronym>
+        <ellipsoidacronym>bessel</ellipsoidacronym>
         <geographicflag>false</geographicflag>
       </spatialrefsys>
     </destinationsrs>
@@ -72,109 +72,82 @@
   </mapcanvas>
   <projectModels/>
   <legend updateDrawingOrder="true">
-    <legendlayer open="false" name="maske" checked="Qt::Checked" drawingOrder="-1" showFeatureCount="0">
+    <legendlayer showFeatureCount="0" checked="Qt::Checked" open="false" name="maske" drawingOrder="-1">
       <filegroup open="false" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="maske_1128ebb3_c2e8_4cd6_95bd_9ffc932da982" visible="1"/>
+        <legendlayerfile layerid="maske_1128ebb3_c2e8_4cd6_95bd_9ffc932da982" isInOverview="0" visible="1"/>
       </filegroup>
     </legendlayer>
-    <legendlayer open="false" name="hoheitsgrenzen_kantonsgrenze" checked="Qt::Checked" drawingOrder="-1" showFeatureCount="0">
+    <legendlayer showFeatureCount="0" checked="Qt::Checked" open="false" name="hoheitsgrenzen_kantonsgrenze" drawingOrder="-1">
       <filegroup open="false" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="hoheitsgrenzen_kantonsgrenze_603dbd89_0db2_4be5_ae9d_b053c06c7f14" visible="1"/>
+        <legendlayerfile layerid="hoheitsgrenzen_kantonsgrenze_603dbd89_0db2_4be5_ae9d_b053c06c7f14" isInOverview="0" visible="1"/>
       </filegroup>
     </legendlayer>
-    <legendlayer open="true" name="ch.swisstopo.sentinel_2018" checked="Qt::Checked" drawingOrder="-1" showFeatureCount="0">
+    <legendlayer showFeatureCount="0" checked="Qt::Checked" open="true" name="ch.swisstopo.sentinel_2018" drawingOrder="-1">
       <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="ch_swisstopo_sentinel_2018_36ec34a0_0ab4_4b12_bb7a_f6984e7a3937" visible="1"/>
+        <legendlayerfile layerid="ch_swisstopo_sentinel_2018_36ec34a0_0ab4_4b12_bb7a_f6984e7a3937" isInOverview="0" visible="1"/>
       </filegroup>
     </legendlayer>
-    <legendlayer open="true" name="ch.swisstopo.orthofoto_2021.rgb" checked="Qt::Checked" drawingOrder="-1" showFeatureCount="0">
+    <legendlayer showFeatureCount="0" checked="Qt::Checked" open="true" name="ch.swisstopo.orthofoto_2021.rgb" drawingOrder="-1">
       <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="ch_swisstopo_orthofoto_2021_rgb_12326aea_0f6c_42a5_ad49_99dc20e5475c" visible="1"/>
+        <legendlayerfile layerid="ch_swisstopo_orthofoto_2021_rgb_12326aea_0f6c_42a5_ad49_99dc20e5475c" isInOverview="0" visible="1"/>
       </filegroup>
     </legendlayer>
   </legend>
   <mapViewDocks/>
   <mapViewDocks3D/>
-  <mapcanvas annotationsVisible="1" name="mAreaCanvas">
-    <units>degrees</units>
-    <extent>
-      <xmin>0</xmin>
-      <ymin>0</ymin>
-      <xmax>0</xmax>
-      <ymax>0</ymax>
-    </extent>
-    <rotation>0</rotation>
-    <destinationsrs>
+  <main-annotation-layer refreshOnNotifyEnabled="0" autoRefreshEnabled="0" refreshOnNotifyMessage="" type="annotation" autoRefreshTime="0">
+    <id>Annotations_3afc30ad_8589_459e_9d7a_f7afd4f5b89d</id>
+    <datasource></datasource>
+    <keywordList>
+      <value></value>
+    </keywordList>
+    <layername></layername>
+    <srs>
       <spatialrefsys>
-        <wkt>GEOGCRS["WGS 84",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["geodetic latitude (Lat)",north,ORDER[1],ANGLEUNIT["degree",0.0174532925199433]],AXIS["geodetic longitude (Lon)",east,ORDER[2],ANGLEUNIT["degree",0.0174532925199433]],USAGE[SCOPE["unknown"],AREA["World"],BBOX[-90,-180,90,180]],ID["EPSG",4326]]</wkt>
-        <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
-        <srsid>3452</srsid>
-        <srid>4326</srid>
-        <authid>EPSG:4326</authid>
-        <description>WGS 84</description>
-        <projectionacronym>longlat</projectionacronym>
-        <ellipsoidacronym>EPSG:7030</ellipsoidacronym>
-        <geographicflag>true</geographicflag>
+        <wkt></wkt>
+        <proj4></proj4>
+        <srsid>0</srsid>
+        <srid>0</srid>
+        <authid></authid>
+        <description></description>
+        <projectionacronym></projectionacronym>
+        <ellipsoidacronym></ellipsoidacronym>
+        <geographicflag>false</geographicflag>
       </spatialrefsys>
-    </destinationsrs>
-    <rendermaptile>0</rendermaptile>
-    <expressionContextScope/>
-  </mapcanvas>
-  <mapcanvas annotationsVisible="1" name="mAreaCanvas">
-    <units>degrees</units>
-    <extent>
-      <xmin>0</xmin>
-      <ymin>0</ymin>
-      <xmax>0</xmax>
-      <ymax>0</ymax>
-    </extent>
-    <rotation>0</rotation>
-    <destinationsrs>
-      <spatialrefsys>
-        <wkt>GEOGCRS["WGS 84",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["geodetic latitude (Lat)",north,ORDER[1],ANGLEUNIT["degree",0.0174532925199433]],AXIS["geodetic longitude (Lon)",east,ORDER[2],ANGLEUNIT["degree",0.0174532925199433]],USAGE[SCOPE["unknown"],AREA["World"],BBOX[-90,-180,90,180]],ID["EPSG",4326]]</wkt>
-        <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
-        <srsid>3452</srsid>
-        <srid>4326</srid>
-        <authid>EPSG:4326</authid>
-        <description>WGS 84</description>
-        <projectionacronym>longlat</projectionacronym>
-        <ellipsoidacronym>EPSG:7030</ellipsoidacronym>
-        <geographicflag>true</geographicflag>
-      </spatialrefsys>
-    </destinationsrs>
-    <rendermaptile>0</rendermaptile>
-    <expressionContextScope/>
-  </mapcanvas>
-  <mapcanvas annotationsVisible="1" name="mAreaCanvas">
-    <units>degrees</units>
-    <extent>
-      <xmin>0</xmin>
-      <ymin>0</ymin>
-      <xmax>0</xmax>
-      <ymax>0</ymax>
-    </extent>
-    <rotation>0</rotation>
-    <destinationsrs>
-      <spatialrefsys>
-        <wkt>GEOGCRS["WGS 84",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["geodetic latitude (Lat)",north,ORDER[1],ANGLEUNIT["degree",0.0174532925199433]],AXIS["geodetic longitude (Lon)",east,ORDER[2],ANGLEUNIT["degree",0.0174532925199433]],USAGE[SCOPE["unknown"],AREA["World"],BBOX[-90,-180,90,180]],ID["EPSG",4326]]</wkt>
-        <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
-        <srsid>3452</srsid>
-        <srid>4326</srid>
-        <authid>EPSG:4326</authid>
-        <description>WGS 84</description>
-        <projectionacronym>longlat</projectionacronym>
-        <ellipsoidacronym>EPSG:7030</ellipsoidacronym>
-        <geographicflag>true</geographicflag>
-      </spatialrefsys>
-    </destinationsrs>
-    <rendermaptile>0</rendermaptile>
-    <expressionContextScope/>
-  </mapcanvas>
+    </srs>
+    <resourceMetadata>
+      <identifier></identifier>
+      <parentidentifier></parentidentifier>
+      <language></language>
+      <type></type>
+      <title></title>
+      <abstract></abstract>
+      <links/>
+      <fees></fees>
+      <encoding></encoding>
+      <crs>
+        <spatialrefsys>
+          <wkt></wkt>
+          <proj4></proj4>
+          <srsid>0</srsid>
+          <srid>0</srid>
+          <authid></authid>
+          <description></description>
+          <projectionacronym></projectionacronym>
+          <ellipsoidacronym></ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </crs>
+      <extent/>
+    </resourceMetadata>
+    <items/>
+    <layerOpacity>1</layerOpacity>
+  </main-annotation-layer>
   <projectlayers>
-    <maplayer maxScale="0" minScale="50000" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" hasScaleBasedVisibilityFlag="1" type="raster" styleCategories="AllStyleCategories" autoRefreshEnabled="0" autoRefreshTime="0">
+    <maplayer hasScaleBasedVisibilityFlag="1" styleCategories="AllStyleCategories" minScale="50000" refreshOnNotifyEnabled="0" autoRefreshEnabled="0" refreshOnNotifyMessage="" type="raster" maxScale="0" autoRefreshTime="0">
       <extent>
         <xmin>2592000</xmin>
-        <ymin>1214000.00000000069849193</ymin>
+        <ymin>1213000.00000000069849193</ymin>
         <xmax>2644999.99999999906867743</xmax>
         <ymax>1262000</ymax>
       </extent>
@@ -186,14 +159,14 @@
       <layername>ch.swisstopo.orthofoto_2021.rgb</layername>
       <srs>
         <spatialrefsys>
-          <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["Europe - Liechtenstein and Switzerland"],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
-          <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+          <wkt>PROJCS["CH1903+ / LV95",GEOGCS["CH1903+",DATUM["CH1903+",SPHEROID["Bessel 1841",6377397.155,299.1528128,AUTHORITY["EPSG","7004"]],TOWGS84[674.374,15.056,405.346,0,0,0,0],AUTHORITY["EPSG","6150"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4150"]],PROJECTION["Hotine_Oblique_Mercator_Azimuth_Center"],PARAMETER["latitude_of_center",46.95240555555556],PARAMETER["longitude_of_center",7.439583333333333],PARAMETER["azimuth",90],PARAMETER["rectified_grid_angle",90],PARAMETER["scale_factor",1],PARAMETER["false_easting",2600000],PARAMETER["false_northing",1200000],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","2056"]]</wkt>
+          <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
           <srsid>47</srsid>
           <srid>2056</srid>
           <authid>EPSG:2056</authid>
           <description>CH1903+ / LV95</description>
           <projectionacronym>somerc</projectionacronym>
-          <ellipsoidacronym>EPSG:7004</ellipsoidacronym>
+          <ellipsoidacronym>bessel</ellipsoidacronym>
           <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
@@ -226,11 +199,11 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
-          <spatial minz="0" maxy="0" miny="0" dimensions="2" maxx="0" minx="0" crs="" maxz="0"/>
+          <spatial dimensions="2" maxz="0" minx="0" maxx="0" crs="" minz="0" miny="0" maxy="0"/>
           <temporal>
             <period>
               <start></start>
@@ -241,10 +214,10 @@
       </resourceMetadata>
       <provider>gdal</provider>
       <noData>
-        <noDataList useSrcNoData="0" bandNo="1"/>
-        <noDataList useSrcNoData="0" bandNo="2"/>
-        <noDataList useSrcNoData="0" bandNo="3"/>
-        <noDataList useSrcNoData="0" bandNo="4"/>
+        <noDataList bandNo="1" useSrcNoData="0"/>
+        <noDataList bandNo="2" useSrcNoData="0"/>
+        <noDataList bandNo="3" useSrcNoData="0"/>
+        <noDataList bandNo="4" useSrcNoData="0"/>
       </noData>
       <map-layer-style-manager current="default">
         <map-layer-style name="default"/>
@@ -254,6 +227,12 @@
         <Removable>1</Removable>
         <Searchable>0</Searchable>
       </flags>
+      <temporal fetchMode="0" enabled="0" mode="0">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
       <customproperties>
         <property value="false" key="WMSBackgroundLayer"/>
         <property value="false" key="WMSPublishDataSourceUrl"/>
@@ -261,7 +240,10 @@
         <property value="Value" key="identify/format"/>
       </customproperties>
       <pipe>
-        <rasterrenderer greenBand="2" alphaBand="4" type="multibandcolor" redBand="1" opacity="1" blueBand="3">
+        <provider>
+          <resampling maxOversampling="2" zoomedInResamplingMethod="nearestNeighbour" enabled="false" zoomedOutResamplingMethod="nearestNeighbour"/>
+        </provider>
+        <rasterrenderer alphaBand="4" opacity="1" nodataColor="" greenBand="2" redBand="1" blueBand="3" type="multibandcolor">
           <rasterTransparency/>
           <minMaxOrigin>
             <limits>MinMax</limits>
@@ -272,13 +254,14 @@
             <stdDevFactor>2</stdDevFactor>
           </minMaxOrigin>
         </rasterrenderer>
-        <brightnesscontrast contrast="0" brightness="0"/>
-        <huesaturation colorizeGreen="128" colorizeStrength="100" colorizeOn="0" grayscaleMode="0" colorizeRed="255" saturation="0" colorizeBlue="128"/>
+        <brightnesscontrast contrast="0" brightness="0" gamma="1"/>
+        <huesaturation colorizeBlue="128" colorizeRed="255" colorizeGreen="128" saturation="0" colorizeStrength="100" colorizeOn="0" grayscaleMode="0"/>
         <rasterresampler zoomedOutResampler="bilinear" maxOversampling="4"/>
+        <resamplingStage>resamplingFilter</resamplingStage>
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
-    <maplayer maxScale="50000" minScale="1e+08" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" hasScaleBasedVisibilityFlag="1" type="raster" styleCategories="AllStyleCategories" autoRefreshEnabled="0" autoRefreshTime="0">
+    <maplayer hasScaleBasedVisibilityFlag="1" styleCategories="AllStyleCategories" minScale="1e+8" refreshOnNotifyEnabled="0" autoRefreshEnabled="0" refreshOnNotifyMessage="" type="raster" maxScale="50000" autoRefreshTime="0">
       <extent>
         <xmin>2384000</xmin>
         <ymin>990000</ymin>
@@ -293,14 +276,14 @@
       <layername>ch.swisstopo.sentinel_2018</layername>
       <srs>
         <spatialrefsys>
-          <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["Europe - Liechtenstein and Switzerland"],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
-          <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+          <wkt>PROJCS["CH1903+ / LV95",GEOGCS["CH1903+",DATUM["CH1903+",SPHEROID["Bessel 1841",6377397.155,299.1528128,AUTHORITY["EPSG","7004"]],TOWGS84[674.374,15.056,405.346,0,0,0,0],AUTHORITY["EPSG","6150"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4150"]],PROJECTION["Hotine_Oblique_Mercator_Azimuth_Center"],PARAMETER["latitude_of_center",46.95240555555556],PARAMETER["longitude_of_center",7.439583333333333],PARAMETER["azimuth",90],PARAMETER["rectified_grid_angle",90],PARAMETER["scale_factor",1],PARAMETER["false_easting",2600000],PARAMETER["false_northing",1200000],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","2056"]]</wkt>
+          <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
           <srsid>47</srsid>
           <srid>2056</srid>
           <authid>EPSG:2056</authid>
           <description>CH1903+ / LV95</description>
           <projectionacronym>somerc</projectionacronym>
-          <ellipsoidacronym>EPSG:7004</ellipsoidacronym>
+          <ellipsoidacronym>bessel</ellipsoidacronym>
           <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
@@ -333,11 +316,11 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
-          <spatial minz="0" maxy="0" miny="0" dimensions="2" maxx="0" minx="0" crs="" maxz="0"/>
+          <spatial dimensions="2" maxz="0" minx="0" maxx="0" crs="" minz="0" miny="0" maxy="0"/>
           <temporal>
             <period>
               <start></start>
@@ -348,9 +331,9 @@
       </resourceMetadata>
       <provider>gdal</provider>
       <noData>
-        <noDataList useSrcNoData="0" bandNo="1"/>
-        <noDataList useSrcNoData="0" bandNo="2"/>
-        <noDataList useSrcNoData="0" bandNo="3"/>
+        <noDataList bandNo="1" useSrcNoData="0"/>
+        <noDataList bandNo="2" useSrcNoData="0"/>
+        <noDataList bandNo="3" useSrcNoData="0"/>
       </noData>
       <map-layer-style-manager current="default">
         <map-layer-style name="default"/>
@@ -360,6 +343,12 @@
         <Removable>1</Removable>
         <Searchable>0</Searchable>
       </flags>
+      <temporal fetchMode="0" enabled="0" mode="0">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
       <customproperties>
         <property value="false" key="WMSBackgroundLayer"/>
         <property value="false" key="WMSPublishDataSourceUrl"/>
@@ -367,7 +356,10 @@
         <property value="Value" key="identify/format"/>
       </customproperties>
       <pipe>
-        <rasterrenderer greenBand="2" alphaBand="-1" type="multibandcolor" redBand="1" opacity="1" blueBand="3">
+        <provider>
+          <resampling maxOversampling="2" zoomedInResamplingMethod="nearestNeighbour" enabled="false" zoomedOutResamplingMethod="nearestNeighbour"/>
+        </provider>
+        <rasterrenderer alphaBand="-1" opacity="1" nodataColor="" greenBand="2" redBand="1" blueBand="3" type="multibandcolor">
           <rasterTransparency/>
           <minMaxOrigin>
             <limits>None</limits>
@@ -378,18 +370,19 @@
             <stdDevFactor>2</stdDevFactor>
           </minMaxOrigin>
         </rasterrenderer>
-        <brightnesscontrast contrast="0" brightness="0"/>
-        <huesaturation colorizeGreen="128" colorizeStrength="100" colorizeOn="0" grayscaleMode="0" colorizeRed="255" saturation="0" colorizeBlue="128"/>
+        <brightnesscontrast contrast="0" brightness="0" gamma="1"/>
+        <huesaturation colorizeBlue="128" colorizeRed="255" colorizeGreen="128" saturation="0" colorizeStrength="100" colorizeOn="0" grayscaleMode="0"/>
         <rasterresampler zoomedOutResampler="bilinear" maxOversampling="4"/>
+        <resamplingStage>resamplingFilter</resamplingStage>
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
-    <maplayer autoRefreshEnabled="0" simplifyLocal="1" autoRefreshTime="0" type="vector" simplifyAlgorithm="0" hasScaleBasedVisibilityFlag="0" labelsEnabled="0" maxScale="0" geometry="Polygon" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" simplifyMaxScale="1" simplifyDrawingHints="1" minScale="1e+08" refreshOnNotifyEnabled="0" simplifyDrawingTol="1" wkbType="MultiPolygon" readOnly="0">
+    <maplayer refreshOnNotifyMessage="" simplifyAlgorithm="0" autoRefreshTime="0" geometry="Polygon" wkbType="MultiPolygon" labelsEnabled="0" simplifyMaxScale="1" type="vector" maxScale="0" readOnly="0" hasScaleBasedVisibilityFlag="0" minScale="100000000" autoRefreshEnabled="0" styleCategories="AllStyleCategories" simplifyDrawingHints="1" refreshOnNotifyEnabled="0" simplifyDrawingTol="1" simplifyLocal="1">
       <extent>
-        <xmin>2592560</xmin>
-        <ymin>1213700</ymin>
-        <xmax>2644760</xmax>
-        <ymax>1261330</ymax>
+        <xmin>2592560.5</xmin>
+        <ymin>1213703</ymin>
+        <xmax>2644759.75</xmax>
+        <ymax>1261330.375</ymax>
       </extent>
       <id>hoheitsgrenzen_kantonsgrenze_603dbd89_0db2_4be5_ae9d_b053c06c7f14</id>
       <datasource>/geodata/hoheitsgrenzen_kantonsgrenze.gpkg|layername=hoheitsgrenzen_kantonsgrenze</datasource>
@@ -399,14 +392,14 @@
       <layername>hoheitsgrenzen_kantonsgrenze</layername>
       <srs>
         <spatialrefsys>
-          <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["Europe - Liechtenstein and Switzerland"],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
-          <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+          <wkt>PROJCS["CH1903+ / LV95",GEOGCS["CH1903+",DATUM["CH1903+",SPHEROID["Bessel 1841",6377397.155,299.1528128,AUTHORITY["EPSG","7004"]],TOWGS84[674.374,15.056,405.346,0,0,0,0],AUTHORITY["EPSG","6150"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4150"]],PROJECTION["Hotine_Oblique_Mercator_Azimuth_Center"],PARAMETER["latitude_of_center",46.95240555555556],PARAMETER["longitude_of_center",7.439583333333333],PARAMETER["azimuth",90],PARAMETER["rectified_grid_angle",90],PARAMETER["scale_factor",1],PARAMETER["false_easting",2600000],PARAMETER["false_northing",1200000],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","2056"]]</wkt>
+          <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
           <srsid>47</srsid>
           <srid>2056</srid>
           <authid>EPSG:2056</authid>
           <description>CH1903+ / LV95</description>
           <projectionacronym>somerc</projectionacronym>
-          <ellipsoidacronym>EPSG:7004</ellipsoidacronym>
+          <ellipsoidacronym>bessel</ellipsoidacronym>
           <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
@@ -439,11 +432,11 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
-          <spatial minz="0" maxy="0" miny="0" dimensions="2" maxx="0" minx="0" crs="" maxz="0"/>
+          <spatial dimensions="2" maxz="0" minx="0" maxx="0" crs="" minz="0" miny="0" maxy="0"/>
           <temporal>
             <period>
               <start></start>
@@ -456,7 +449,6 @@
       <vectorjoins/>
       <layerDependencies/>
       <dataDependencies/>
-      <legend type="default-vector"/>
       <expressionfields/>
       <map-layer-style-manager current="default">
         <map-layer-style name="default"/>
@@ -467,26 +459,32 @@
         <Removable>1</Removable>
         <Searchable>1</Searchable>
       </flags>
-      <renderer-v2 enableorderby="0" type="invertedPolygonRenderer" forceraster="0" preprocessing="0">
-        <renderer-v2 enableorderby="0" type="RuleRenderer" forceraster="0" symbollevels="0">
+      <temporal fixedDuration="0" startExpression="" durationField="" startField="" endField="" enabled="0" mode="0" durationUnit="min" accumulate="0" endExpression="">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
+      <renderer-v2 forceraster="0" preprocessing="0" enableorderby="0" type="invertedPolygonRenderer">
+        <renderer-v2 forceraster="0" enableorderby="0" type="RuleRenderer" symbollevels="0">
           <rules key="{ddc29f59-27d8-4424-8eb4-7f187fa85e1a}">
-            <rule key="{9d3def8e-5784-4441-a3b5-6c867613d19f}" scalemindenom="50000" symbol="0" scalemaxdenom="100000000"/>
-            <rule key="{8c95a333-2aa1-45aa-aa84-caf0c55177b5}" symbol="1" scalemaxdenom="50000"/>
+            <rule symbol="0" scalemaxdenom="100000000" scalemindenom="50000" key="{9d3def8e-5784-4441-a3b5-6c867613d19f}"/>
+            <rule symbol="1" scalemaxdenom="50000" key="{8c95a333-2aa1-45aa-aa84-caf0c55177b5}"/>
           </rules>
           <symbols>
-            <symbol name="0" alpha="1" type="fill" clip_to_extent="1" force_rhr="0">
-              <layer class="SimpleFill" locked="0" pass="0" enabled="1">
-                <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
-                <prop v="255,255,255,128" k="color"/>
-                <prop v="bevel" k="joinstyle"/>
-                <prop v="0,0" k="offset"/>
-                <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
-                <prop v="MM" k="offset_unit"/>
-                <prop v="35,35,35,255" k="outline_color"/>
-                <prop v="no" k="outline_style"/>
-                <prop v="0.26" k="outline_width"/>
-                <prop v="MM" k="outline_width_unit"/>
-                <prop v="solid" k="style"/>
+            <symbol force_rhr="0" clip_to_extent="1" alpha="1" name="0" type="fill">
+              <layer class="SimpleFill" enabled="1" locked="0" pass="0">
+                <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+                <prop k="color" v="255,255,255,128"/>
+                <prop k="joinstyle" v="bevel"/>
+                <prop k="offset" v="0,0"/>
+                <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+                <prop k="offset_unit" v="MM"/>
+                <prop k="outline_color" v="35,35,35,255"/>
+                <prop k="outline_style" v="no"/>
+                <prop k="outline_width" v="0.26"/>
+                <prop k="outline_width_unit" v="MM"/>
+                <prop k="style" v="solid"/>
                 <data_defined_properties>
                   <Option type="Map">
                     <Option value="" name="name" type="QString"/>
@@ -495,23 +493,28 @@
                   </Option>
                 </data_defined_properties>
               </layer>
-              <layer class="SimpleLine" locked="0" pass="0" enabled="1">
-                <prop v="square" k="capstyle"/>
-                <prop v="5;2" k="customdash"/>
-                <prop v="3x:0,0,0,0,0,0" k="customdash_map_unit_scale"/>
-                <prop v="MM" k="customdash_unit"/>
-                <prop v="1" k="draw_inside_polygon"/>
-                <prop v="bevel" k="joinstyle"/>
-                <prop v="255,255,255,168" k="line_color"/>
-                <prop v="solid" k="line_style"/>
-                <prop v="2" k="line_width"/>
-                <prop v="MM" k="line_width_unit"/>
-                <prop v="0" k="offset"/>
-                <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
-                <prop v="MM" k="offset_unit"/>
-                <prop v="0" k="ring_filter"/>
-                <prop v="0" k="use_custom_dash"/>
-                <prop v="3x:0,0,0,0,0,0" k="width_map_unit_scale"/>
+              <layer class="SimpleLine" enabled="1" locked="0" pass="0">
+                <prop k="align_dash_pattern" v="0"/>
+                <prop k="capstyle" v="square"/>
+                <prop k="customdash" v="5;2"/>
+                <prop k="customdash_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+                <prop k="customdash_unit" v="MM"/>
+                <prop k="dash_pattern_offset" v="0"/>
+                <prop k="dash_pattern_offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+                <prop k="dash_pattern_offset_unit" v="MM"/>
+                <prop k="draw_inside_polygon" v="1"/>
+                <prop k="joinstyle" v="bevel"/>
+                <prop k="line_color" v="255,255,255,168"/>
+                <prop k="line_style" v="solid"/>
+                <prop k="line_width" v="2"/>
+                <prop k="line_width_unit" v="MM"/>
+                <prop k="offset" v="0"/>
+                <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+                <prop k="offset_unit" v="MM"/>
+                <prop k="ring_filter" v="0"/>
+                <prop k="tweak_dash_pattern_on_corners" v="0"/>
+                <prop k="use_custom_dash" v="0"/>
+                <prop k="width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
                 <data_defined_properties>
                   <Option type="Map">
                     <Option value="" name="name" type="QString"/>
@@ -521,19 +524,19 @@
                 </data_defined_properties>
               </layer>
             </symbol>
-            <symbol name="1" alpha="1" type="fill" clip_to_extent="1" force_rhr="0">
-              <layer class="SimpleFill" locked="0" pass="0" enabled="1">
-                <prop v="3x:0,0,0,0,0,0" k="border_width_map_unit_scale"/>
-                <prop v="196,60,57,255" k="color"/>
-                <prop v="bevel" k="joinstyle"/>
-                <prop v="0,0" k="offset"/>
-                <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
-                <prop v="MM" k="offset_unit"/>
-                <prop v="255,255,255,168" k="outline_color"/>
-                <prop v="solid" k="outline_style"/>
-                <prop v="0.6" k="outline_width"/>
-                <prop v="MM" k="outline_width_unit"/>
-                <prop v="no" k="style"/>
+            <symbol force_rhr="0" clip_to_extent="1" alpha="1" name="1" type="fill">
+              <layer class="SimpleFill" enabled="1" locked="0" pass="0">
+                <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+                <prop k="color" v="196,60,57,255"/>
+                <prop k="joinstyle" v="bevel"/>
+                <prop k="offset" v="0,0"/>
+                <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+                <prop k="offset_unit" v="MM"/>
+                <prop k="outline_color" v="255,255,255,168"/>
+                <prop k="outline_style" v="solid"/>
+                <prop k="outline_width" v="0.6"/>
+                <prop k="outline_width_unit" v="MM"/>
+                <prop k="style" v="no"/>
                 <data_defined_properties>
                   <Option type="Map">
                     <Option value="" name="name" type="QString"/>
@@ -554,12 +557,47 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerOpacity>1</layerOpacity>
-      <SingleCategoryDiagramRenderer diagramType="Histogram" attributeLegend="1">
-        <DiagramCategory barWidth="5" penAlpha="255" scaleDependency="Area" enabled="0" scaleBasedVisibility="0" diagramOrientation="Up" penWidth="0" penColor="#000000" sizeScale="3x:0,0,0,0,0,0" maxScaleDenominator="1e+08" minScaleDenominator="0" labelPlacementMethod="XHeight" sizeType="MM" lineSizeScale="3x:0,0,0,0,0,0" height="15" opacity="1" lineSizeType="MM" backgroundAlpha="255" rotationOffset="270" width="15" minimumSize="0" backgroundColor="#ffffff">
+      <SingleCategoryDiagramRenderer attributeLegend="1" diagramType="Histogram">
+        <DiagramCategory sizeType="MM" direction="1" minimumSize="0" penAlpha="255" showAxis="0" minScaleDenominator="0" backgroundAlpha="255" height="15" scaleDependency="Area" spacing="0" lineSizeType="MM" labelPlacementMethod="XHeight" barWidth="5" scaleBasedVisibility="0" maxScaleDenominator="1e+8" opacity="1" rotationOffset="270" spacingUnitScale="3x:0,0,0,0,0,0" penWidth="0" spacingUnit="MM" diagramOrientation="Up" sizeScale="3x:0,0,0,0,0,0" width="15" backgroundColor="#ffffff" enabled="0" lineSizeScale="3x:0,0,0,0,0,0" penColor="#000000">
           <fontProperties style="Regular" description="Noto Sans,10,-1,0,50,0,0,0,0,0,Regular"/>
+          <attribute label="" color="#000000" field=""/>
+          <axisSymbol>
+            <symbol force_rhr="0" clip_to_extent="1" alpha="1" name="" type="line">
+              <layer class="SimpleLine" enabled="1" locked="0" pass="0">
+                <prop k="align_dash_pattern" v="0"/>
+                <prop k="capstyle" v="square"/>
+                <prop k="customdash" v="5;2"/>
+                <prop k="customdash_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+                <prop k="customdash_unit" v="MM"/>
+                <prop k="dash_pattern_offset" v="0"/>
+                <prop k="dash_pattern_offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+                <prop k="dash_pattern_offset_unit" v="MM"/>
+                <prop k="draw_inside_polygon" v="0"/>
+                <prop k="joinstyle" v="bevel"/>
+                <prop k="line_color" v="35,35,35,255"/>
+                <prop k="line_style" v="solid"/>
+                <prop k="line_width" v="0.26"/>
+                <prop k="line_width_unit" v="MM"/>
+                <prop k="offset" v="0"/>
+                <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+                <prop k="offset_unit" v="MM"/>
+                <prop k="ring_filter" v="0"/>
+                <prop k="tweak_dash_pattern_on_corners" v="0"/>
+                <prop k="use_custom_dash" v="0"/>
+                <prop k="width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+                <data_defined_properties>
+                  <Option type="Map">
+                    <Option value="" name="name" type="QString"/>
+                    <Option name="properties"/>
+                    <Option value="collection" name="type" type="QString"/>
+                  </Option>
+                </data_defined_properties>
+              </layer>
+            </symbol>
+          </axisSymbol>
         </DiagramCategory>
       </SingleCategoryDiagramRenderer>
-      <DiagramLayerSettings zIndex="0" obstacle="0" dist="0" placement="1" linePlacementFlags="18" priority="0" showAll="1">
+      <DiagramLayerSettings placement="1" priority="0" showAll="1" obstacle="0" linePlacementFlags="18" dist="0" zIndex="0">
         <properties>
           <Option type="Map">
             <Option value="" name="name" type="QString"/>
@@ -578,43 +616,38 @@
           </Option>
         </checkConfiguration>
       </geometryOptions>
+      <legend type="default-vector"/>
+      <referencedLayers/>
       <fieldConfiguration>
-        <field name="fid">
+        <field name="t_id" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
           </editWidget>
         </field>
-        <field name="t_id">
+        <field name="t_ili_tid" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
           </editWidget>
         </field>
-        <field name="t_ili_tid">
+        <field name="kantonsname" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
           </editWidget>
         </field>
-        <field name="kantonsname">
+        <field name="kantonskuerzel" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
           </editWidget>
         </field>
-        <field name="kantonskuerzel">
-          <editWidget type="TextEdit">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field name="kantonsnummer">
+        <field name="kantonsnummer" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
               <Option/>
@@ -623,17 +656,13 @@
         </field>
       </fieldConfiguration>
       <aliases>
-        <alias name="" field="fid" index="0"/>
-        <alias name="" field="t_id" index="1"/>
-        <alias name="" field="t_ili_tid" index="2"/>
-        <alias name="" field="kantonsname" index="3"/>
-        <alias name="" field="kantonskuerzel" index="4"/>
-        <alias name="" field="kantonsnummer" index="5"/>
+        <alias index="0" field="t_id" name=""/>
+        <alias index="1" field="t_ili_tid" name=""/>
+        <alias index="2" field="kantonsname" name=""/>
+        <alias index="3" field="kantonskuerzel" name=""/>
+        <alias index="4" field="kantonsnummer" name=""/>
       </aliases>
-      <excludeAttributesWMS/>
-      <excludeAttributesWFS/>
       <defaults>
-        <default expression="" applyOnUpdate="0" field="fid"/>
         <default expression="" applyOnUpdate="0" field="t_id"/>
         <default expression="" applyOnUpdate="0" field="t_ili_tid"/>
         <default expression="" applyOnUpdate="0" field="kantonsname"/>
@@ -641,15 +670,13 @@
         <default expression="" applyOnUpdate="0" field="kantonsnummer"/>
       </defaults>
       <constraints>
-        <constraint notnull_strength="1" exp_strength="0" unique_strength="1" constraints="3" field="fid"/>
-        <constraint notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0" field="t_id"/>
-        <constraint notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0" field="t_ili_tid"/>
-        <constraint notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0" field="kantonsname"/>
-        <constraint notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0" field="kantonskuerzel"/>
-        <constraint notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0" field="kantonsnummer"/>
+        <constraint notnull_strength="1" constraints="3" unique_strength="1" exp_strength="0" field="t_id"/>
+        <constraint notnull_strength="0" constraints="0" unique_strength="0" exp_strength="0" field="t_ili_tid"/>
+        <constraint notnull_strength="1" constraints="1" unique_strength="0" exp_strength="0" field="kantonsname"/>
+        <constraint notnull_strength="1" constraints="1" unique_strength="0" exp_strength="0" field="kantonskuerzel"/>
+        <constraint notnull_strength="1" constraints="1" unique_strength="0" exp_strength="0" field="kantonsnummer"/>
       </constraints>
       <constraintExpressions>
-        <constraint exp="" desc="" field="fid"/>
         <constraint exp="" desc="" field="t_id"/>
         <constraint exp="" desc="" field="t_ili_tid"/>
         <constraint exp="" desc="" field="kantonsname"/>
@@ -662,13 +689,13 @@
       </attributeactions>
       <attributetableconfig sortExpression="" actionWidgetStyle="dropDown" sortOrder="0">
         <columns>
-          <column name="fid" hidden="0" type="field" width="-1"/>
-          <column name="t_id" hidden="0" type="field" width="-1"/>
-          <column name="t_ili_tid" hidden="0" type="field" width="-1"/>
-          <column name="kantonsname" hidden="0" type="field" width="-1"/>
-          <column name="kantonskuerzel" hidden="0" type="field" width="-1"/>
-          <column name="kantonsnummer" hidden="0" type="field" width="-1"/>
-          <column hidden="1" type="actions" width="-1"/>
+          <column hidden="0" width="-1" name="fid" type="field"/>
+          <column hidden="0" width="-1" name="t_id" type="field"/>
+          <column hidden="0" width="-1" name="t_ili_tid" type="field"/>
+          <column hidden="0" width="-1" name="kantonsname" type="field"/>
+          <column hidden="0" width="-1" name="kantonskuerzel" type="field"/>
+          <column hidden="0" width="-1" name="kantonsnummer" type="field"/>
+          <column hidden="1" width="-1" type="actions"/>
         </columns>
       </attributetableconfig>
       <conditionalstyles>
@@ -700,12 +727,12 @@ def my_form_open(dialog, layer, feature):
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
       <editable>
-        <field name="fid" editable="1"/>
-        <field name="kantonskuerzel" editable="1"/>
-        <field name="kantonsname" editable="1"/>
-        <field name="kantonsnummer" editable="1"/>
-        <field name="t_id" editable="1"/>
-        <field name="t_ili_tid" editable="1"/>
+        <field editable="1" name="fid"/>
+        <field editable="1" name="kantonskuerzel"/>
+        <field editable="1" name="kantonsname"/>
+        <field editable="1" name="kantonsnummer"/>
+        <field editable="1" name="t_id"/>
+        <field editable="1" name="t_ili_tid"/>
       </editable>
       <labelOnTop>
         <field labelOnTop="0" name="fid"/>
@@ -715,11 +742,12 @@ def my_form_open(dialog, layer, feature):
         <field labelOnTop="0" name="t_id"/>
         <field labelOnTop="0" name="t_ili_tid"/>
       </labelOnTop>
+      <dataDefinedFieldProperties/>
       <widgets/>
       <previewExpression>kantonsname</previewExpression>
       <mapTip></mapTip>
     </maplayer>
-    <maplayer maxScale="0" minScale="1e+08" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" hasScaleBasedVisibilityFlag="0" type="raster" styleCategories="AllStyleCategories" autoRefreshEnabled="0" autoRefreshTime="0">
+    <maplayer hasScaleBasedVisibilityFlag="0" styleCategories="AllStyleCategories" minScale="1e+8" refreshOnNotifyEnabled="0" autoRefreshEnabled="0" refreshOnNotifyMessage="" type="raster" maxScale="0" autoRefreshTime="0">
       <extent>
         <xmin>2315000</xmin>
         <ymin>913000</ymin>
@@ -734,14 +762,14 @@ def my_form_open(dialog, layer, feature):
       <layername>maske</layername>
       <srs>
         <spatialrefsys>
-          <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["Europe - Liechtenstein and Switzerland"],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
-          <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+          <wkt>PROJCS["CH1903+ / LV95",GEOGCS["CH1903+",DATUM["CH1903+",SPHEROID["Bessel 1841",6377397.155,299.1528128,AUTHORITY["EPSG","7004"]],TOWGS84[674.374,15.056,405.346,0,0,0,0],AUTHORITY["EPSG","6150"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4150"]],PROJECTION["Hotine_Oblique_Mercator_Azimuth_Center"],PARAMETER["latitude_of_center",46.95240555555556],PARAMETER["longitude_of_center",7.439583333333333],PARAMETER["azimuth",90],PARAMETER["rectified_grid_angle",90],PARAMETER["scale_factor",1],PARAMETER["false_easting",2600000],PARAMETER["false_northing",1200000],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","2056"]]</wkt>
+          <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
           <srsid>47</srsid>
           <srid>2056</srid>
           <authid>EPSG:2056</authid>
           <description>CH1903+ / LV95</description>
           <projectionacronym>somerc</projectionacronym>
-          <ellipsoidacronym>EPSG:7004</ellipsoidacronym>
+          <ellipsoidacronym>bessel</ellipsoidacronym>
           <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
@@ -774,11 +802,11 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
-          <spatial minz="0" maxy="0" miny="0" dimensions="2" maxx="0" minx="0" crs="" maxz="0"/>
+          <spatial dimensions="2" maxz="0" minx="0" maxx="0" crs="" minz="0" miny="0" maxy="0"/>
           <temporal>
             <period>
               <start></start>
@@ -789,7 +817,7 @@ def my_form_open(dialog, layer, feature):
       </resourceMetadata>
       <provider>gdal</provider>
       <noData>
-        <noDataList useSrcNoData="1" bandNo="1"/>
+        <noDataList bandNo="1" useSrcNoData="1"/>
       </noData>
       <map-layer-style-manager current="default">
         <map-layer-style name="default"/>
@@ -799,6 +827,12 @@ def my_form_open(dialog, layer, feature):
         <Removable>1</Removable>
         <Searchable>0</Searchable>
       </flags>
+      <temporal fetchMode="0" enabled="0" mode="0">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
       <customproperties>
         <property value="false" key="WMSBackgroundLayer"/>
         <property value="false" key="WMSPublishDataSourceUrl"/>
@@ -806,7 +840,10 @@ def my_form_open(dialog, layer, feature):
         <property value="Value" key="identify/format"/>
       </customproperties>
       <pipe>
-        <rasterrenderer alphaBand="-1" type="paletted" band="1" opacity="1">
+        <provider>
+          <resampling maxOversampling="2" zoomedInResamplingMethod="nearestNeighbour" enabled="false" zoomedOutResamplingMethod="nearestNeighbour"/>
+        </provider>
+        <rasterrenderer alphaBand="-1" opacity="1" band="1" nodataColor="" type="paletted">
           <rasterTransparency/>
           <minMaxOrigin>
             <limits>None</limits>
@@ -817,13 +854,13 @@ def my_form_open(dialog, layer, feature):
             <stdDevFactor>2</stdDevFactor>
           </minMaxOrigin>
           <colorPalette>
-            <paletteEntry value="1" color="#ffffff" alpha="255" label="1"/>
+            <paletteEntry value="1" label="1" color="#ffffff" alpha="255"/>
           </colorPalette>
-          <colorramp name="[source]" type="randomcolors"/>
         </rasterrenderer>
-        <brightnesscontrast contrast="0" brightness="0"/>
-        <huesaturation colorizeGreen="128" colorizeStrength="100" colorizeOn="0" grayscaleMode="0" colorizeRed="255" saturation="0" colorizeBlue="128"/>
+        <brightnesscontrast contrast="0" brightness="0" gamma="1"/>
+        <huesaturation colorizeBlue="128" colorizeRed="255" colorizeGreen="128" saturation="0" colorizeStrength="100" colorizeOn="0" grayscaleMode="0"/>
         <rasterresampler maxOversampling="2"/>
+        <resamplingStage>resamplingFilter</resamplingStage>
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
@@ -843,6 +880,9 @@ def my_form_open(dialog, layer, feature):
       <Opacity type="double">1</Opacity>
       <RandomColors type="bool">true</RandomColors>
     </DefaultStyles>
+    <Digitizing>
+      <AvoidIntersectionsMode type="int">2</AvoidIntersectionsMode>
+    </Digitizing>
     <Gui>
       <CanvasColorBluePart type="int">255</CanvasColorBluePart>
       <CanvasColorGreenPart type="int">255</CanvasColorGreenPart>
@@ -867,10 +907,13 @@ def my_form_open(dialog, layer, feature):
     </Measurement>
     <PAL>
       <CandidatesLine type="int">50</CandidatesLine>
+      <CandidatesLinePerCM type="double">5</CandidatesLinePerCM>
       <CandidatesPoint type="int">16</CandidatesPoint>
       <CandidatesPolygon type="int">30</CandidatesPolygon>
+      <CandidatesPolygonPerCM type="double">2.5</CandidatesPolygonPerCM>
       <DrawRectOnly type="bool">false</DrawRectOnly>
       <DrawUnplaced type="bool">false</DrawUnplaced>
+      <PlacementEngineVersion type="int">0</PlacementEngineVersion>
       <SearchMethod type="int">0</SearchMethod>
       <ShowingAllLabels type="bool">false</ShowingAllLabels>
       <ShowingCandidates type="bool">false</ShowingCandidates>
@@ -954,6 +997,13 @@ def my_form_open(dialog, layer, feature):
     </WMTSPngLayers>
     <WMTSUrl type="QString"></WMTSUrl>
   </properties>
+  <dataDefinedServerProperties>
+    <Option type="Map">
+      <Option value="" name="name" type="QString"/>
+      <Option name="properties"/>
+      <Option value="collection" name="type" type="QString"/>
+    </Option>
+  </dataDefinedServerProperties>
   <visibility-presets/>
   <transformContext/>
   <projectMetadata>
@@ -981,5 +1031,33 @@ def my_form_open(dialog, layer, feature):
   <Bookmarks/>
   <ProjectViewSettings UseProjectScales="0">
     <Scales/>
+    <DefaultViewExtent xmin="2537036.16658340999856591" xmax="2700284.08341659000143409" ymax="1289904.18755343533121049" ymin="1185129.18744656466878951">
+      <spatialrefsys>
+        <wkt>PROJCS["CH1903+ / LV95",GEOGCS["CH1903+",DATUM["CH1903+",SPHEROID["Bessel 1841",6377397.155,299.1528128,AUTHORITY["EPSG","7004"]],TOWGS84[674.374,15.056,405.346,0,0,0,0],AUTHORITY["EPSG","6150"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4150"]],PROJECTION["Hotine_Oblique_Mercator_Azimuth_Center"],PARAMETER["latitude_of_center",46.95240555555556],PARAMETER["longitude_of_center",7.439583333333333],PARAMETER["azimuth",90],PARAMETER["rectified_grid_angle",90],PARAMETER["scale_factor",1],PARAMETER["false_easting",2600000],PARAMETER["false_northing",1200000],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","2056"]]</wkt>
+        <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+        <srsid>47</srsid>
+        <srid>2056</srid>
+        <authid>EPSG:2056</authid>
+        <description>CH1903+ / LV95</description>
+        <projectionacronym>somerc</projectionacronym>
+        <ellipsoidacronym>bessel</ellipsoidacronym>
+        <geographicflag>false</geographicflag>
+      </spatialrefsys>
+    </DefaultViewExtent>
   </ProjectViewSettings>
+  <ProjectTimeSettings frameRate="1" timeStepUnit="h" cumulativeTemporalRange="0" timeStep="1"/>
+  <ProjectDisplaySettings>
+    <BearingFormat id="bearing">
+      <Option type="Map">
+        <Option value="" name="decimal_separator" type="QChar"/>
+        <Option value="6" name="decimals" type="int"/>
+        <Option value="0" name="direction_format" type="int"/>
+        <Option value="0" name="rounding_type" type="int"/>
+        <Option value="false" name="show_plus" type="bool"/>
+        <Option value="true" name="show_thousand_separator" type="bool"/>
+        <Option value="false" name="show_trailing_zeros" type="bool"/>
+        <Option value="" name="thousand_separator" type="QChar"/>
+      </Option>
+    </BearingFormat>
+  </ProjectDisplaySettings>
 </qgis>
