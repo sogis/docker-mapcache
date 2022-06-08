@@ -85,7 +85,7 @@ export TILES_PATH=/tmp/tiles
 Verzeichnis für die Tiles anlegen und benötigte Berechtigungen setzen:
 
 ```
-mkdir $TILES_PATH && sudo chown 1001 $TILES_PATH
+mkdir -m 0777 $TILES_PATH
 ```
 
 #### Nur bei Bedarf: Änderungen an *.qgs*-Dokumenten vornehmen
