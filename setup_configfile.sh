@@ -7,7 +7,7 @@ CONFIG_FILE='/mapcache/mapcache.xml'
 
 sed -i "s|SOURCE_URL|${SOURCE_URL:-https://geo-t.so.ch/api/wms}|g" ${CONFIG_FILE}
 sed -i "s|DEMO_SERVICE_ENABLED|${DEMO_SERVICE_ENABLED:-false}|g" ${CONFIG_FILE}
-if [[ -v SERVICE_URL ]]
+if [[ -n $SERVICE_URL ]]
 then
     sed -i "s|<\!-- \(<url>\)SERVICE_URL\(</url>\) -->|\1${SERVICE_URL}\2|g" ${CONFIG_FILE}
 fi
