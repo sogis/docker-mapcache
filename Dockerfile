@@ -1,4 +1,4 @@
-FROM debian:bullseye
+FROM debian:bookworm
 
 RUN apt-get update && \
     apt-get install --assume-yes --no-install-recommends apache2 libapache2-mod-mapcache mapcache-tools ca-certificates rsync && \

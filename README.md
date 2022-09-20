@@ -1,5 +1,7 @@
 # docker-mapcache
 
+Docker image providing a MapCache WMTS
+
 ## Build 
 
 ```
