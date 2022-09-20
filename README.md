@@ -3,13 +3,13 @@
 ## Build 
 
 ```
-docker build -t sogis/docker-mapcache .
+docker build -t sogis/mapcache .
 ```
 
 ## Run
 
 ```
-docker run -p 8281:8080 -v /tmp/tiles:/tiles --rm --name mapcache sogis/docker-mapcache:latest
+docker run -p 8281:8080 -v /tmp/tiles:/tiles --rm --name mapcache sogis/mapcache
 ```
 
 The following environment variables may be passed:
