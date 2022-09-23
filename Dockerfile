@@ -1,12 +1,17 @@
 FROM debian:bookworm
 
+ENV HOME=/home/appuser
+ARG UID=999
+RUN useradd --system --uid $UID --gid 0 appuser && \
+    mkdir --mode=g+w $HOME
+
 RUN apt-get update && \
     apt-get install --assume-yes --no-install-recommends apache2 libapache2-mod-mapcache mapcache-tools ca-certificates rsync && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 # Configuration for running Apache as non-root user
-RUN chown --recursive root:root /var/log/apache2 /var/run/apache2 && \
+RUN chgrp --recursive 0 /var/log/apache2 /var/run/apache2 && \
     chmod --recursive g+w /var/log/apache2 /var/run/apache2 && \
     sed -i -e 's/Listen 80/Listen 8080/' /etc/apache2/ports.conf
 # Truncate Apache access logs after a certain time using rotatelogs, and send error messages to standard output
@@ -28,7 +33,7 @@ VOLUME ["/tiles"]
 
 EXPOSE 8080
 
-USER 1001
+USER $UID
 
 ENTRYPOINT ["/mapcache/setup_configfile.sh"]
 
