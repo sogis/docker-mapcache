@@ -19,6 +19,7 @@ The following environment variables may be passed:
 -e SERVICE_URL=https://geo-t.so.ch/api # The base URL of the MapCache service
 -e SOURCE_URL=https://geo-t.so.ch/api/wms # The base URL of the source WMS
 -e DEMO_SERVICE_ENABLED=true # Enable the MapCache demo service (a basic map viewer)
+-e APACHE_ACCESS_LOG_ENABLED=true # Print Apache access log to standard output
 ```
 
 Log into container:
