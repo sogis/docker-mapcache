@@ -14,7 +14,8 @@ RUN apt-get update && \
 RUN chgrp --recursive 0 /var/log/apache2 /var/run/apache2 && \
     chmod --recursive g+w /var/log/apache2 /var/run/apache2 && \
     sed -i -e 's/Listen 80/Listen 8080/' /etc/apache2/ports.conf
-# Truncate Apache access logs after a certain time using rotatelogs, and send error messages to standard output
+# Send Apache access log to standard out, and log only if APACHE_ACCESS_LOG_ENABLED is set to true
+# Send Apache error log to standard out as well
 RUN sed -i -E \
     -e "s/^(CustomLog) (\S*) (\S*)/\1 \"|\/bin\/cat\" \3 \"expr=osenv('APACHE_ACCESS_LOG_ENABLED') == 'true'\"/" \
     -e "3 i ErrorLog \"|\/bin\/cat\"" \
