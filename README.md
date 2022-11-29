@@ -29,12 +29,12 @@ bash -c "clear && docker exec -it mapcache /bin/bash"
 
 WMTSCapabilities.xml:
 ```
-http://localhost:8281/mapcache/wmts/1.0.0/WMTSCapabilities.xml
+http://localhost:8281/wmts/1.0.0/WMTSCapabilities.xml
 ```
 
 Demo map (if enabled):
 ```
-http://localhost:8281/mapcache/demo
+http://localhost:8281/demo
 ```
 
 Troubleshooting:

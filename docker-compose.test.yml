@@ -2,7 +2,7 @@ version: '3.3'
 services:
   sut:
     image: curlimages/curl:latest
-    command: ["curl", "-f", "http://mapcache:8080/mapcache/wmts/1.0.0/WMTSCapabilities.xml"]
+    command: ["curl", "-f", "http://mapcache:8080/wmts/1.0.0/WMTSCapabilities.xml"]
     depends_on:
       - mapcache
   mapcache:

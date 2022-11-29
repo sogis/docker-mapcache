@@ -15,7 +15,7 @@ _TODO_: Mehr Dokumentation! Wo muss was (in OpenShift) eingetragen werden? Was m
 ## Docker-Image
 Die MapCache-Konfiguration `mapcache.xml` ist hardcodiert im Image und muss bei Änderungen bei den WMS-Endpunkten dementsprechend angepasst werden. Bei Bedarf kann das Dockerfile so angepasst werden, dass die Konfiguration gemountet werden kann.
 
-Die `WMTSCapabilities`-URL ist: `http://localhost:8281/mapcache/wmts/1.0.0/WMTSCapabilities.xml`
+Die `WMTSCapabilities`-URL ist: `http://localhost:8281/wmts/1.0.0/WMTSCapabilities.xml`
 
 Im Image ist eine GeoPackage-Datei mit gebufferten Kantonsgrenzen (1km) für das Seeden des Grundbuchplanes.
 
@@ -80,7 +80,7 @@ Wichtig scheint `dpiMode` zu sein. Entsprechend werden beim WMS-Request vendor-s
   "name": "hintergrundkarte_sw",
   "title": "Karte SW",
   "type": "wmts",
-  "url": "http://159.69.8.22/mapcache/wmts/1.0.0/ch.so.agi.hintergrundkarte_sw/default/{TileMatrixSet}/{TileMatrix}/{TileRow}/{TileCol}.png",
+  "url": "http://159.69.8.22/wmts/1.0.0/ch.so.agi.hintergrundkarte_sw/default/{TileMatrixSet}/{TileMatrix}/{TileRow}/{TileCol}.png",
   "tileMatrixSet": "2056",
   "tileMatrixPrefix": "",
   "thumbnail": "img/mapthumbs/default.jpg",
