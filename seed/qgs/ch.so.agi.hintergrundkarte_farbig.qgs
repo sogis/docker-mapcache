@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis projectname="ch.so.agi.hintergrundkarte_farbig" saveUser="vagrant" version="3.16.3-Hannover" saveUserFull="vagrant" saveDateTime="2022-06-03T15:28:56">
+<qgis projectname="ch.so.agi.hintergrundkarte_farbig" saveDateTime="2023-03-23T10:41:53" saveUser="vagrant" version="3.16.3-Hannover" saveUserFull="vagrant">
   <homePath path=""/>
   <title>ch.so.agi.hintergrundkarte_farbig</title>
   <autotransaction active="0"/>
@@ -20,28 +20,28 @@
   </projectCrs>
   <layer-tree-group>
     <customproperties/>
-    <layer-tree-layer source="/geodata/ch.so.agi.hintergrundkarte/maske.tif" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" expanded="0" providerKey="gdal" patch_size="0,0" name="maske" id="maske_f7b0abd0_8125_4bbb_81ae_f7567cdfbf2f">
+    <layer-tree-layer id="maske_f7b0abd0_8125_4bbb_81ae_f7567cdfbf2f" expanded="0" legend_exp="" checked="Qt::Checked" legend_split_behavior="0" providerKey="gdal" name="maske" source="/geodata/ch.so.agi.hintergrundkarte/maske.tif" patch_size="0,0">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer source="/geodata/ch.swisstopo.lk1000.farbig_relief/krel1000.tif" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" expanded="0" providerKey="gdal" patch_size="0,0" name="ch.swisstopo.lk1000.farbig_relief" id="krel1000_289397dd_260e_4f4c_aab0_3671a1ff8bd5">
+    <layer-tree-layer id="krel1000_289397dd_260e_4f4c_aab0_3671a1ff8bd5" expanded="0" legend_exp="" checked="Qt::Checked" legend_split_behavior="0" providerKey="gdal" name="ch.swisstopo.lk1000.farbig_relief" source="/geodata/ch.swisstopo.lk1000.farbig_relief/lk1000_farbig_relief.vrt" patch_size="0,0">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer source="/geodata/ch.swisstopo.lk500.farbig_relief/PK500_LV95_KREL_10L_Mosaic_2016.tif" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" expanded="1" providerKey="gdal" patch_size="0,0" name="ch.swisstopo.lk500.farbig_relief" id="PK500_LV95_KREL_10L_Mosaic_2016_0d4cfbd3_ba37_4b44_87b5_b8129056b85d">
+    <layer-tree-layer id="PK500_LV95_KREL_10L_Mosaic_2016_0d4cfbd3_ba37_4b44_87b5_b8129056b85d" expanded="1" legend_exp="" checked="Qt::Checked" legend_split_behavior="0" providerKey="gdal" name="ch.swisstopo.lk500.farbig_relief" source="/geodata/ch.swisstopo.lk500.farbig_relief/lk500_farbig_relief.vrt" patch_size="0,0">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer source="/geodata/ch.swisstopo.lk200.farbig_relief/lk200_farbig_relief.vrt" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" expanded="1" providerKey="gdal" patch_size="0,0" name="ch.swisstopo.lk200.farbig_relief" id="lk200_farbig_relief_4c9d7a53_9984_4494_90d7_7dbd2608443e">
+    <layer-tree-layer id="lk200_farbig_relief_4c9d7a53_9984_4494_90d7_7dbd2608443e" expanded="1" legend_exp="" checked="Qt::Checked" legend_split_behavior="0" providerKey="gdal" name="ch.swisstopo.lk200.farbig_relief" source="/geodata/ch.swisstopo.lk200.farbig_relief/lk200_farbig_relief.vrt" patch_size="0,0">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer source="/geodata/ch.swisstopo.lk100.farbig_relief/lk100_farbig_relief.vrt" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" expanded="1" providerKey="gdal" patch_size="0,0" name="ch.swisstopo.lk100.farbig_relief" id="lk100_farbig_relief_22134aeb_3970_4315_83fc_c6cbe539f7e8">
+    <layer-tree-layer id="lk100_farbig_relief_22134aeb_3970_4315_83fc_c6cbe539f7e8" expanded="1" legend_exp="" checked="Qt::Checked" legend_split_behavior="0" providerKey="gdal" name="ch.swisstopo.lk100.farbig_relief" source="/geodata/ch.swisstopo.lk100.farbig_relief/lk100_farbig_relief.vrt" patch_size="0,0">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer source="/geodata/ch.swisstopo.lk50.farbig_relief/lk50_farbig_relief.vrt" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" expanded="1" providerKey="gdal" patch_size="0,0" name="ch.swisstopo.lk50.farbig_relief" id="lk50_farbig_relief_20181de5_d161_4c7e_a4c6_52d9d27c536c">
+    <layer-tree-layer id="lk50_farbig_relief_20181de5_d161_4c7e_a4c6_52d9d27c536c" expanded="1" legend_exp="" checked="Qt::Checked" legend_split_behavior="0" providerKey="gdal" name="ch.swisstopo.lk50.farbig_relief" source="/geodata/ch.swisstopo.lk50.farbig_relief/lk50_farbig_relief.vrt" patch_size="0,0">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer source="/geodata/ch.swisstopo.lk25.farbig_relief/lk25_farbig_relief.vrt" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" expanded="1" providerKey="gdal" patch_size="0,0" name="ch.swisstopo.lk25.farbig_relief" id="lk25_farbig_relief_1505020c_f825_4859_a2cc_05756a62a87a">
+    <layer-tree-layer id="lk25_farbig_relief_1505020c_f825_4859_a2cc_05756a62a87a" expanded="1" legend_exp="" checked="Qt::Checked" legend_split_behavior="0" providerKey="gdal" name="ch.swisstopo.lk25.farbig_relief" source="/geodata/ch.swisstopo.lk25.farbig_relief/lk25_farbig_relief.vrt" patch_size="0,0">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer source="/geodata/ch.swisstopo.lk10.farbig_relief/lk10_farbig_relief.vrt" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" expanded="1" providerKey="gdal" patch_size="0,0" name="ch.swisstopo.lk10.farbig_relief" id="lk10_farbig_relief_454f9144_ef6e_42c7_adbe_67217c448956">
+    <layer-tree-layer id="lk10_farbig_relief_454f9144_ef6e_42c7_adbe_67217c448956" expanded="1" legend_exp="" checked="Qt::Checked" legend_split_behavior="0" providerKey="gdal" name="ch.swisstopo.lk10.farbig_relief" source="/geodata/ch.swisstopo.lk10.farbig_relief/lk10_farbig_relief.vrt" patch_size="0,0">
       <customproperties/>
     </layer-tree-layer>
     <custom-order enabled="0">
@@ -55,17 +55,17 @@
       <item>maske_f7b0abd0_8125_4bbb_81ae_f7567cdfbf2f</item>
     </custom-order>
   </layer-tree-group>
-  <snapping-settings tolerance="12" scaleDependencyMode="0" minScale="0" unit="1" intersection-snapping="0" enabled="0" mode="2" type="1" self-snapping="0" maxScale="0">
+  <snapping-settings maxScale="0" tolerance="12" self-snapping="0" scaleDependencyMode="0" enabled="0" minScale="0" unit="1" mode="2" type="1" intersection-snapping="0">
     <individual-layer-settings/>
   </snapping-settings>
   <relations/>
-  <mapcanvas annotationsVisible="1" name="theMapCanvas">
+  <mapcanvas name="theMapCanvas" annotationsVisible="1">
     <units>meters</units>
     <extent>
-      <xmin>2543601.56242207391187549</xmin>
-      <ymin>1201612.49994656490162015</ymin>
-      <xmax>2696398.43757792608812451</xmax>
-      <ymax>1306387.50005343509837985</ymax>
+      <xmin>2626229.59062500018626451</xmin>
+      <ymin>1256228.3812500003259629</ymin>
+      <xmax>2629281.15312500018626451</xmax>
+      <ymax>1258287.3656250003259629</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -86,50 +86,50 @@
   </mapcanvas>
   <projectModels/>
   <legend updateDrawingOrder="true">
-    <legendlayer showFeatureCount="0" checked="Qt::Checked" open="false" name="maske" drawingOrder="-1">
+    <legendlayer showFeatureCount="0" drawingOrder="-1" checked="Qt::Checked" open="false" name="maske">
       <filegroup open="false" hidden="false">
-        <legendlayerfile layerid="maske_f7b0abd0_8125_4bbb_81ae_f7567cdfbf2f" isInOverview="0" visible="1"/>
+        <legendlayerfile isInOverview="0" layerid="maske_f7b0abd0_8125_4bbb_81ae_f7567cdfbf2f" visible="1"/>
       </filegroup>
     </legendlayer>
-    <legendlayer showFeatureCount="0" checked="Qt::Checked" open="false" name="ch.swisstopo.lk1000.farbig_relief" drawingOrder="-1">
+    <legendlayer showFeatureCount="0" drawingOrder="-1" checked="Qt::Checked" open="false" name="ch.swisstopo.lk1000.farbig_relief">
       <filegroup open="false" hidden="false">
-        <legendlayerfile layerid="krel1000_289397dd_260e_4f4c_aab0_3671a1ff8bd5" isInOverview="0" visible="1"/>
+        <legendlayerfile isInOverview="0" layerid="krel1000_289397dd_260e_4f4c_aab0_3671a1ff8bd5" visible="1"/>
       </filegroup>
     </legendlayer>
-    <legendlayer showFeatureCount="0" checked="Qt::Checked" open="true" name="ch.swisstopo.lk500.farbig_relief" drawingOrder="-1">
+    <legendlayer showFeatureCount="0" drawingOrder="-1" checked="Qt::Checked" open="true" name="ch.swisstopo.lk500.farbig_relief">
       <filegroup open="true" hidden="false">
-        <legendlayerfile layerid="PK500_LV95_KREL_10L_Mosaic_2016_0d4cfbd3_ba37_4b44_87b5_b8129056b85d" isInOverview="0" visible="1"/>
+        <legendlayerfile isInOverview="0" layerid="PK500_LV95_KREL_10L_Mosaic_2016_0d4cfbd3_ba37_4b44_87b5_b8129056b85d" visible="1"/>
       </filegroup>
     </legendlayer>
-    <legendlayer showFeatureCount="0" checked="Qt::Checked" open="true" name="ch.swisstopo.lk200.farbig_relief" drawingOrder="-1">
+    <legendlayer showFeatureCount="0" drawingOrder="-1" checked="Qt::Checked" open="true" name="ch.swisstopo.lk200.farbig_relief">
       <filegroup open="true" hidden="false">
-        <legendlayerfile layerid="lk200_farbig_relief_4c9d7a53_9984_4494_90d7_7dbd2608443e" isInOverview="0" visible="1"/>
+        <legendlayerfile isInOverview="0" layerid="lk200_farbig_relief_4c9d7a53_9984_4494_90d7_7dbd2608443e" visible="1"/>
       </filegroup>
     </legendlayer>
-    <legendlayer showFeatureCount="0" checked="Qt::Checked" open="true" name="ch.swisstopo.lk100.farbig_relief" drawingOrder="-1">
+    <legendlayer showFeatureCount="0" drawingOrder="-1" checked="Qt::Checked" open="true" name="ch.swisstopo.lk100.farbig_relief">
       <filegroup open="true" hidden="false">
-        <legendlayerfile layerid="lk100_farbig_relief_22134aeb_3970_4315_83fc_c6cbe539f7e8" isInOverview="0" visible="1"/>
+        <legendlayerfile isInOverview="0" layerid="lk100_farbig_relief_22134aeb_3970_4315_83fc_c6cbe539f7e8" visible="1"/>
       </filegroup>
     </legendlayer>
-    <legendlayer showFeatureCount="0" checked="Qt::Checked" open="true" name="ch.swisstopo.lk50.farbig_relief" drawingOrder="-1">
+    <legendlayer showFeatureCount="0" drawingOrder="-1" checked="Qt::Checked" open="true" name="ch.swisstopo.lk50.farbig_relief">
       <filegroup open="true" hidden="false">
-        <legendlayerfile layerid="lk50_farbig_relief_20181de5_d161_4c7e_a4c6_52d9d27c536c" isInOverview="0" visible="1"/>
+        <legendlayerfile isInOverview="0" layerid="lk50_farbig_relief_20181de5_d161_4c7e_a4c6_52d9d27c536c" visible="1"/>
       </filegroup>
     </legendlayer>
-    <legendlayer showFeatureCount="0" checked="Qt::Checked" open="true" name="ch.swisstopo.lk25.farbig_relief" drawingOrder="-1">
+    <legendlayer showFeatureCount="0" drawingOrder="-1" checked="Qt::Checked" open="true" name="ch.swisstopo.lk25.farbig_relief">
       <filegroup open="true" hidden="false">
-        <legendlayerfile layerid="lk25_farbig_relief_1505020c_f825_4859_a2cc_05756a62a87a" isInOverview="0" visible="1"/>
+        <legendlayerfile isInOverview="0" layerid="lk25_farbig_relief_1505020c_f825_4859_a2cc_05756a62a87a" visible="1"/>
       </filegroup>
     </legendlayer>
-    <legendlayer showFeatureCount="0" checked="Qt::Checked" open="true" name="ch.swisstopo.lk10.farbig_relief" drawingOrder="-1">
+    <legendlayer showFeatureCount="0" drawingOrder="-1" checked="Qt::Checked" open="true" name="ch.swisstopo.lk10.farbig_relief">
       <filegroup open="true" hidden="false">
-        <legendlayerfile layerid="lk10_farbig_relief_454f9144_ef6e_42c7_adbe_67217c448956" isInOverview="0" visible="1"/>
+        <legendlayerfile isInOverview="0" layerid="lk10_farbig_relief_454f9144_ef6e_42c7_adbe_67217c448956" visible="1"/>
       </filegroup>
     </legendlayer>
   </legend>
   <mapViewDocks/>
   <mapViewDocks3D/>
-  <main-annotation-layer refreshOnNotifyEnabled="0" autoRefreshEnabled="0" refreshOnNotifyMessage="" type="annotation" autoRefreshTime="0">
+  <main-annotation-layer autoRefreshEnabled="0" type="annotation" refreshOnNotifyEnabled="0" autoRefreshTime="0" refreshOnNotifyMessage="">
     <id>Annotations_3afc30ad_8589_459e_9d7a_f7afd4f5b89d</id>
     <datasource></datasource>
     <keywordList>
@@ -146,7 +146,7 @@
         <description></description>
         <projectionacronym></projectionacronym>
         <ellipsoidacronym></ellipsoidacronym>
-        <geographicflag>true</geographicflag>
+        <geographicflag>false</geographicflag>
       </spatialrefsys>
     </srs>
     <resourceMetadata>
@@ -169,7 +169,7 @@
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </crs>
       <extent/>
@@ -178,15 +178,15 @@
     <layerOpacity>1</layerOpacity>
   </main-annotation-layer>
   <projectlayers>
-    <maplayer hasScaleBasedVisibilityFlag="1" styleCategories="AllStyleCategories" minScale="280000" refreshOnNotifyEnabled="0" autoRefreshEnabled="0" refreshOnNotifyMessage="" type="raster" maxScale="150000" autoRefreshTime="0">
+    <maplayer maxScale="150000" hasScaleBasedVisibilityFlag="1" minScale="280000" autoRefreshEnabled="0" type="raster" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" autoRefreshTime="0" refreshOnNotifyMessage="">
       <extent>
-        <xmin>2480000</xmin>
-        <ymin>1062000</ymin>
-        <xmax>2865000</xmax>
-        <ymax>1302000</ymax>
+        <xmin>2443000</xmin>
+        <ymin>1024000</ymin>
+        <xmax>2895000</xmax>
+        <ymax>1340000</ymax>
       </extent>
       <id>PK500_LV95_KREL_10L_Mosaic_2016_0d4cfbd3_ba37_4b44_87b5_b8129056b85d</id>
-      <datasource>/geodata/ch.swisstopo.lk500.farbig_relief/PK500_LV95_KREL_10L_Mosaic_2016.tif</datasource>
+      <datasource>/geodata/ch.swisstopo.lk500.farbig_relief/lk500_farbig_relief.vrt</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -233,11 +233,11 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
-          <spatial dimensions="2" maxz="0" minx="0" maxx="0" crs="" minz="0" miny="0" maxy="0"/>
+          <spatial maxy="0" maxz="0" miny="0" crs="" dimensions="2" minx="0" maxx="0" minz="0"/>
           <temporal>
             <period>
               <start></start>
@@ -248,9 +248,10 @@
       </resourceMetadata>
       <provider>gdal</provider>
       <noData>
-        <noDataList bandNo="1" useSrcNoData="0"/>
-        <noDataList bandNo="2" useSrcNoData="0"/>
-        <noDataList bandNo="3" useSrcNoData="0"/>
+        <noDataList useSrcNoData="0" bandNo="1"/>
+        <noDataList useSrcNoData="0" bandNo="2"/>
+        <noDataList useSrcNoData="0" bandNo="3"/>
+        <noDataList useSrcNoData="0" bandNo="4"/>
       </noData>
       <map-layer-style-manager current="default">
         <map-layer-style name="default"/>
@@ -260,7 +261,7 @@
         <Removable>1</Removable>
         <Searchable>0</Searchable>
       </flags>
-      <temporal fetchMode="0" enabled="0" mode="0">
+      <temporal enabled="0" mode="0" fetchMode="0">
         <fixedRange>
           <start></start>
           <end></end>
@@ -274,9 +275,9 @@
       </customproperties>
       <pipe>
         <provider>
-          <resampling maxOversampling="2" zoomedInResamplingMethod="nearestNeighbour" enabled="false" zoomedOutResamplingMethod="nearestNeighbour"/>
+          <resampling maxOversampling="2" zoomedOutResamplingMethod="nearestNeighbour" enabled="false" zoomedInResamplingMethod="nearestNeighbour"/>
         </provider>
-        <rasterrenderer alphaBand="-1" opacity="1" nodataColor="" greenBand="2" redBand="1" blueBand="3" type="multibandcolor">
+        <rasterrenderer redBand="1" nodataColor="" greenBand="2" blueBand="3" opacity="1" type="multibandcolor" alphaBand="-1">
           <rasterTransparency/>
           <minMaxOrigin>
             <limits>MinMax</limits>
@@ -287,14 +288,14 @@
             <stdDevFactor>2</stdDevFactor>
           </minMaxOrigin>
         </rasterrenderer>
-        <brightnesscontrast contrast="0" brightness="0" gamma="1"/>
-        <huesaturation colorizeBlue="128" colorizeRed="255" colorizeGreen="128" saturation="0" colorizeStrength="100" colorizeOn="0" grayscaleMode="0"/>
-        <rasterresampler zoomedOutResampler="bilinear" maxOversampling="4"/>
+        <brightnesscontrast brightness="0" contrast="0" gamma="1"/>
+        <huesaturation saturation="0" grayscaleMode="0" colorizeOn="0" colorizeGreen="128" colorizeBlue="128" colorizeRed="255" colorizeStrength="100"/>
+        <rasterresampler maxOversampling="4" zoomedOutResampler="bilinear"/>
         <resamplingStage>resamplingFilter</resamplingStage>
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
-    <maplayer hasScaleBasedVisibilityFlag="1" styleCategories="AllStyleCategories" minScale="1e+8" refreshOnNotifyEnabled="0" autoRefreshEnabled="0" refreshOnNotifyMessage="" type="raster" maxScale="280000" autoRefreshTime="0">
+    <maplayer maxScale="280000" hasScaleBasedVisibilityFlag="1" minScale="1e+8" autoRefreshEnabled="0" type="raster" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" autoRefreshTime="0" refreshOnNotifyMessage="">
       <extent>
         <xmin>2317000</xmin>
         <ymin>913000</ymin>
@@ -302,7 +303,7 @@
         <ymax>1413000</ymax>
       </extent>
       <id>krel1000_289397dd_260e_4f4c_aab0_3671a1ff8bd5</id>
-      <datasource>/geodata/ch.swisstopo.lk1000.farbig_relief/krel1000.tif</datasource>
+      <datasource>/geodata/ch.swisstopo.lk1000.farbig_relief/lk1000_farbig_relief.vrt</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -349,11 +350,11 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
-          <spatial dimensions="2" maxz="0" minx="0" maxx="0" crs="" minz="0" miny="0" maxy="0"/>
+          <spatial maxy="0" maxz="0" miny="0" crs="" dimensions="2" minx="0" maxx="0" minz="0"/>
           <temporal>
             <period>
               <start></start>
@@ -364,7 +365,10 @@
       </resourceMetadata>
       <provider>gdal</provider>
       <noData>
-        <noDataList bandNo="1" useSrcNoData="0"/>
+        <noDataList useSrcNoData="0" bandNo="1"/>
+        <noDataList useSrcNoData="0" bandNo="2"/>
+        <noDataList useSrcNoData="0" bandNo="3"/>
+        <noDataList useSrcNoData="0" bandNo="4"/>
       </noData>
       <map-layer-style-manager current="default">
         <map-layer-style name="default"/>
@@ -374,7 +378,7 @@
         <Removable>1</Removable>
         <Searchable>0</Searchable>
       </flags>
-      <temporal fetchMode="0" enabled="0" mode="0">
+      <temporal enabled="0" mode="0" fetchMode="0">
         <fixedRange>
           <start></start>
           <end></end>
@@ -388,285 +392,27 @@
       </customproperties>
       <pipe>
         <provider>
-          <resampling maxOversampling="2" zoomedInResamplingMethod="nearestNeighbour" enabled="false" zoomedOutResamplingMethod="nearestNeighbour"/>
+          <resampling maxOversampling="4" zoomedOutResamplingMethod="bilinear" enabled="false" zoomedInResamplingMethod="nearestNeighbour"/>
         </provider>
-        <rasterrenderer alphaBand="-1" opacity="1" band="1" nodataColor="" type="paletted">
+        <rasterrenderer redBand="1" nodataColor="" greenBand="2" blueBand="3" opacity="1" type="multibandcolor" alphaBand="-1">
           <rasterTransparency/>
           <minMaxOrigin>
-            <limits>None</limits>
+            <limits>MinMax</limits>
             <extent>WholeRaster</extent>
             <statAccuracy>Estimated</statAccuracy>
             <cumulativeCutLower>0.02</cumulativeCutLower>
             <cumulativeCutUpper>0.98</cumulativeCutUpper>
             <stdDevFactor>2</stdDevFactor>
           </minMaxOrigin>
-          <colorPalette>
-            <paletteEntry value="0" label="0" color="#860506" alpha="255"/>
-            <paletteEntry value="1" label="1" color="#bc191c" alpha="255"/>
-            <paletteEntry value="2" label="2" color="#480709" alpha="255"/>
-            <paletteEntry value="3" label="3" color="#e81c24" alpha="255"/>
-            <paletteEntry value="4" label="4" color="#dc1c24" alpha="255"/>
-            <paletteEntry value="5" label="5" color="#d41c24" alpha="255"/>
-            <paletteEntry value="6" label="6" color="#cb1c24" alpha="255"/>
-            <paletteEntry value="7" label="7" color="#782c2f" alpha="255"/>
-            <paletteEntry value="8" label="8" color="#edc2c5" alpha="255"/>
-            <paletteEntry value="9" label="9" color="#f49ca4" alpha="255"/>
-            <paletteEntry value="10" label="10" color="#c47c84" alpha="255"/>
-            <paletteEntry value="11" label="11" color="#915c62" alpha="255"/>
-            <paletteEntry value="12" label="12" color="#64353c" alpha="255"/>
-            <paletteEntry value="13" label="13" color="#ea95a2" alpha="255"/>
-            <paletteEntry value="14" label="14" color="#c08b93" alpha="255"/>
-            <paletteEntry value="15" label="15" color="#ead4d8" alpha="255"/>
-            <paletteEntry value="16" label="16" color="#dfccd0" alpha="255"/>
-            <paletteEntry value="17" label="17" color="#745b62" alpha="255"/>
-            <paletteEntry value="18" label="18" color="#20040c" alpha="255"/>
-            <paletteEntry value="19" label="19" color="#240c14" alpha="255"/>
-            <paletteEntry value="20" label="20" color="#b0a1a7" alpha="255"/>
-            <paletteEntry value="21" label="21" color="#c58da7" alpha="255"/>
-            <paletteEntry value="22" label="22" color="#c0abb5" alpha="255"/>
-            <paletteEntry value="23" label="23" color="#23141c" alpha="255"/>
-            <paletteEntry value="24" label="24" color="#170c13" alpha="255"/>
-            <paletteEntry value="25" label="25" color="#241c24" alpha="255"/>
-            <paletteEntry value="26" label="26" color="#beb4c7" alpha="255"/>
-            <paletteEntry value="27" label="27" color="#b2abbc" alpha="255"/>
-            <paletteEntry value="28" label="28" color="#040417" alpha="255"/>
-            <paletteEntry value="29" label="29" color="#14141c" alpha="255"/>
-            <paletteEntry value="30" label="30" color="#1c1c24" alpha="255"/>
-            <paletteEntry value="31" label="31" color="#b4b4d4" alpha="255"/>
-            <paletteEntry value="32" label="32" color="#5c5c63" alpha="255"/>
-            <paletteEntry value="33" label="33" color="#8c8c94" alpha="255"/>
-            <paletteEntry value="34" label="34" color="#b4b4bc" alpha="255"/>
-            <paletteEntry value="35" label="35" color="#bcbcc3" alpha="255"/>
-            <paletteEntry value="36" label="36" color="#f4f4fc" alpha="255"/>
-            <paletteEntry value="37" label="37" color="#ececf4" alpha="255"/>
-            <paletteEntry value="38" label="38" color="#e4e4ec" alpha="255"/>
-            <paletteEntry value="39" label="39" color="#dcdce4" alpha="255"/>
-            <paletteEntry value="40" label="40" color="#949496" alpha="255"/>
-            <paletteEntry value="41" label="41" color="#bcc4e1" alpha="255"/>
-            <paletteEntry value="42" label="42" color="#d4dcec" alpha="255"/>
-            <paletteEntry value="43" label="43" color="#dce4f4" alpha="255"/>
-            <paletteEntry value="44" label="44" color="#4a4c50" alpha="255"/>
-            <paletteEntry value="45" label="45" color="#abc4ec" alpha="255"/>
-            <paletteEntry value="46" label="46" color="#b4c4dd" alpha="255"/>
-            <paletteEntry value="47" label="47" color="#bccce4" alpha="255"/>
-            <paletteEntry value="48" label="48" color="#9aaec9" alpha="255"/>
-            <paletteEntry value="49" label="49" color="#91a1b7" alpha="255"/>
-            <paletteEntry value="50" label="50" color="#abbcd4" alpha="255"/>
-            <paletteEntry value="51" label="51" color="#496586" alpha="255"/>
-            <paletteEntry value="52" label="52" color="#7a99c0" alpha="255"/>
-            <paletteEntry value="53" label="53" color="#86a7d1" alpha="255"/>
-            <paletteEntry value="54" label="54" color="#c4d4e7" alpha="255"/>
-            <paletteEntry value="55" label="55" color="#5484b8" alpha="255"/>
-            <paletteEntry value="56" label="56" color="#375473" alpha="255"/>
-            <paletteEntry value="57" label="57" color="#6a88ab" alpha="255"/>
-            <paletteEntry value="58" label="58" color="#324050" alpha="255"/>
-            <paletteEntry value="59" label="59" color="#0b151f" alpha="255"/>
-            <paletteEntry value="60" label="60" color="#1b334b" alpha="255"/>
-            <paletteEntry value="61" label="61" color="#4c7aa9" alpha="255"/>
-            <paletteEntry value="62" label="62" color="#598dc4" alpha="255"/>
-            <paletteEntry value="63" label="63" color="#040506" alpha="255"/>
-            <paletteEntry value="64" label="64" color="#acc4dc" alpha="255"/>
-            <paletteEntry value="65" label="65" color="#bcccdc" alpha="255"/>
-            <paletteEntry value="66" label="66" color="#d4e4f4" alpha="255"/>
-            <paletteEntry value="67" label="67" color="#6a727a" alpha="255"/>
-            <paletteEntry value="68" label="68" color="#9ca4ac" alpha="255"/>
-            <paletteEntry value="69" label="69" color="#a4acb4" alpha="255"/>
-            <paletteEntry value="70" label="70" color="#acb4bc" alpha="255"/>
-            <paletteEntry value="71" label="71" color="#bcc4cc" alpha="255"/>
-            <paletteEntry value="72" label="72" color="#b4bcc4" alpha="255"/>
-            <paletteEntry value="73" label="73" color="#c4ccd4" alpha="255"/>
-            <paletteEntry value="74" label="74" color="#ccd4dc" alpha="255"/>
-            <paletteEntry value="75" label="75" color="#dce4ec" alpha="255"/>
-            <paletteEntry value="76" label="76" color="#d4dce4" alpha="255"/>
-            <paletteEntry value="77" label="77" color="#e4ecf4" alpha="255"/>
-            <paletteEntry value="78" label="78" color="#04294b" alpha="255"/>
-            <paletteEntry value="79" label="79" color="#757c82" alpha="255"/>
-            <paletteEntry value="80" label="80" color="#7e8489" alpha="255"/>
-            <paletteEntry value="81" label="81" color="#929ca4" alpha="255"/>
-            <paletteEntry value="82" label="82" color="#04436f" alpha="255"/>
-            <paletteEntry value="83" label="83" color="#0c74bc" alpha="255"/>
-            <paletteEntry value="84" label="84" color="#0c619a" alpha="255"/>
-            <paletteEntry value="85" label="85" color="#818c94" alpha="255"/>
-            <paletteEntry value="86" label="86" color="#0c7cc4" alpha="255"/>
-            <paletteEntry value="87" label="87" color="#0c74b4" alpha="255"/>
-            <paletteEntry value="88" label="88" color="#0c6ca9" alpha="255"/>
-            <paletteEntry value="89" label="89" color="#1477b4" alpha="255"/>
-            <paletteEntry value="90" label="90" color="#05598a" alpha="255"/>
-            <paletteEntry value="91" label="91" color="#0c7cbc" alpha="255"/>
-            <paletteEntry value="92" label="92" color="#a4b4bd" alpha="255"/>
-            <paletteEntry value="93" label="93" color="#0c74ac" alpha="255"/>
-            <paletteEntry value="94" label="94" color="#2579a5" alpha="255"/>
-            <paletteEntry value="95" label="95" color="#9cacb4" alpha="255"/>
-            <paletteEntry value="96" label="96" color="#acbcc4" alpha="255"/>
-            <paletteEntry value="97" label="97" color="#b4c4cc" alpha="255"/>
-            <paletteEntry value="98" label="98" color="#c4d4dc" alpha="255"/>
-            <paletteEntry value="99" label="99" color="#d4e4ec" alpha="255"/>
-            <paletteEntry value="100" label="100" color="#dcecf4" alpha="255"/>
-            <paletteEntry value="101" label="101" color="#287896" alpha="255"/>
-            <paletteEntry value="102" label="102" color="#141c1f" alpha="255"/>
-            <paletteEntry value="103" label="103" color="#acc4cc" alpha="255"/>
-            <paletteEntry value="104" label="104" color="#307782" alpha="255"/>
-            <paletteEntry value="105" label="105" color="#90b3b6" alpha="255"/>
-            <paletteEntry value="106" label="106" color="#a4b4b4" alpha="255"/>
-            <paletteEntry value="107" label="107" color="#acbcbc" alpha="255"/>
-            <paletteEntry value="108" label="108" color="#bccccc" alpha="255"/>
-            <paletteEntry value="109" label="109" color="#b4c4c4" alpha="255"/>
-            <paletteEntry value="110" label="110" color="#c4d4d4" alpha="255"/>
-            <paletteEntry value="111" label="111" color="#ccdcdc" alpha="255"/>
-            <paletteEntry value="112" label="112" color="#848c8c" alpha="255"/>
-            <paletteEntry value="113" label="113" color="#8c9494" alpha="255"/>
-            <paletteEntry value="114" label="114" color="#5f6464" alpha="255"/>
-            <paletteEntry value="115" label="115" color="#acb4b4" alpha="255"/>
-            <paletteEntry value="116" label="116" color="#b4bcbc" alpha="255"/>
-            <paletteEntry value="117" label="117" color="#d4dcdc" alpha="255"/>
-            <paletteEntry value="118" label="118" color="#ccd4d4" alpha="255"/>
-            <paletteEntry value="119" label="119" color="#f4fcfc" alpha="255"/>
-            <paletteEntry value="120" label="120" color="#ecf4f4" alpha="255"/>
-            <paletteEntry value="121" label="121" color="#e4ecec" alpha="255"/>
-            <paletteEntry value="122" label="122" color="#dce4e4" alpha="255"/>
-            <paletteEntry value="123" label="123" color="#c4c8c8" alpha="255"/>
-            <paletteEntry value="124" label="124" color="#a3adab" alpha="255"/>
-            <paletteEntry value="125" label="125" color="#bdc4c1" alpha="255"/>
-            <paletteEntry value="126" label="126" color="#3c765a" alpha="255"/>
-            <paletteEntry value="127" label="127" color="#356a4c" alpha="255"/>
-            <paletteEntry value="128" label="128" color="#073417" alpha="255"/>
-            <paletteEntry value="129" label="129" color="#255633" alpha="255"/>
-            <paletteEntry value="130" label="130" color="#a6bcac" alpha="255"/>
-            <paletteEntry value="131" label="131" color="#134720" alpha="255"/>
-            <paletteEntry value="132" label="132" color="#b1c8b6" alpha="255"/>
-            <paletteEntry value="133" label="133" color="#8ca990" alpha="255"/>
-            <paletteEntry value="134" label="134" color="#7da081" alpha="255"/>
-            <paletteEntry value="135" label="135" color="#2e7035" alpha="255"/>
-            <paletteEntry value="136" label="136" color="#428e47" alpha="255"/>
-            <paletteEntry value="137" label="137" color="#041405" alpha="255"/>
-            <paletteEntry value="138" label="138" color="#408344" alpha="255"/>
-            <paletteEntry value="139" label="139" color="#6f9271" alpha="255"/>
-            <paletteEntry value="140" label="140" color="#609161" alpha="255"/>
-            <paletteEntry value="141" label="141" color="#509951" alpha="255"/>
-            <paletteEntry value="142" label="142" color="#64bc64" alpha="255"/>
-            <paletteEntry value="143" label="143" color="#ecf4ec" alpha="255"/>
-            <paletteEntry value="144" label="144" color="#5aa858" alpha="255"/>
-            <paletteEntry value="145" label="145" color="#94b993" alpha="255"/>
-            <paletteEntry value="146" label="146" color="#74aa72" alpha="255"/>
-            <paletteEntry value="147" label="147" color="#84be81" alpha="255"/>
-            <paletteEntry value="148" label="148" color="#c0d4bf" alpha="255"/>
-            <paletteEntry value="149" label="149" color="#63b45d" alpha="255"/>
-            <paletteEntry value="150" label="150" color="#a6cca2" alpha="255"/>
-            <paletteEntry value="151" label="151" color="#c8dcc6" alpha="255"/>
-            <paletteEntry value="152" label="152" color="#cfe4cb" alpha="255"/>
-            <paletteEntry value="153" label="153" color="#565855" alpha="255"/>
-            <paletteEntry value="154" label="154" color="#0c1406" alpha="255"/>
-            <paletteEntry value="155" label="155" color="#2f4220" alpha="255"/>
-            <paletteEntry value="156" label="156" color="#6c904c" alpha="255"/>
-            <paletteEntry value="157" label="157" color="#141c04" alpha="255"/>
-            <paletteEntry value="158" label="158" color="#a6c846" alpha="255"/>
-            <paletteEntry value="159" label="159" color="#95ae44" alpha="255"/>
-            <paletteEntry value="160" label="160" color="#a3aa23" alpha="255"/>
-            <paletteEntry value="161" label="161" color="#bbbc99" alpha="255"/>
-            <paletteEntry value="162" label="162" color="#1c1c04" alpha="255"/>
-            <paletteEntry value="163" label="163" color="#5c5c10" alpha="255"/>
-            <paletteEntry value="164" label="164" color="#cecc32" alpha="255"/>
-            <paletteEntry value="165" label="165" color="#141408" alpha="255"/>
-            <paletteEntry value="166" label="166" color="#717141" alpha="255"/>
-            <paletteEntry value="167" label="167" color="#1c1c14" alpha="255"/>
-            <paletteEntry value="168" label="168" color="#dfdfba" alpha="255"/>
-            <paletteEntry value="169" label="169" color="#fcfcec" alpha="255"/>
-            <paletteEntry value="170" label="170" color="#fcfcf4" alpha="255"/>
-            <paletteEntry value="171" label="171" color="#f4f4ec" alpha="255"/>
-            <paletteEntry value="172" label="172" color="#f4ec04" alpha="255"/>
-            <paletteEntry value="173" label="173" color="#ebdf06" alpha="255"/>
-            <paletteEntry value="174" label="174" color="#8c8504" alpha="255"/>
-            <paletteEntry value="175" label="175" color="#bcb40c" alpha="255"/>
-            <paletteEntry value="176" label="176" color="#beb850" alpha="255"/>
-            <paletteEntry value="177" label="177" color="#8d8a4d" alpha="255"/>
-            <paletteEntry value="178" label="178" color="#b9b679" alpha="255"/>
-            <paletteEntry value="179" label="179" color="#f6f4c7" alpha="255"/>
-            <paletteEntry value="180" label="180" color="#f4e404" alpha="255"/>
-            <paletteEntry value="181" label="181" color="#f1e564" alpha="255"/>
-            <paletteEntry value="182" label="182" color="#f4ec95" alpha="255"/>
-            <paletteEntry value="183" label="183" color="#e7e192" alpha="255"/>
-            <paletteEntry value="184" label="184" color="#eeebc5" alpha="255"/>
-            <paletteEntry value="185" label="185" color="#c4b40c" alpha="255"/>
-            <paletteEntry value="186" label="186" color="#fbe42c" alpha="255"/>
-            <paletteEntry value="187" label="187" color="#f4db2c" alpha="255"/>
-            <paletteEntry value="188" label="188" color="#f4d414" alpha="255"/>
-            <paletteEntry value="189" label="189" color="#a49c6c" alpha="255"/>
-            <paletteEntry value="190" label="190" color="#f1d755" alpha="255"/>
-            <paletteEntry value="191" label="191" color="#bd9814" alpha="255"/>
-            <paletteEntry value="192" label="192" color="#cdb56c" alpha="255"/>
-            <paletteEntry value="193" label="193" color="#f4bb1c" alpha="255"/>
-            <paletteEntry value="194" label="194" color="#c4a454" alpha="255"/>
-            <paletteEntry value="195" label="195" color="#fccc64" alpha="255"/>
-            <paletteEntry value="196" label="196" color="#1c1404" alpha="255"/>
-            <paletteEntry value="197" label="197" color="#614b1f" alpha="255"/>
-            <paletteEntry value="198" label="198" color="#94743c" alpha="255"/>
-            <paletteEntry value="199" label="199" color="#8b857a" alpha="255"/>
-            <paletteEntry value="200" label="200" color="#8f5605" alpha="255"/>
-            <paletteEntry value="201" label="201" color="#c47c14" alpha="255"/>
-            <paletteEntry value="202" label="202" color="#f3c482" alpha="255"/>
-            <paletteEntry value="203" label="203" color="#efd5b3" alpha="255"/>
-            <paletteEntry value="204" label="204" color="#fc9c24" alpha="255"/>
-            <paletteEntry value="205" label="205" color="#ec9424" alpha="255"/>
-            <paletteEntry value="206" label="206" color="#613404" alpha="255"/>
-            <paletteEntry value="207" label="207" color="#c47315" alpha="255"/>
-            <paletteEntry value="208" label="208" color="#fc9424" alpha="255"/>
-            <paletteEntry value="209" label="209" color="#f49424" alpha="255"/>
-            <paletteEntry value="210" label="210" color="#c48742" alpha="255"/>
-            <paletteEntry value="211" label="211" color="#faa54f" alpha="255"/>
-            <paletteEntry value="212" label="212" color="#1c140c" alpha="255"/>
-            <paletteEntry value="213" label="213" color="#fcf4ec" alpha="255"/>
-            <paletteEntry value="214" label="214" color="#8a725c" alpha="255"/>
-            <paletteEntry value="215" label="215" color="#f48224" alpha="255"/>
-            <paletteEntry value="216" label="216" color="#f4843c" alpha="255"/>
-            <paletteEntry value="217" label="217" color="#24140b" alpha="255"/>
-            <paletteEntry value="218" label="218" color="#bcada5" alpha="255"/>
-            <paletteEntry value="219" label="219" color="#f4ad91" alpha="255"/>
-            <paletteEntry value="220" label="220" color="#d4c4bd" alpha="255"/>
-            <paletteEntry value="221" label="221" color="#b79284" alpha="255"/>
-            <paletteEntry value="222" label="222" color="#eabdac" alpha="255"/>
-            <paletteEntry value="223" label="223" color="#cea99c" alpha="255"/>
-            <paletteEntry value="224" label="224" color="#240c04" alpha="255"/>
-            <paletteEntry value="225" label="225" color="#5a1b08" alpha="255"/>
-            <paletteEntry value="226" label="226" color="#1b0904" alpha="255"/>
-            <paletteEntry value="227" label="227" color="#ee8f75" alpha="255"/>
-            <paletteEntry value="228" label="228" color="#df8a72" alpha="255"/>
-            <paletteEntry value="229" label="229" color="#ba7561" alpha="255"/>
-            <paletteEntry value="230" label="230" color="#a58982" alpha="255"/>
-            <paletteEntry value="231" label="231" color="#e15d41" alpha="255"/>
-            <paletteEntry value="232" label="232" color="#654842" alpha="255"/>
-            <paletteEntry value="233" label="233" color="#e3b2a8" alpha="255"/>
-            <paletteEntry value="234" label="234" color="#d6b5ae" alpha="255"/>
-            <paletteEntry value="235" label="235" color="#b44b37" alpha="255"/>
-            <paletteEntry value="236" label="236" color="#f49c8c" alpha="255"/>
-            <paletteEntry value="237" label="237" color="#bb9b96" alpha="255"/>
-            <paletteEntry value="238" label="238" color="#402522" alpha="255"/>
-            <paletteEntry value="239" label="239" color="#522b27" alpha="255"/>
-            <paletteEntry value="240" label="240" color="#913029" alpha="255"/>
-            <paletteEntry value="241" label="241" color="#553332" alpha="255"/>
-            <paletteEntry value="242" label="242" color="#5b0404" alpha="255"/>
-            <paletteEntry value="243" label="243" color="#240404" alpha="255"/>
-            <paletteEntry value="244" label="244" color="#e42424" alpha="255"/>
-            <paletteEntry value="245" label="245" color="#240c0c" alpha="255"/>
-            <paletteEntry value="246" label="246" color="#241414" alpha="255"/>
-            <paletteEntry value="247" label="247" color="#241c1c" alpha="255"/>
-            <paletteEntry value="248" label="248" color="#8f7373" alpha="255"/>
-            <paletteEntry value="249" label="249" color="#f1dcdc" alpha="255"/>
-            <paletteEntry value="250" label="250" color="#fcf4f4" alpha="255"/>
-            <paletteEntry value="251" label="251" color="#fdfdfd" alpha="255"/>
-            <paletteEntry value="252" label="252" color="#f4f4f4" alpha="255"/>
-            <paletteEntry value="253" label="253" color="#ececec" alpha="255"/>
-            <paletteEntry value="254" label="254" color="#242424" alpha="255"/>
-            <paletteEntry value="255" label="255" color="#ffffff" alpha="255"/>
-          </colorPalette>
         </rasterrenderer>
-        <brightnesscontrast contrast="0" brightness="0" gamma="1"/>
-        <huesaturation colorizeBlue="128" colorizeRed="255" colorizeGreen="128" saturation="0" colorizeStrength="100" colorizeOn="0" grayscaleMode="0"/>
-        <rasterresampler zoomedOutResampler="bilinear" maxOversampling="4"/>
+        <brightnesscontrast brightness="0" contrast="0" gamma="1"/>
+        <huesaturation saturation="0" grayscaleMode="0" colorizeOn="0" colorizeGreen="128" colorizeBlue="128" colorizeRed="255" colorizeStrength="100"/>
+        <rasterresampler maxOversampling="4" zoomedOutResampler="bilinear"/>
         <resamplingStage>resamplingFilter</resamplingStage>
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
-    <maplayer hasScaleBasedVisibilityFlag="1" styleCategories="AllStyleCategories" minScale="70000" refreshOnNotifyEnabled="0" autoRefreshEnabled="0" refreshOnNotifyMessage="" type="raster" maxScale="35000" autoRefreshTime="0">
+    <maplayer maxScale="35000" hasScaleBasedVisibilityFlag="1" minScale="70000" autoRefreshEnabled="0" type="raster" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" autoRefreshTime="0" refreshOnNotifyMessage="">
       <extent>
         <xmin>2550000</xmin>
         <ymin>1206000</ymin>
@@ -721,11 +467,11 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
-          <spatial dimensions="2" maxz="0" minx="0" maxx="0" crs="" minz="0" miny="0" maxy="0"/>
+          <spatial maxy="0" maxz="0" miny="0" crs="" dimensions="2" minx="0" maxx="0" minz="0"/>
           <temporal>
             <period>
               <start></start>
@@ -736,10 +482,10 @@
       </resourceMetadata>
       <provider>gdal</provider>
       <noData>
-        <noDataList bandNo="1" useSrcNoData="0"/>
-        <noDataList bandNo="2" useSrcNoData="0"/>
-        <noDataList bandNo="3" useSrcNoData="0"/>
-        <noDataList bandNo="4" useSrcNoData="0"/>
+        <noDataList useSrcNoData="0" bandNo="1"/>
+        <noDataList useSrcNoData="0" bandNo="2"/>
+        <noDataList useSrcNoData="0" bandNo="3"/>
+        <noDataList useSrcNoData="0" bandNo="4"/>
       </noData>
       <map-layer-style-manager current="default">
         <map-layer-style name="default"/>
@@ -749,7 +495,7 @@
         <Removable>1</Removable>
         <Searchable>0</Searchable>
       </flags>
-      <temporal fetchMode="0" enabled="0" mode="0">
+      <temporal enabled="0" mode="0" fetchMode="0">
         <fixedRange>
           <start></start>
           <end></end>
@@ -763,9 +509,9 @@
       </customproperties>
       <pipe>
         <provider>
-          <resampling maxOversampling="2" zoomedInResamplingMethod="nearestNeighbour" enabled="false" zoomedOutResamplingMethod="nearestNeighbour"/>
+          <resampling maxOversampling="2" zoomedOutResamplingMethod="nearestNeighbour" enabled="false" zoomedInResamplingMethod="nearestNeighbour"/>
         </provider>
-        <rasterrenderer alphaBand="4" opacity="1" nodataColor="" greenBand="2" redBand="1" blueBand="3" type="multibandcolor">
+        <rasterrenderer redBand="1" nodataColor="" greenBand="2" blueBand="3" opacity="1" type="multibandcolor" alphaBand="4">
           <rasterTransparency/>
           <minMaxOrigin>
             <limits>MinMax</limits>
@@ -776,18 +522,18 @@
             <stdDevFactor>2</stdDevFactor>
           </minMaxOrigin>
         </rasterrenderer>
-        <brightnesscontrast contrast="0" brightness="0" gamma="1"/>
-        <huesaturation colorizeBlue="128" colorizeRed="255" colorizeGreen="128" saturation="0" colorizeStrength="100" colorizeOn="0" grayscaleMode="0"/>
-        <rasterresampler zoomedOutResampler="bilinear" maxOversampling="4"/>
+        <brightnesscontrast brightness="0" contrast="0" gamma="1"/>
+        <huesaturation saturation="0" grayscaleMode="0" colorizeOn="0" colorizeGreen="128" colorizeBlue="128" colorizeRed="255" colorizeStrength="100"/>
+        <rasterresampler maxOversampling="4" zoomedOutResampler="bilinear"/>
         <resamplingStage>resamplingFilter</resamplingStage>
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
-    <maplayer hasScaleBasedVisibilityFlag="1" styleCategories="AllStyleCategories" minScale="9000" refreshOnNotifyEnabled="0" autoRefreshEnabled="0" refreshOnNotifyMessage="" type="raster" maxScale="5000" autoRefreshTime="0">
+    <maplayer maxScale="5000" hasScaleBasedVisibilityFlag="1" minScale="9000" autoRefreshEnabled="0" type="raster" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" autoRefreshTime="0" refreshOnNotifyMessage="">
       <extent>
         <xmin>2585000</xmin>
         <ymin>1212000</ymin>
-        <xmax>2646250</xmax>
+        <xmax>2655000</xmax>
         <ymax>1266000</ymax>
       </extent>
       <id>lk10_farbig_relief_454f9144_ef6e_42c7_adbe_67217c448956</id>
@@ -838,11 +584,11 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
-          <spatial dimensions="2" maxz="0" minx="0" maxx="0" crs="" minz="0" miny="0" maxy="0"/>
+          <spatial maxy="0" maxz="0" miny="0" crs="" dimensions="2" minx="0" maxx="0" minz="0"/>
           <temporal>
             <period>
               <start></start>
@@ -853,10 +599,10 @@
       </resourceMetadata>
       <provider>gdal</provider>
       <noData>
-        <noDataList bandNo="1" useSrcNoData="0"/>
-        <noDataList bandNo="2" useSrcNoData="0"/>
-        <noDataList bandNo="3" useSrcNoData="0"/>
-        <noDataList bandNo="4" useSrcNoData="0"/>
+        <noDataList useSrcNoData="0" bandNo="1"/>
+        <noDataList useSrcNoData="0" bandNo="2"/>
+        <noDataList useSrcNoData="0" bandNo="3"/>
+        <noDataList useSrcNoData="0" bandNo="4"/>
       </noData>
       <map-layer-style-manager current="default">
         <map-layer-style name="default"/>
@@ -866,7 +612,7 @@
         <Removable>1</Removable>
         <Searchable>0</Searchable>
       </flags>
-      <temporal fetchMode="0" enabled="0" mode="0">
+      <temporal enabled="0" mode="0" fetchMode="0">
         <fixedRange>
           <start></start>
           <end></end>
@@ -880,9 +626,9 @@
       </customproperties>
       <pipe>
         <provider>
-          <resampling maxOversampling="2" zoomedInResamplingMethod="nearestNeighbour" enabled="false" zoomedOutResamplingMethod="nearestNeighbour"/>
+          <resampling maxOversampling="2" zoomedOutResamplingMethod="nearestNeighbour" enabled="false" zoomedInResamplingMethod="nearestNeighbour"/>
         </provider>
-        <rasterrenderer alphaBand="4" opacity="1" nodataColor="" greenBand="2" redBand="1" blueBand="3" type="multibandcolor">
+        <rasterrenderer redBand="1" nodataColor="" greenBand="2" blueBand="3" opacity="1" type="multibandcolor" alphaBand="4">
           <rasterTransparency/>
           <minMaxOrigin>
             <limits>MinMax</limits>
@@ -893,19 +639,19 @@
             <stdDevFactor>2</stdDevFactor>
           </minMaxOrigin>
         </rasterrenderer>
-        <brightnesscontrast contrast="0" brightness="0" gamma="1"/>
-        <huesaturation colorizeBlue="128" colorizeRed="255" colorizeGreen="128" saturation="0" colorizeStrength="100" colorizeOn="0" grayscaleMode="0"/>
-        <rasterresampler zoomedOutResampler="bilinear" maxOversampling="4"/>
+        <brightnesscontrast brightness="0" contrast="0" gamma="1"/>
+        <huesaturation saturation="0" grayscaleMode="0" colorizeOn="0" colorizeGreen="128" colorizeBlue="128" colorizeRed="255" colorizeStrength="100"/>
+        <rasterresampler maxOversampling="4" zoomedOutResampler="bilinear"/>
         <resamplingStage>resamplingFilter</resamplingStage>
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
-    <maplayer hasScaleBasedVisibilityFlag="1" styleCategories="AllStyleCategories" minScale="150000" refreshOnNotifyEnabled="0" autoRefreshEnabled="0" refreshOnNotifyMessage="" type="raster" maxScale="70000" autoRefreshTime="0">
+    <maplayer maxScale="70000" hasScaleBasedVisibilityFlag="1" minScale="150000" autoRefreshEnabled="0" type="raster" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" autoRefreshTime="0" refreshOnNotifyMessage="">
       <extent>
-        <xmin>2463000</xmin>
-        <ymin>1044100</ymin>
-        <xmax>2847000</xmax>
-        <ymax>1319900</ymax>
+        <xmin>2443000</xmin>
+        <ymin>1024000</ymin>
+        <xmax>2895000</xmax>
+        <ymax>1340000</ymax>
       </extent>
       <id>lk200_farbig_relief_4c9d7a53_9984_4494_90d7_7dbd2608443e</id>
       <datasource>/geodata/ch.swisstopo.lk200.farbig_relief/lk200_farbig_relief.vrt</datasource>
@@ -955,11 +701,11 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
-          <spatial dimensions="2" maxz="0" minx="0" maxx="0" crs="" minz="0" miny="0" maxy="0"/>
+          <spatial maxy="0" maxz="0" miny="0" crs="" dimensions="2" minx="0" maxx="0" minz="0"/>
           <temporal>
             <period>
               <start></start>
@@ -970,10 +716,10 @@
       </resourceMetadata>
       <provider>gdal</provider>
       <noData>
-        <noDataList bandNo="1" useSrcNoData="0"/>
-        <noDataList bandNo="2" useSrcNoData="0"/>
-        <noDataList bandNo="3" useSrcNoData="0"/>
-        <noDataList bandNo="4" useSrcNoData="0"/>
+        <noDataList useSrcNoData="0" bandNo="1"/>
+        <noDataList useSrcNoData="0" bandNo="2"/>
+        <noDataList useSrcNoData="0" bandNo="3"/>
+        <noDataList useSrcNoData="0" bandNo="4"/>
       </noData>
       <map-layer-style-manager current="default">
         <map-layer-style name="default"/>
@@ -983,7 +729,7 @@
         <Removable>1</Removable>
         <Searchable>0</Searchable>
       </flags>
-      <temporal fetchMode="0" enabled="0" mode="0">
+      <temporal enabled="0" mode="0" fetchMode="0">
         <fixedRange>
           <start></start>
           <end></end>
@@ -997,9 +743,9 @@
       </customproperties>
       <pipe>
         <provider>
-          <resampling maxOversampling="2" zoomedInResamplingMethod="nearestNeighbour" enabled="false" zoomedOutResamplingMethod="nearestNeighbour"/>
+          <resampling maxOversampling="2" zoomedOutResamplingMethod="nearestNeighbour" enabled="false" zoomedInResamplingMethod="nearestNeighbour"/>
         </provider>
-        <rasterrenderer alphaBand="4" opacity="1" nodataColor="" greenBand="2" redBand="1" blueBand="3" type="multibandcolor">
+        <rasterrenderer redBand="1" nodataColor="" greenBand="2" blueBand="3" opacity="1" type="multibandcolor" alphaBand="4">
           <rasterTransparency/>
           <minMaxOrigin>
             <limits>MinMax</limits>
@@ -1010,14 +756,14 @@
             <stdDevFactor>2</stdDevFactor>
           </minMaxOrigin>
         </rasterrenderer>
-        <brightnesscontrast contrast="0" brightness="0" gamma="1"/>
-        <huesaturation colorizeBlue="128" colorizeRed="255" colorizeGreen="128" saturation="0" colorizeStrength="100" colorizeOn="0" grayscaleMode="0"/>
-        <rasterresampler zoomedOutResampler="bilinear" maxOversampling="4"/>
+        <brightnesscontrast brightness="0" contrast="0" gamma="1"/>
+        <huesaturation saturation="0" grayscaleMode="0" colorizeOn="0" colorizeGreen="128" colorizeBlue="128" colorizeRed="255" colorizeStrength="100"/>
+        <rasterresampler maxOversampling="4" zoomedOutResampler="bilinear"/>
         <resamplingStage>resamplingFilter</resamplingStage>
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
-    <maplayer hasScaleBasedVisibilityFlag="1" styleCategories="AllStyleCategories" minScale="18000" refreshOnNotifyEnabled="0" autoRefreshEnabled="0" refreshOnNotifyMessage="" type="raster" maxScale="9000" autoRefreshTime="0">
+    <maplayer maxScale="9000" hasScaleBasedVisibilityFlag="1" minScale="18000" autoRefreshEnabled="0" type="raster" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" autoRefreshTime="0" refreshOnNotifyMessage="">
       <extent>
         <xmin>2585000</xmin>
         <ymin>1206000</ymin>
@@ -1072,11 +818,11 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
-          <spatial dimensions="2" maxz="0" minx="0" maxx="0" crs="" minz="0" miny="0" maxy="0"/>
+          <spatial maxy="0" maxz="0" miny="0" crs="" dimensions="2" minx="0" maxx="0" minz="0"/>
           <temporal>
             <period>
               <start></start>
@@ -1087,10 +833,10 @@
       </resourceMetadata>
       <provider>gdal</provider>
       <noData>
-        <noDataList bandNo="1" useSrcNoData="0"/>
-        <noDataList bandNo="2" useSrcNoData="0"/>
-        <noDataList bandNo="3" useSrcNoData="0"/>
-        <noDataList bandNo="4" useSrcNoData="0"/>
+        <noDataList useSrcNoData="0" bandNo="1"/>
+        <noDataList useSrcNoData="0" bandNo="2"/>
+        <noDataList useSrcNoData="0" bandNo="3"/>
+        <noDataList useSrcNoData="0" bandNo="4"/>
       </noData>
       <map-layer-style-manager current="default">
         <map-layer-style name="default"/>
@@ -1100,7 +846,7 @@
         <Removable>1</Removable>
         <Searchable>0</Searchable>
       </flags>
-      <temporal fetchMode="0" enabled="0" mode="0">
+      <temporal enabled="0" mode="0" fetchMode="0">
         <fixedRange>
           <start></start>
           <end></end>
@@ -1114,9 +860,9 @@
       </customproperties>
       <pipe>
         <provider>
-          <resampling maxOversampling="2" zoomedInResamplingMethod="nearestNeighbour" enabled="false" zoomedOutResamplingMethod="nearestNeighbour"/>
+          <resampling maxOversampling="2" zoomedOutResamplingMethod="nearestNeighbour" enabled="false" zoomedInResamplingMethod="nearestNeighbour"/>
         </provider>
-        <rasterrenderer alphaBand="4" opacity="1" nodataColor="" greenBand="2" redBand="1" blueBand="3" type="multibandcolor">
+        <rasterrenderer redBand="1" nodataColor="" greenBand="2" blueBand="3" opacity="1" type="multibandcolor" alphaBand="4">
           <rasterTransparency/>
           <minMaxOrigin>
             <limits>None</limits>
@@ -1127,14 +873,14 @@
             <stdDevFactor>2</stdDevFactor>
           </minMaxOrigin>
         </rasterrenderer>
-        <brightnesscontrast contrast="0" brightness="0" gamma="1"/>
-        <huesaturation colorizeBlue="128" colorizeRed="255" colorizeGreen="128" saturation="0" colorizeStrength="100" colorizeOn="0" grayscaleMode="0"/>
-        <rasterresampler zoomedOutResampler="bilinear" maxOversampling="4"/>
+        <brightnesscontrast brightness="0" contrast="0" gamma="1"/>
+        <huesaturation saturation="0" grayscaleMode="0" colorizeOn="0" colorizeGreen="128" colorizeBlue="128" colorizeRed="255" colorizeStrength="100"/>
+        <rasterresampler maxOversampling="4" zoomedOutResampler="bilinear"/>
         <resamplingStage>resamplingFilter</resamplingStage>
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
-    <maplayer hasScaleBasedVisibilityFlag="1" styleCategories="AllStyleCategories" minScale="35000" refreshOnNotifyEnabled="0" autoRefreshEnabled="0" refreshOnNotifyMessage="" type="raster" maxScale="18000" autoRefreshTime="0">
+    <maplayer maxScale="18000" hasScaleBasedVisibilityFlag="1" minScale="35000" autoRefreshEnabled="0" type="raster" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" autoRefreshTime="0" refreshOnNotifyMessage="">
       <extent>
         <xmin>2585000</xmin>
         <ymin>1206000</ymin>
@@ -1189,11 +935,11 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
-          <spatial dimensions="2" maxz="0" minx="0" maxx="0" crs="" minz="0" miny="0" maxy="0"/>
+          <spatial maxy="0" maxz="0" miny="0" crs="" dimensions="2" minx="0" maxx="0" minz="0"/>
           <temporal>
             <period>
               <start></start>
@@ -1204,10 +950,10 @@
       </resourceMetadata>
       <provider>gdal</provider>
       <noData>
-        <noDataList bandNo="1" useSrcNoData="0"/>
-        <noDataList bandNo="2" useSrcNoData="0"/>
-        <noDataList bandNo="3" useSrcNoData="0"/>
-        <noDataList bandNo="4" useSrcNoData="0"/>
+        <noDataList useSrcNoData="0" bandNo="1"/>
+        <noDataList useSrcNoData="0" bandNo="2"/>
+        <noDataList useSrcNoData="0" bandNo="3"/>
+        <noDataList useSrcNoData="0" bandNo="4"/>
       </noData>
       <map-layer-style-manager current="default">
         <map-layer-style name="default"/>
@@ -1217,7 +963,7 @@
         <Removable>1</Removable>
         <Searchable>0</Searchable>
       </flags>
-      <temporal fetchMode="0" enabled="0" mode="0">
+      <temporal enabled="0" mode="0" fetchMode="0">
         <fixedRange>
           <start></start>
           <end></end>
@@ -1231,9 +977,9 @@
       </customproperties>
       <pipe>
         <provider>
-          <resampling maxOversampling="2" zoomedInResamplingMethod="nearestNeighbour" enabled="false" zoomedOutResamplingMethod="nearestNeighbour"/>
+          <resampling maxOversampling="2" zoomedOutResamplingMethod="nearestNeighbour" enabled="false" zoomedInResamplingMethod="nearestNeighbour"/>
         </provider>
-        <rasterrenderer alphaBand="4" opacity="1" nodataColor="" greenBand="2" redBand="1" blueBand="3" type="multibandcolor">
+        <rasterrenderer redBand="1" nodataColor="" greenBand="2" blueBand="3" opacity="1" type="multibandcolor" alphaBand="4">
           <rasterTransparency/>
           <minMaxOrigin>
             <limits>MinMax</limits>
@@ -1244,14 +990,14 @@
             <stdDevFactor>2</stdDevFactor>
           </minMaxOrigin>
         </rasterrenderer>
-        <brightnesscontrast contrast="0" brightness="0" gamma="1"/>
-        <huesaturation colorizeBlue="128" colorizeRed="255" colorizeGreen="128" saturation="0" colorizeStrength="100" colorizeOn="0" grayscaleMode="0"/>
-        <rasterresampler zoomedOutResampler="bilinear" maxOversampling="4"/>
+        <brightnesscontrast brightness="0" contrast="0" gamma="1"/>
+        <huesaturation saturation="0" grayscaleMode="0" colorizeOn="0" colorizeGreen="128" colorizeBlue="128" colorizeRed="255" colorizeStrength="100"/>
+        <rasterresampler maxOversampling="4" zoomedOutResampler="bilinear"/>
         <resamplingStage>resamplingFilter</resamplingStage>
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
-    <maplayer hasScaleBasedVisibilityFlag="0" styleCategories="AllStyleCategories" minScale="1e+8" refreshOnNotifyEnabled="0" autoRefreshEnabled="0" refreshOnNotifyMessage="" type="raster" maxScale="0" autoRefreshTime="0">
+    <maplayer maxScale="0" hasScaleBasedVisibilityFlag="0" minScale="1e+8" autoRefreshEnabled="0" type="raster" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" autoRefreshTime="0" refreshOnNotifyMessage="">
       <extent>
         <xmin>2315000</xmin>
         <ymin>913000</ymin>
@@ -1306,11 +1052,11 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
-          <spatial dimensions="2" maxz="0" minx="0" maxx="0" crs="" minz="0" miny="0" maxy="0"/>
+          <spatial maxy="0" maxz="0" miny="0" crs="" dimensions="2" minx="0" maxx="0" minz="0"/>
           <temporal>
             <period>
               <start></start>
@@ -1321,7 +1067,7 @@
       </resourceMetadata>
       <provider>gdal</provider>
       <noData>
-        <noDataList bandNo="1" useSrcNoData="1"/>
+        <noDataList useSrcNoData="1" bandNo="1"/>
       </noData>
       <map-layer-style-manager current="default">
         <map-layer-style name="default"/>
@@ -1331,7 +1077,7 @@
         <Removable>1</Removable>
         <Searchable>0</Searchable>
       </flags>
-      <temporal fetchMode="0" enabled="0" mode="0">
+      <temporal enabled="0" mode="0" fetchMode="0">
         <fixedRange>
           <start></start>
           <end></end>
@@ -1345,9 +1091,9 @@
       </customproperties>
       <pipe>
         <provider>
-          <resampling maxOversampling="2" zoomedInResamplingMethod="nearestNeighbour" enabled="false" zoomedOutResamplingMethod="nearestNeighbour"/>
+          <resampling maxOversampling="2" zoomedOutResamplingMethod="nearestNeighbour" enabled="false" zoomedInResamplingMethod="nearestNeighbour"/>
         </provider>
-        <rasterrenderer alphaBand="-1" opacity="1" band="1" nodataColor="" type="paletted">
+        <rasterrenderer nodataColor="" opacity="1" band="1" type="paletted" alphaBand="-1">
           <rasterTransparency/>
           <minMaxOrigin>
             <limits>None</limits>
@@ -1358,11 +1104,11 @@
             <stdDevFactor>2</stdDevFactor>
           </minMaxOrigin>
           <colorPalette>
-            <paletteEntry value="1" label="1" color="#ffffff" alpha="255"/>
+            <paletteEntry alpha="255" value="1" label="1" color="#ffffff"/>
           </colorPalette>
         </rasterrenderer>
-        <brightnesscontrast contrast="0" brightness="0" gamma="1"/>
-        <huesaturation colorizeBlue="128" colorizeRed="255" colorizeGreen="128" saturation="0" colorizeStrength="100" colorizeOn="0" grayscaleMode="0"/>
+        <brightnesscontrast brightness="0" contrast="0" gamma="1"/>
+        <huesaturation saturation="0" grayscaleMode="0" colorizeOn="0" colorizeGreen="128" colorizeBlue="128" colorizeRed="255" colorizeStrength="100"/>
         <rasterresampler maxOversampling="2"/>
         <resamplingStage>resamplingFilter</resamplingStage>
       </pipe>
@@ -1539,7 +1285,7 @@
   <Bookmarks/>
   <ProjectViewSettings UseProjectScales="0">
     <Scales/>
-    <DefaultViewExtent xmin="2538376.0415834104642272" xmax="2701623.9584165895357728" ymax="1306387.50005343509837985" ymin="1201612.49994656490162015">
+    <DefaultViewExtent ymax="1258287.3656250003259629" xmin="2625955.23125000018626451" xmax="2629555.51250000018626451" ymin="1256228.3812500003259629">
       <spatialrefsys>
         <wkt>PROJCS["CH1903+ / LV95",GEOGCS["CH1903+",DATUM["CH1903+",SPHEROID["Bessel 1841",6377397.155,299.1528128,AUTHORITY["EPSG","7004"]],TOWGS84[674.374,15.056,405.346,0,0,0,0],AUTHORITY["EPSG","6150"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4150"]],PROJECTION["Hotine_Oblique_Mercator_Azimuth_Center"],PARAMETER["latitude_of_center",46.95240555555556],PARAMETER["longitude_of_center",7.439583333333333],PARAMETER["azimuth",90],PARAMETER["rectified_grid_angle",90],PARAMETER["scale_factor",1],PARAMETER["false_easting",2600000],PARAMETER["false_northing",1200000],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","2056"]]</wkt>
         <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
@@ -1553,7 +1299,7 @@
       </spatialrefsys>
     </DefaultViewExtent>
   </ProjectViewSettings>
-  <ProjectTimeSettings frameRate="1" timeStepUnit="h" cumulativeTemporalRange="0" timeStep="1"/>
+  <ProjectTimeSettings cumulativeTemporalRange="0" frameRate="1" timeStep="1" timeStepUnit="h"/>
   <ProjectDisplaySettings>
     <BearingFormat id="bearing">
       <Option type="Map">
