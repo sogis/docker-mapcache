@@ -20,11 +20,12 @@ RUN mkdir --parent /var/run/apache2/socks /var/run/lock/apache2 && \
 RUN sed -i -E -e "1 i ServerName mapcache" /etc/apache2/apache2.conf
 # Additionally log time taken to serve request (%D)
 RUN sed -i -E -e "s/(%t)/\1 %D/" /etc/apache2/apache2.conf
-# Send Apache access log to standard out, and log only if APACHE_ACCESS_LOG_ENABLED is set to true
+# Send Apache access log to standard out,
+# and log only if APACHE_ACCESS_LOG_ENABLED is set to true
 # Send Apache error log to standard out as well
 RUN sed -i -E \
     -e "s/^(CustomLog) (\S*) (\S*)/\1 \"|\/bin\/cat\" \3 \"expr=osenv('APACHE_ACCESS_LOG_ENABLED') == 'true'\"/" \
-    -e "3 i ErrorLog \"|\/bin\/cat\"" \
+    -e "$ a ErrorLog \"|\/bin\/cat\"" \
     /etc/apache2/conf-available/other-vhosts-access-log.conf
 
 # Configure and enable MapCache
