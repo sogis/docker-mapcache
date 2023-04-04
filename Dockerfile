@@ -12,7 +12,8 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Configuration for running Apache as non-root user
-RUN chgrp --recursive 0 /var/log/apache2 /var/run/apache2 && \
+RUN mkdir --parent /var/run/apache2/socks /var/run/lock/apache2 && \
+    chgrp --recursive 0 /var/log/apache2 /var/run/apache2 && \
     chmod --recursive g+w /var/log/apache2 /var/run/apache2 && \
     sed -i -e 's/Listen 80/Listen 8080/' /etc/apache2/ports.conf
 # Additionally log time taken to serve request (%D)
