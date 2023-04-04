@@ -6,7 +6,8 @@ RUN useradd --system --uid $UID --gid 0 appuser && \
     mkdir --mode=g+w $HOME
 
 RUN apt-get update && \
-    apt-get install --assume-yes --no-install-recommends apache2 libapache2-mod-mapcache mapcache-tools ca-certificates rsync && \
+    apt-get install --assume-yes --no-install-recommends \
+      apache2 libapache2-mod-mapcache mapcache-tools ca-certificates rsync && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
