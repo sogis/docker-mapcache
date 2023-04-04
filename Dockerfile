@@ -16,6 +16,8 @@ RUN mkdir --parent /var/run/apache2/socks /var/run/lock/apache2 && \
     chgrp --recursive 0 /var/log/apache2 /var/run/apache2 && \
     chmod --recursive g+w /var/log/apache2 /var/run/apache2 && \
     sed -i -e 's/Listen 80/Listen 8080/' /etc/apache2/ports.conf
+# Set ServerName
+RUN sed -i -E -e "1 i ServerName mapcache" /etc/apache2/apache2.conf
 # Additionally log time taken to serve request (%D)
 RUN sed -i -E -e "s/(%t)/\1 %D/" /etc/apache2/apache2.conf
 # Send Apache access log to standard out, and log only if APACHE_ACCESS_LOG_ENABLED is set to true
