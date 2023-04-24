@@ -36,7 +36,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build image
-        run: docker build --tag $DOCKER_NAMESPACE/$DOCKER_IMAGE:$GITHUB_RUN_NUMBER --tag $DOCKER_NAMESPACE/$DOCKER_IMAGE:latest .
+        run: docker build --cache-from sogis/mapcache:latest --tag $DOCKER_NAMESPACE/$DOCKER_IMAGE:$GITHUB_RUN_NUMBER --tag $DOCKER_NAMESPACE/$DOCKER_IMAGE:latest .
 
       - name: Test image
         run: |
