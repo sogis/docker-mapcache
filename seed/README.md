@@ -22,7 +22,7 @@ aus dem Zielverzeichnis gelöscht werden:
 rsync -a --info=progress2 $USER@UTIL-SERVERNAME:/opt/sogis_pic/geodata/ch.swisstopo.lk* $GEODATA_PATH
 # Beim folgenden Befehl besser user und password weglassen und dies stattdessen in Datei .pgpass erfassen
 ogr2ogr -f GPKG -overwrite $GEODATA_PATH/hoheitsgrenzen_kantonsgrenze.gpkg PG:'host=xy dbname=pub user=xy password=xy' -nln hoheitsgrenzen_kantonsgrenze agi_hoheitsgrenzen_pub.hoheitsgrenzen_kantonsgrenze
-rsync -a --info=progress2 $USER@UTIL-SERVERNAME:/opt/sogis_pic/geodata/ch.swisstopo.swissimage_2018.rgb $GEODATA_PATH
+rsync -a --info=progress2 $USER@UTIL-SERVERNAME:/opt/sogis_pic/geodata/ch.swisstopo.swissimage_2021.rgb $GEODATA_PATH
 rsync -a --info=progress2 $USER@UTIL-SERVERNAME:/opt/sogis_pic/geodata/ch.swisstopo.sentinel_2018 $GEODATA_PATH
 ```
 
