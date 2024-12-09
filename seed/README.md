@@ -147,31 +147,31 @@ Diese Einstellung ist unter *Project > Properties / General* zu finden.
 Die aktuellsten Images pullen:
 
 ```
-docker-compose pull
+docker compose pull
 ```
 
 Den WMS starten:
 
 ```
-docker-compose up -d wms
+docker compose up -d wms
 ```
 
 Seeden nach Bedarf:
 
 ```
-docker-compose run --rm --service-ports -e SOURCE_URL=http://wms/qgis/ch.so.agi.hintergrundkarte_sw seeder mapcache_seed -c /mapcache/mapcache.xml -t ch.so.agi.hintergrundkarte_sw -f -z 0,10 -n 4
-docker-compose run --rm --service-ports -e SOURCE_URL=http://wms/qgis/ch.so.agi.hintergrundkarte_farbig seeder mapcache_seed -c /mapcache/mapcache.xml -t ch.so.agi.hintergrundkarte_farbig -f -z 0,10 -n 4
-docker-compose run --rm --service-ports -e SOURCE_URL=http://wms/qgis/ch.so.agi.hintergrundkarte_ortho seeder mapcache_seed -c /mapcache/mapcache.xml -t ch.so.agi.hintergrundkarte_ortho -f -z 0,14 -n 4
+docker compose run --rm --service-ports -e SOURCE_URL=http://wms/qgis/ch.so.agi.hintergrundkarte_sw seeder mapcache_seed -c /mapcache/mapcache.xml -t ch.so.agi.hintergrundkarte_sw -f -z 0,10 -n 4
+docker compose run --rm --service-ports -e SOURCE_URL=http://wms/qgis/ch.so.agi.hintergrundkarte_farbig seeder mapcache_seed -c /mapcache/mapcache.xml -t ch.so.agi.hintergrundkarte_farbig -f -z 0,10 -n 4
+docker compose run --rm --service-ports -e SOURCE_URL=http://wms/qgis/ch.so.agi.hintergrundkarte_ortho seeder mapcache_seed -c /mapcache/mapcache.xml -t ch.so.agi.hintergrundkarte_ortho -f -z 0,14 -n 4
 ```
 
 Alles stoppen:
 
 ```
-docker-compose down
+docker compose down
 ```
 
 
-Falls man noch weitere Änderungen an den .qgs-Dokumenten machen muss, führt man sicherheitshalber vor dem nächsten `docker-compose run` ein `docker-compose down` aus, damit die Änderungen übernommen werden.
+Falls man noch weitere Änderungen an den .qgs-Dokumenten machen muss, führt man sicherheitshalber vor dem nächsten `docker compose run` ein `docker compose down` aus, damit die Änderungen übernommen werden.
 
 ### Kacheln in OpenShift publizieren
 
