@@ -23,7 +23,7 @@ rsync -a --info=progress2 $USER@UTIL-SERVERNAME:/opt/sogis_pic/geodata/ch.swisst
 rsync -a --info=progress2 $USER@UTIL-SERVERNAME:/opt/sogis_pic/geodata/ch.so.agi.hintergrundkarte $GEODATA_PATH
 # Beim folgenden Befehl besser user und password weglassen und dies stattdessen in Datei .pgpass erfassen
 ogr2ogr -f GPKG -overwrite $GEODATA_PATH/hoheitsgrenzen_kantonsgrenze.gpkg PG:'host=xy dbname=pub user=xy password=xy' -nln hoheitsgrenzen_kantonsgrenze agi_hoheitsgrenzen_pub.hoheitsgrenzen_kantonsgrenze
-rsync -a --info=progress2 $USER@UTIL-SERVERNAME:/opt/sogis_pic/geodata/ch.swisstopo.swissimage_2021.rgb $GEODATA_PATH
+rsync -a --info=progress2 $USER@UTIL-SERVERNAME:/opt/sogis_pic/geodata/ch.swisstopo.swissimage_2024.rgb $GEODATA_PATH
 rsync -a --info=progress2 $USER@UTIL-SERVERNAME:/opt/sogis_pic/geodata/ch.swisstopo.sentinel_2018 $GEODATA_PATH
 ```
 
@@ -95,7 +95,7 @@ Einige Änderungen können möglicherweise mit einem Skript realisiert werden,
 z.B. die Änderung eines Orthofoto-Standes mit folgedem Befehl:
 
 ```
-sed -E 's/(swissimage|orthofoto)_2018/\1_2021/g' qgs/ch.so.agi.hintergrundkarte_ortho.qgs
+sed -i -E 's/swissimage_2021/swissimage_2024/g' qgs/ch.so.agi.hintergrundkarte_ortho.qgs
 ```
 
 Falls vor dem Seeden hingegen manuelle Änderungen

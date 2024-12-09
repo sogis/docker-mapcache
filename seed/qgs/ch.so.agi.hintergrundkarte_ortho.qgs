@@ -29,12 +29,12 @@
     <layer-tree-layer source="/geodata/ch.swisstopo.sentinel_2018/ch.swisstopo.sentinel_2018.tif" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" expanded="1" providerKey="gdal" patch_size="0,0" name="ch.swisstopo.sentinel_2018" id="ch_swisstopo_sentinel_2018_36ec34a0_0ab4_4b12_bb7a_f6984e7a3937">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer source="/geodata/ch.swisstopo.swissimage_2021.rgb/ch.swisstopo.orthofoto_2021.rgb.vrt" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" expanded="1" providerKey="gdal" patch_size="0,0" name="ch.swisstopo.orthofoto_2021.rgb" id="ch_swisstopo_orthofoto_2021_rgb_12326aea_0f6c_42a5_ad49_99dc20e5475c">
+    <layer-tree-layer source="/geodata/ch.swisstopo.swissimage_2024.rgb/ch.swisstopo.swissimage_2024.rgb.tif" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" expanded="1" providerKey="gdal" patch_size="0,0" name="ch.swisstopo.swissimage_2024.rgb" id="ch_swisstopo_swissimage_2024_rgb_12326aea_0f6c_42a5_ad49_99dc20e5475c">
       <customproperties/>
     </layer-tree-layer>
     <custom-order enabled="0">
       <item>ch_swisstopo_sentinel_2018_36ec34a0_0ab4_4b12_bb7a_f6984e7a3937</item>
-      <item>ch_swisstopo_orthofoto_2021_rgb_12326aea_0f6c_42a5_ad49_99dc20e5475c</item>
+      <item>ch_swisstopo_swissimage_2024_rgb_12326aea_0f6c_42a5_ad49_99dc20e5475c</item>
       <item>hoheitsgrenzen_kantonsgrenze_603dbd89_0db2_4be5_ae9d_b053c06c7f14</item>
       <item>maske_1128ebb3_c2e8_4cd6_95bd_9ffc932da982</item>
     </custom-order>
@@ -87,9 +87,9 @@
         <legendlayerfile layerid="ch_swisstopo_sentinel_2018_36ec34a0_0ab4_4b12_bb7a_f6984e7a3937" isInOverview="0" visible="1"/>
       </filegroup>
     </legendlayer>
-    <legendlayer showFeatureCount="0" checked="Qt::Checked" open="true" name="ch.swisstopo.orthofoto_2021.rgb" drawingOrder="-1">
+    <legendlayer showFeatureCount="0" checked="Qt::Checked" open="true" name="ch.swisstopo.swissimage_2024.rgb" drawingOrder="-1">
       <filegroup open="true" hidden="false">
-        <legendlayerfile layerid="ch_swisstopo_orthofoto_2021_rgb_12326aea_0f6c_42a5_ad49_99dc20e5475c" isInOverview="0" visible="1"/>
+        <legendlayerfile layerid="ch_swisstopo_swissimage_2024_rgb_12326aea_0f6c_42a5_ad49_99dc20e5475c" isInOverview="0" visible="1"/>
       </filegroup>
     </legendlayer>
   </legend>
@@ -151,12 +151,12 @@
         <xmax>2644999.99999999906867743</xmax>
         <ymax>1262000</ymax>
       </extent>
-      <id>ch_swisstopo_orthofoto_2021_rgb_12326aea_0f6c_42a5_ad49_99dc20e5475c</id>
-      <datasource>/geodata/ch.swisstopo.swissimage_2021.rgb/ch.swisstopo.orthofoto_2021.rgb.vrt</datasource>
+      <id>ch_swisstopo_swissimage_2024_rgb_12326aea_0f6c_42a5_ad49_99dc20e5475c</id>
+      <datasource>/geodata/ch.swisstopo.swissimage_2024.rgb/ch.swisstopo.swissimage_2024.rgb.tif</datasource>
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>ch.swisstopo.orthofoto_2021.rgb</layername>
+      <layername>ch.swisstopo.swissimage_2024.rgb</layername>
       <srs>
         <spatialrefsys>
           <wkt>PROJCS["CH1903+ / LV95",GEOGCS["CH1903+",DATUM["CH1903+",SPHEROID["Bessel 1841",6377397.155,299.1528128,AUTHORITY["EPSG","7004"]],TOWGS84[674.374,15.056,405.346,0,0,0,0],AUTHORITY["EPSG","6150"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4150"]],PROJECTION["Hotine_Oblique_Mercator_Azimuth_Center"],PARAMETER["latitude_of_center",46.95240555555556],PARAMETER["longitude_of_center",7.439583333333333],PARAMETER["azimuth",90],PARAMETER["rectified_grid_angle",90],PARAMETER["scale_factor",1],PARAMETER["false_easting",2600000],PARAMETER["false_northing",1200000],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","2056"]]</wkt>
@@ -867,7 +867,7 @@ def my_form_open(dialog, layer, feature):
   </projectlayers>
   <layerorder>
     <layer id="ch_swisstopo_sentinel_2018_36ec34a0_0ab4_4b12_bb7a_f6984e7a3937"/>
-    <layer id="ch_swisstopo_orthofoto_2021_rgb_12326aea_0f6c_42a5_ad49_99dc20e5475c"/>
+    <layer id="ch_swisstopo_swissimage_2024_rgb_12326aea_0f6c_42a5_ad49_99dc20e5475c"/>
     <layer id="hoheitsgrenzen_kantonsgrenze_603dbd89_0db2_4be5_ae9d_b053c06c7f14"/>
     <layer id="maske_1128ebb3_c2e8_4cd6_95bd_9ffc932da982"/>
   </layerorder>
