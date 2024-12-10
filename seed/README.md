@@ -163,12 +163,25 @@ docker compose run --rm --service-ports -e SOURCE_URL=http://wms/qgis/ch.so.agi.
 docker compose run --rm --service-ports -e SOURCE_URL=http://wms/qgis/ch.so.agi.hintergrundkarte_farbig seeder mapcache_seed -c /mapcache/mapcache.xml -t ch.so.agi.hintergrundkarte_farbig -f -z 0,10 -n 4
 docker compose run --rm --service-ports -e SOURCE_URL=http://wms/qgis/ch.so.agi.hintergrundkarte_ortho seeder mapcache_seed -c /mapcache/mapcache.xml -t ch.so.agi.hintergrundkarte_ortho -f -z 0,14 -n 4
 ```
+Zur Information:
+* Der MapCache-Service ist während des Seedens nicht verfügbar
+* QGIS Server ist bei Bedarf unter z.B. der folgenden URL erreichbar:
+  http://localhost:8081/qgis/ch.so.agi.hintergrundkarte_sw?SERVICE=WMS&REQUEST=GetCapabilities
 
-Alles stoppen:
+QGIS Server stoppen:
 
 ```
 docker compose down
 ```
+
+Resultat prüfen nach Bedarf:
+
+```
+docker compose run --rm --service-ports -e SOURCE_URL=http://wms/qgis/ch.so.agi.hintergrundkarte_sw wmts
+docker compose run --rm --service-ports -e SOURCE_URL=http://wms/qgis/ch.so.agi.hintergrundkarte_farbig wmts
+docker compose run --rm --service-ports -e SOURCE_URL=http://wms/qgis/ch.so.agi.hintergrundkarte_ortho wmts
+```
+Danach http://localhost:8080/demo aufrufen und im WMTS-Viewer rechts aussen den entsprechenden Layer einschalten.
 
 
 Falls man noch weitere Änderungen an den .qgs-Dokumenten machen muss, führt man sicherheitshalber vor dem nächsten `docker compose run` ein `docker compose down` aus, damit die Änderungen übernommen werden.
@@ -182,11 +195,3 @@ oc rsync --no-perms --progress $TILES_PATH/ mapcache-65-srz54:/tiles
 oc delete pod mapcache-65-srz54
 oc delete pod mapcache-65-vm8jg
 ```
-
-### Information
-
-Der MapCache-Service ist während des Seedens nicht verfügbar.
-Um das Resultat zu prüfen, kann man den
-[im allgemeinen README angegebenen Befehl](../README.md#run) verwenden.
-Der WMS (QGIS Server) ist aber unter der folgenden URL erreichbar, wenn die Docker-Container laufen:
-http://localhost:8081/qgis/ch.so.agi.hintergrundkarte_sw?SERVICE=WMS&REQUEST=GetCapabilities
