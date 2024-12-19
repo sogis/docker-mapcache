@@ -5,13 +5,13 @@ Docker image providing a MapCache WMTS
 ## Build 
 
 ```
-docker build -t sogis/mapcache .
+docker build -t local/mapcache .
 ```
 
 ## Run
 
 ```
-docker run -p 8281:8080 -v /tmp/tiles:/tiles --rm --name mapcache sogis/mapcache
+docker run -p 8281:8080 -v /tmp/tiles:/tiles --rm --name mapcache local/mapcache
 ```
 
 The following environment variables may be passed:
