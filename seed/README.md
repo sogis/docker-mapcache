@@ -50,7 +50,7 @@ unzip $GEODATA_PATH/ch.so.agi.av.hoheitsgrenzen.gpkg.zip -d $GEODATA_PATH/ch.so.
 
 ### Rasterdaten auf dem WMTS-Extent zuschneiden
 
-Fürs Seeden der WMTS-Kacheln wird ein auf dem COG basierenes VRT mit reduziertem Extent erstellt (nur für die Varianten *farbig_relief* und *grau* bzw. *grau_relief*).
+Fürs Seeden der WMTS-Kacheln wird ein auf dem COG basierendes VRT mit reduziertem Extent erstellt (nur für die Varianten *farbig_relief* und *grau* bzw. *grau_relief*).
 Hierfür jeweils eine der folgenden Umgebungsvariablen-Kombinationen setzen und danach den untenstehenden Befehl ausführen:
 ```sh
 # Swiss Map Raster 10
@@ -96,7 +96,7 @@ Definieren, wo die Geodaten liegen und wo die Kacheln erstellt werden sollen:
 
 ```sh
 export GEODATA_PATH=$HOME/geodata
-export TILES_PATH=/tmp/tiles
+export TILES_PATH=$HOME/tiles
 ```
 
 Verzeichnis für die Tiles anlegen:
@@ -223,7 +223,7 @@ Falls man noch weitere Änderungen an den *.qgs*-Dokumenten machen muss, muss ma
 Zunächst muss der Inhalt des `$TILES_PATH` kurz überprüft werden. Danach meldet man sich an OpenShift an und kopiert mit folgenden Befehlsvorlagen die Kacheln auf einen der *MapCache*-Pods. Danach müssen **alle** *MapCache*-Pods neu gestartet werden, z.B. mit `oc delete pod ...`. Der Neustart ist nötig, damit Dateien, auf die der Service während des Kopierens noch zugegriffen hat, freigegeben werden und dadurch auch tatsächlich gelöscht werden.
 
 ```sh
-oc rsync --no-perms --progress ${TILES_PATH:-/tmp/tiles}/ mapcache-65-srz54:/tiles
+oc rsync --no-perms --progress ${TILES_PATH:-$HOME/tiles}/ mapcache-65-srz54:/tiles
 oc delete pod mapcache-65-srz54
 oc delete pod mapcache-65-vm8jg
 ```
