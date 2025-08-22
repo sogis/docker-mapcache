@@ -1,67 +1,83 @@
 # WMTS-Kacheln seeden
 
-Mit dieser Anleitung und der dazugehörigen Umgebung (_Docker Compose_) können WMTS-Kacheln auf einem anderen System als auf dem produktiven WMTS geseedet werden (z.B. auf der lokalen Maschine). Die fertigen Kacheln müssen danach nur noch auf das produktive System kopiert werden.
+Mit dieser Anleitung und der dazugehörigen Umgebung (_Docker Compose_) können WMTS-Kacheln auf einer lokalen Maschine geseedet und die fertigen Kacheln danach auf das produktive System kopiert werden.
+Dadurch fällt die Last nicht auf dem produktiven System an.
 
 
-## Bereitstellen der Geodaten auf einer lokalen Maschine im AGI
+## Geodaten lokal bereitstellen
 
 Zunächst muss man entscheiden, wo auf dem lokalen Rechner die Daten abgelegt werden sollen. Dieser Pfad muss in der Umgebungsvariable `GEODATA_PATH` gespeichert und danach das entsprechende Verzeichnis angelegt werden, z.B.:
 
-```
+```sh
 export GEODATA_PATH=$HOME/geodata
 mkdir $GEODATA_PATH
 ```
 
-Die benötigten Geodaten kopiert man mit `rsync` hierher bzw. generiert man mit ogr2ogr;
-wahrscheinlich ist es häufig sinnvoll,
-den `rsync`-Befehlen zudem die Option `--delete` mitzugeben,
-damit im Quellverzeichnis nicht mehr vorhandene Dateien
-aus dem Zielverzeichnis gelöscht werden:
+### Rasterdaten
 
+Die benötigten Geodaten kopiert man mit folgenden Befehlen auf die lokale Maschine.
+Bei einem Update der Hintergrundkarten sind sie möglicherweise bereits lokal vorhanden; dann kann man diesen Schritt hier überspringen.
 ```
-rsync -a --info=progress2 $USER@UTIL-SERVERNAME:/opt/sogis_pic/geodata/ch.swisstopo.lk* $GEODATA_PATH
-rsync -a --info=progress2 $USER@UTIL-SERVERNAME:/opt/sogis_pic/geodata/ch.so.agi.hintergrundkarte $GEODATA_PATH
-# Beim folgenden Befehl besser user und password weglassen und dies stattdessen in Datei .pgpass erfassen
-ogr2ogr -f GPKG -overwrite $GEODATA_PATH/hoheitsgrenzen_kantonsgrenze.gpkg PG:'host=xy dbname=pub user=xy password=xy' -nln hoheitsgrenzen_kantonsgrenze agi_hoheitsgrenzen_pub.hoheitsgrenzen_kantonsgrenze
-rsync -a --info=progress2 $USER@UTIL-SERVERNAME:/opt/sogis_pic/geodata/ch.swisstopo.swissimage_2024.rgb $GEODATA_PATH
-rsync -a --info=progress2 $USER@UTIL-SERVERNAME:/opt/sogis_pic/geodata/ch.swisstopo.sentinel_2018 $GEODATA_PATH
+rsync --delete -a --chmod=D0775,F0664 --info=progress2 ~/shares/sogisgeodata/geodata/ch.swisstopo.lk* $GEODATA_PATH
+rsync --delete -a --chmod=D0775,F0664 --info=progress2 ~/shares/sogisgeodata/geodata/ch.swisstopo.swissimage_2024.rgb $GEODATA_PATH
+rsync --delete -a --chmod=D0775,F0664 --info=progress2 ~/shares/sogisgeodata/geodata/ch.swisstopo.sentinel_2018 $GEODATA_PATH
 ```
 
-Nun kann man gemäss der Anleitung im Abschnit _Kacheln erstellen (seeden)_ mit dem Seeden starten.
-
-
-### Optional: Bereitstellen der Geodaten auf einer beliebigen lokalen Maschine
-
-Falls man die Kacheln auf einer externen Maschine seeden möchte, muss man zunächst ebenfalls auf der AGI-Maschine die obigen Schritte ausführen, um die Geodaten auf die AGI-Maschine zu kopieren. Danach speichert man sie entweder auf einer externen Festplatte und transferiert sie auf die externe Maschine, wobei auch dort wieder ein `$GEODATA_PATH` angelegt werden muss, wohin man danach die Daten kopiert:
-
+Falls sich die Maschine ausserhalb des Kantonsnetzwerks befindet, kann man die Daten alternativ mit folgenden Befehlen herunterladen, wobei man aber drauf achten muss, dass man den Server files.geo.so.ch nicht überlastet:
+```sh
+export PRODUCT=lk10; export VARIANT=farbig_relief
+# (usw., Umgebungsvariablen-Kombinationen siehe im übernächsten Abschnitt)
 ```
-export GEODATA_PATH=$HOME/geodata
-mkdir $GEODATA_PATH
+```sh
+mkdir $GEODATA_PATH/ch.swisstopo.${PRODUCT}.${VARIANT}
+wget https://files.geo.so.ch/ch.swisstopo.${PRODUCT}.${VARIANT}/aktuell/ch.swisstopo.${PRODUCT}.${VARIANT}.tif -P $GEODATA_PATH/ch.swisstopo.${PRODUCT}.${VARIANT}
+mkdir $GEODATA_PATH/ch.swisstopo.swissimage_2024.rgb
+wget https://files.geo.so.ch/ch.swisstopo.swissimage_2024.rgb/aktuell/ch.swisstopo.swissimage_2024.rgb.tif -P $GEODATA_PATH/ch.swisstopo.swissimage_2024.rgb
+mkdir $GEODATA_PATH/ch.swisstopo.sentinel_2018
+wget https://files.geo.so.ch/ch.swisstopo.sentinel_2018/aktuell/ch.swisstopo.sentinel_2018.tif -P $GEODATA_PATH/ch.swisstopo.sentinel_2018
 ```
 
-Oder man packt die Daten in ein Archiv und überträgt sie übers Internet. (Die Landeskarten sind allerdings ca. 12GB gross, die Orthofotos 26GB.)
+### Hoheitsgrenzen
 
-Packen auf der AGI-Maschine:
-
+Die in jedem Fall zusätzlich benötigten Hoheitsgrenzen lädt man mit folgendem Befehl herunter:
+```sh
+wget https://files.geo.so.ch/ch.so.agi.av.hoheitsgrenzen/aktuell/ch.so.agi.av.hoheitsgrenzen.gpkg.zip -P $GEODATA_PATH/
 ```
-cd $GEODATA_PATH
-tar -czf lk.tar.gz ch.swisstopo.lk*
-tar -czf maske.tar.gz ch.so.agi.hintergrundkarte/maske.tif
-tar -czf ch.swisstopo.swissimage_2018.rgb.tar.gz ch.swisstopo.swissimage_2018.rgb
-tar -czf ch.swisstopo.sentinel_2018.tar.gz ch.swisstopo.sentinel_2018
+Entpacken:
+```sh
+unzip $GEODATA_PATH/ch.so.agi.av.hoheitsgrenzen.gpkg.zip -d $GEODATA_PATH/ch.so.agi.av.hoheitsgrenzen
 ```
-(`hoheitsgrenzen_kantonsgrenze.gpkg` muss nicht gepackt werden, und `ch.swisstopo.sentinel_2018` packen wir nur deshalb, weil beim Entpacken praktischerweise auch der richtige Unterordner angelegt wird.)
 
-Entpacken auf der externen Maschine:
+### Rasterdaten auf dem WMTS-Extent zuschneiden
 
+Fürs Seeden der WMTS-Kacheln wird ein auf dem COG basierendes VRT mit reduziertem Extent erstellt (nur für die Varianten *farbig_relief* und *grau* bzw. *grau_relief*).
+Hierfür jeweils eine der folgenden Umgebungsvariablen-Kombinationen setzen und danach den untenstehenden Befehl ausführen:
+```sh
+# Swiss Map Raster 10
+export PRODUCT=lk10; export VARIANT=farbig_relief
+export PRODUCT=lk10; export VARIANT=grau_relief
+# Swiss Map Raster 25
+export PRODUCT=lk25; export VARIANT=farbig_relief
+export PRODUCT=lk25; export VARIANT=grau
+# Swiss Map Raster 50
+export PRODUCT=lk50; export VARIANT=farbig_relief
+export PRODUCT=lk50; export VARIANT=grau
+# Swiss Map Raster 100
+export PRODUCT=lk100; export VARIANT=farbig_relief
+export PRODUCT=lk100; export VARIANT=grau
+# Swiss Map Raster 200
+export PRODUCT=lk200; export VARIANT=farbig_relief
+export PRODUCT=lk200; export VARIANT=grau
+# Swiss Map Raster 500
+export PRODUCT=lk500; export VARIANT=farbig_relief
+export PRODUCT=lk500; export VARIANT=grau
+# Swiss Map Raster 1000
+export PRODUCT=lk1000; export VARIANT=farbig_relief
+export PRODUCT=lk1000; export VARIANT=grau_relief
 ```
-export GEODATA_PATH=$HOME/geodata
-mkdir $GEODATA_PATH
-cd $GEODATA_PATH
-tar -xzf lk.tar.gz
-tar -xzf maske.tar.gz
-tar -xzf ch.swisstopo.swissimage_2018.rgb.tar.gz
-tar -xzf ch.swisstopo.sentinel_2018.tar.gz
+```sh
+cd $GEODATA_PATH/ch.swisstopo.${PRODUCT}.${VARIANT}
+gdal_translate -of VRT -projwin 2570000 1268000 2667000 1208000 ch.swisstopo.${PRODUCT}.${VARIANT}.tif ch.swisstopo.${PRODUCT}-masked.${VARIANT}.vrt
 ```
 
 
@@ -71,32 +87,46 @@ tar -xzf ch.swisstopo.sentinel_2018.tar.gz
 
 Git-Repository auschecken und ins `seed`-Unterverzeichnis wechseln:
 
-```
+```sh
 git clone https://github.com/sogis/docker-mapcache.git && cd docker-mapcache
 cd seed
 ```
 
 Definieren, wo die Geodaten liegen und wo die Kacheln erstellt werden sollen:
 
-```
+```sh
 export GEODATA_PATH=$HOME/geodata
-export TILES_PATH=/tmp/tiles
+export TILES_PATH=$HOME/tiles
 ```
 
-Verzeichnis für die Tiles anlegen und benötigte Berechtigungen setzen:
+Verzeichnis für die Tiles anlegen:
 
+```sh
+mkdir $TILES_PATH
 ```
-mkdir -m 0777 $TILES_PATH
-```
 
-#### Nur bei Bedarf: Änderungen an *.qgs*-Dokumenten vornehmen
+### Nur bei Bedarf: Änderungen an *.qgs*-Dokumenten vornehmen
 
-Einige Änderungen können möglicherweise mit einem Skript realisiert werden,
-z.B. die Änderung eines Orthofoto-Standes mit folgedem Befehl:
+Falls Änderungen an den *.qgs*-Dokumenten nötig sein sollten, können kleinere Anpassungen möglicherweise mit einem Skript realisiert werden.
+Z.B. für die Änderung eines Orthofoto-Standes:
 
-```
+```sh
 sed -i -E 's/swissimage_2021/swissimage_2024/g' qgs/ch.so.agi.hintergrundkarte_ortho.qgs
 ```
+Falls hingegen manuelle Änderungen an *.qgs*-Dokumenten notwendig sind, kann man mit dem folgenden Befehl einen Docker-Container mit der passenden QGIS-Version starten und die Anpassungen dort vornehmen:
+```sh
+docker run -it --rm --name qgis -u $UID \
+-e HOME=/home/$UID -e DISPLAY=$DISPLAY -e GDAL_PAM_ENABLED=NO \
+-v /tmp/.X11-unix:/tmp/.X11-unix -v /tmp:/home/$UID \
+-v ./qgs:/home/$UID/qgs -v $GEODATA_PATH:/geodata \
+qgis/qgis:final-3_28_7 qgis
+```
+
+Die Geodaten sind hierbei unter `/geodata` verfügbar.
+Zu beachten ist beim Editieren, dass die Pfade zu den Geodaten *absolut* gespeichert sein müssen.
+(Der Pfad zu den geladenen Geodaten muss also mit `/geodata` beginnen.)
+
+### Nur bei Bedarf: Änderungen an *.qgs*-Dokumenten mittels Vagrant Box vornehmen (veraltet)
 
 Falls vor dem Seeden hingegen manuelle Änderungen
 an *.qgs*-Dokumenten notwendig sind,
@@ -144,54 +174,56 @@ Diese Einstellung ist unter *Project > Properties / General* zu finden.
 
 ### Seeden
 
-Die aktuellsten Images pullen:
+Die aktuellsten Docker Images pullen:
 
-```
+```sh
 docker compose pull
 ```
 
 Den WMS starten:
 
-```
+```sh
 docker compose up -d wms
 ```
 
-Seeden nach Bedarf:
+Seeden:
 
-```
-docker compose run --rm --service-ports -e SOURCE_URL=http://wms/qgis/ch.so.agi.hintergrundkarte_sw seeder mapcache_seed -c /mapcache/mapcache.xml -t ch.so.agi.hintergrundkarte_sw -f -z 0,10 -n 4
-docker compose run --rm --service-ports -e SOURCE_URL=http://wms/qgis/ch.so.agi.hintergrundkarte_farbig seeder mapcache_seed -c /mapcache/mapcache.xml -t ch.so.agi.hintergrundkarte_farbig -f -z 0,10 -n 4
-docker compose run --rm --service-ports -e SOURCE_URL=http://wms/qgis/ch.so.agi.hintergrundkarte_ortho seeder mapcache_seed -c /mapcache/mapcache.xml -t ch.so.agi.hintergrundkarte_ortho -f -z 0,14 -n 4
+```sh
+# hintergrundkarte_farbig, nur die Landeskarten-Zoomstufen, Daucer ca. 10min:
+docker compose run --rm -u $UID -e SOURCE_URL=http://wms/qgis/ch.so.agi.hintergrundkarte_farbig wmts mapcache_seed -c /mapcache/mapcache.xml -t ch.so.agi.hintergrundkarte_farbig -f -z 0,10 -n 4
+# hintergrundkarte_sw, nur die Landeskarten-Zoomstufen, Dauer ca. 6min:
+docker compose run --rm -u $UID -e SOURCE_URL=http://wms/qgis/ch.so.agi.hintergrundkarte_sw wmts mapcache_seed -c /mapcache/mapcache.xml -t ch.so.agi.hintergrundkarte_sw -f -z 0,10 -n 4
+# hintergrundkarte_ortho, alle Zoomstufen:
+docker compose run --rm -u $UID -e SOURCE_URL=http://wms/qgis/ch.so.agi.hintergrundkarte_ortho wmts mapcache_seed -c /mapcache/mapcache.xml -t ch.so.agi.hintergrundkarte_ortho -f -z 0,14 -n 4
 ```
 Zur Information:
 * Der MapCache-Service ist während des Seedens nicht verfügbar
 * QGIS Server ist bei Bedarf unter z.B. der folgenden URL erreichbar:
   http://localhost:8081/qgis/ch.so.agi.hintergrundkarte_sw?SERVICE=WMS&REQUEST=GetCapabilities
 
-QGIS Server stoppen:
+Den WMS stoppen:
 
-```
+```sh
 docker compose down
 ```
 
-Resultat prüfen nach Bedarf:
+Um das Resultat zu prüfen den WMTS starten (nach Bedarf):
 
+```sh
+docker compose run --rm --service-ports wmts
 ```
-docker compose run --rm --service-ports -e SOURCE_URL=http://wms/qgis/ch.so.agi.hintergrundkarte_sw wmts
-docker compose run --rm --service-ports -e SOURCE_URL=http://wms/qgis/ch.so.agi.hintergrundkarte_farbig wmts
-docker compose run --rm --service-ports -e SOURCE_URL=http://wms/qgis/ch.so.agi.hintergrundkarte_ortho wmts
-```
-Danach http://localhost:8080/demo aufrufen und im WMTS-Viewer rechts aussen den entsprechenden Layer einschalten.
+Danach http://localhost:8080/demo/wmts aufrufen **und im Viewer auf den Plus-Button rechts oben klicken und dort den entsprechenden Layer einschalten**.
 
 
-Falls man noch weitere Änderungen an den .qgs-Dokumenten machen muss, führt man sicherheitshalber vor dem nächsten `docker compose run` ein `docker compose down` aus, damit die Änderungen übernommen werden.
+Falls man noch weitere Änderungen an den *.qgs*-Dokumenten machen muss, muss man vor dem nächsten Seeden ein `docker compose down` und `docker compose up -d wms` ausführen, damit die Änderungen übernommen werden.
 
-### Kacheln in OpenShift publizieren
 
-Zunächst muss der Inhalt des `$TILES_PATH` kurz überprüft werden. Danach meldet man sich an OpenShift an und kopiert mit folgenden Befehlsvorlagen die Kacheln auf einen der *MapCache*-Pods. Danach müssen **alle** *MapCache*-Pods neu gestartet werden, z.B. mit `oc delete pod ...`. Der Neustart ist nötig, damit Dateien, auf die der Service während des Kopierens noch zugegriffen hat, freigegeben werden.
+## Kacheln in OpenShift publizieren
 
-```
-oc rsync --no-perms --progress $TILES_PATH/ mapcache-65-srz54:/tiles
+Zunächst muss der Inhalt des `$TILES_PATH` kurz überprüft werden. Danach meldet man sich an OpenShift an und kopiert mit folgenden Befehlsvorlagen die Kacheln auf einen der *MapCache*-Pods. Danach müssen **alle** *MapCache*-Pods neu gestartet werden, z.B. mit `oc delete pod ...`. Der Neustart ist nötig, damit Dateien, auf die der Service während des Kopierens noch zugegriffen hat, freigegeben werden und dadurch auch tatsächlich gelöscht werden.
+
+```sh
+oc rsync --no-perms --progress ${TILES_PATH:-$HOME/tiles}/ mapcache-65-srz54:/tiles
 oc delete pod mapcache-65-srz54
 oc delete pod mapcache-65-vm8jg
 ```

@@ -1,4 +1,3 @@
-version: '3'
 services:
   wmts:
     image: sogis/mapcache:latest
@@ -8,21 +7,15 @@ services:
       - "8080:8080"
     volumes:
       - ${TILES_PATH}:/tiles
-  seeder:
-    image: sogis/mapcache:latest
-    environment:
-      DEMO_SERVICE_ENABLED: 'true'
-    volumes:
-      - ${TILES_PATH}:/tiles
-    depends_on:
-      - wms
   wms:
-    image: sogis/qgis-server-base:3.16
+    image: sourcepole/qwc-qgis-server:3.28.7
     environment:
-      QGIS_FCGI_MIN_PROCESSES: 4
-      QGIS_FCGI_MAX_PROCESSES: 4
+      URL_PREFIX: /qgis
+      FCGI_MIN_PROCESSES: 0
+      FCGI_MAX_PROCESSES: 4
+      FCGI_PROCESS_LIFE_TIME: 0
     ports:
       - "8081:80"
     volumes:
-      - ${PWD}/qgs:/data
-      - ${GEODATA_PATH:-./geodata}:/geodata
+      - ./qgs:/data
+      - ${GEODATA_PATH}:/geodata
