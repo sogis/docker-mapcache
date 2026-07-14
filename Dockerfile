@@ -1,4 +1,4 @@
-FROM debian:bookworm
+FROM debian:trixie
 
 ENV HOME=/home/appuser
 ARG UID=999
