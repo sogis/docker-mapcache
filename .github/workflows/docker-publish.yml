@@ -40,8 +40,8 @@ jobs:
 
       - name: Test image
         run: |
-          docker-compose --file docker-compose.test.yml build
-          docker-compose --file docker-compose.test.yml run sut
+          docker compose --file docker-compose.test.yml build
+          docker compose --file docker-compose.test.yml run sut
 
       - name: Log into Docker registry
         if: github.event_name != 'pull_request'
