@@ -11,7 +11,8 @@ docker build -t local/mapcache .
 ## Run
 
 ```
-docker run --rm --name mapcache -v /tmp/tiles:/tiles -p 8281:8080 local/mapcache
+mkdir --mode=0777 /tmp/tiles
+docker run --rm --name mapcache --mount type=bind,src=/tmp/tiles,dst=/tiles -p 8281:8080 local/mapcache
 ```
 
 The following environment variables may be passed:
