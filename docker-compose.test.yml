@@ -1,7 +1,7 @@
 services:
   sut:
     image: curlimages/curl:latest
-    command: ["curl", "-f", "http://mapcache:8080/wmts/1.0.0/WMTSCapabilities.xml"]
+    command: ["curl", "--no-progress-meter", "-f", "http://mapcache:8080/wmts/1.0.0/WMTSCapabilities.xml"]
     depends_on:
       - mapcache
   mapcache:
