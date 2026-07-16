@@ -11,7 +11,7 @@ docker build -t local/mapcache .
 ## Run
 
 ```
-docker run -p 8281:8080 -v /tmp/tiles:/tiles --rm --name mapcache local/mapcache
+docker run --rm --name mapcache -v /tmp/tiles:/tiles -p 8281:8080 local/mapcache
 ```
 
 The following environment variables may be passed:
