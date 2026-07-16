@@ -1,10 +1,10 @@
 name: Docker
 
 on:
-  # Run when pushing to master branch
+  # Run when pushing to main branch
   push:
     branches:
-      - master
+      - main
     paths-ignore:
       - 'docs/**'
       - 'seed/**'
