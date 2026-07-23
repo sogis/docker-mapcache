@@ -20,7 +20,7 @@ docker run --rm --name mapcache --mount type=bind,src=/tmp/tiles,dst=/tiles -p 8
 ```
 Provide a specific mapcache.xml config file:
 ```
-docker run --rm --name mapcache --mount type=bind,src=/tmp/tiles,dst=/tiles --mount type=bind,src=./mapcache.xml,dst=/mapcache/mapcache-template.xml -p 8080:8080 -e DEMO_SERVICE_ENABLED=true local/mapcache
+docker run --rm --name mapcache --mount type=bind,src=/tmp/tiles,dst=/tiles --mount type=bind,src=./mapcache.xml,dst=/mapcache/mapcache.xml.tpl -p 8080:8080 -e DEMO_SERVICE_ENABLED=true local/mapcache
 ```
 
 The following environment variables may be passed:

@@ -3,10 +3,11 @@
 # Provides a MapCache config file from a template
 # and replaces placeholders with actual values
 
-CONFIG_FILE_TEMPLATE='/mapcache/mapcache-template.xml'
+CONFIG_FILE_TEMPLATE='/mapcache/mapcache.xml.tpl'
 CONFIG_FILE='/mapcache/mapcache.xml'
 
 if [[ -e "$CONFIG_FILE_TEMPLATE" ]]; then
+    echo "Mounted MapCache config file template found at $CONFIG_FILE_TEMPLATE"
     cp "$CONFIG_FILE_TEMPLATE" "$CONFIG_FILE"
 fi
 
