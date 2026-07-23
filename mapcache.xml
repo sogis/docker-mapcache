@@ -38,6 +38,7 @@
         <FORMAT>image/jpeg</FORMAT>
         <LAYERS>ch.so.agi.hintergrundkarte_ortho</LAYERS>
         <TRANSPARENT>true</TRANSPARENT>
+        <VERSION>1.3.0</VERSION>
       </params>
     </getmap>
     <http>
@@ -52,6 +53,7 @@
         <FORMAT>image/png</FORMAT>
         <LAYERS>ch.so.agi.hintergrundkarte_farbig</LAYERS>
         <TRANSPARENT>true</TRANSPARENT>
+        <VERSION>1.3.0</VERSION>
       </params>
   </getmap>
     <http>
@@ -66,6 +68,7 @@
         <FORMAT>image/png</FORMAT>
         <LAYERS>ch.so.agi.hintergrundkarte_sw</LAYERS>
         <TRANSPARENT>true</TRANSPARENT>
+        <VERSION>1.3.0</VERSION>
       </params>
     </getmap>
     <http>
