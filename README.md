@@ -14,13 +14,13 @@ Prepare:
 ```
 mkdir --mode=0777 /tmp/tiles
 ```
-Run with default mapcache.xml config file:
+Run with default mapcache-default.xml.tpl config file template:
 ```
 docker run --rm --name mapcache --mount type=bind,src=/tmp/tiles,dst=/tiles -p 8080:8080 -e DEMO_SERVICE_ENABLED=true local/mapcache
 ```
-Provide a specific mapcache.xml config file:
+Provide your own mapcache.xml.tpl config file template:
 ```
-docker run --rm --name mapcache --mount type=bind,src=/tmp/tiles,dst=/tiles --mount type=bind,src=./mapcache.xml,dst=/mapcache/mapcache.xml.tpl -p 8080:8080 -e DEMO_SERVICE_ENABLED=true local/mapcache
+docker run --rm --name mapcache --mount type=bind,src=/tmp/tiles,dst=/tiles --mount type=bind,src=~/my-mapcache.xml.tpl,dst=/mapcache/mapcache-configfile-template/mapcache.xml.tpl -p 8080:8080 -e DEMO_SERVICE_ENABLED=true local/mapcache
 ```
 
 The following environment variables may be passed:
