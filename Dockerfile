@@ -32,9 +32,9 @@ RUN sed -i -E \
 # Configure and enable MapCache
 RUN mkdir /mapcache /tiles && \
     chmod g+w /mapcache /tiles
-COPY wmts-seeding-perimeter.gpkg entrypoint.sh /mapcache/
+COPY wmts-seeding-perimeter.gpkg entrypoint.sh setup-configfile.sh /mapcache/
 RUN chmod g+w /mapcache/wmts-seeding-perimeter.gpkg && \
-    chmod g-w+x /mapcache/entrypoint.sh
+    chmod g-w+x /mapcache/entrypoint.sh /mapcache/setup-configfile.sh
 COPY mapcache-default.xml.tpl /mapcache/mapcache-configfile-template/
 COPY mapcache.conf /etc/apache2/sites-available/mapcache.conf
 RUN a2ensite mapcache
