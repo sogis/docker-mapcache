@@ -25,8 +25,8 @@ RUN sed -i -E -e "s/(%t)/\1 %D/" /etc/apache2/apache2.conf
 # and log only if APACHE_ACCESS_LOG_ENABLED is set to true
 # Send Apache error log to standard out as well
 RUN sed -i -E \
-    -e "s/^(CustomLog) (\S*) (\S*)/\1 \"|\/bin\/cat\" \3 \"expr=osenv('APACHE_ACCESS_LOG_ENABLED') == 'true'\"/" \
-    -e "$ a ErrorLog \"|\/bin\/cat\"" \
+    -e "s/^(CustomLog) (\S*) (\S*)/\1 \/dev\/stdout \3 \"expr=osenv('APACHE_ACCESS_LOG_ENABLED') == 'true'\"/" \
+    -e "$ a ErrorLog \/dev\/stderr" \
     /etc/apache2/conf-available/other-vhosts-access-log.conf
 
 # Configure and enable MapCache
