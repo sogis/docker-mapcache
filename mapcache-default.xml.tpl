@@ -93,7 +93,7 @@
     <grid restricted_extent="2570000,1208000,2667000,1268000">2056</grid>
     <format>PNG</format>
     <metatile>8 8</metatile>
-    <metabuffer>20</metabuffer>
+    <metabuffer>200</metabuffer>
     <expires>28800</expires>
   </tileset>
 
@@ -103,7 +103,7 @@
     <grid restricted_extent="2570000,1208000,2667000,1268000">2056</grid>
     <format>PNG</format>
     <metatile>8 8</metatile>
-    <metabuffer>20</metabuffer>
+    <metabuffer>200</metabuffer>
     <expires>28800</expires>
   </tileset>
 
