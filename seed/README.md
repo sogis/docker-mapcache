@@ -16,7 +16,7 @@ mkdir $GEODATA_PATH
 ### Rasterdaten
 
 Die benötigten Geodaten kopiert man mit folgenden Befehlen auf die lokale Maschine.
-Bei einem Update der Hintergrundkarten sind sie möglicherweise bereits lokal vorhanden; dann kann man diesen Schritt hier überspringen.
+Bei einem Update der Hintergrundkarten sind sie wahrscheinlich bereits lokal vorhanden; dann kann man diesen Schritt hier überspringen, bzw. man muss nur noch *ch.swisstopo.sentinel_2018* nach lokal kopieren.
 ```
 rsync --delete -a --chmod=D0775,F0664 --info=progress2 ~/shares/sogisgeodata/geodata/ch.swisstopo.lk* $GEODATA_PATH
 rsync --delete -a --chmod=D0775,F0664 --info=progress2 ~/shares/sogisgeodata/geodata/ch.swisstopo.swissimage_2024.rgb $GEODATA_PATH
@@ -50,7 +50,9 @@ unzip $GEODATA_PATH/ch.so.agi.av.hoheitsgrenzen.gpkg.zip -d $GEODATA_PATH/ch.so.
 
 ### Rasterdaten auf dem WMTS-Extent zuschneiden
 
-Fürs Seeden der WMTS-Kacheln wird ein auf dem COG basierendes VRT mit reduziertem Extent erstellt (nur für die Varianten *farbig_relief* und *grau* bzw. *grau_relief*).
+Fürs Seeden der WMTS-Kacheln wird ein auf dem COG basierendes VRT mit reduziertem Extent erstellt.
+(Bei den Landeskarten nur für die Varianten *farbig_relief* und *grau* bzw. *grau_relief*, weil nur diese in den Hintergrundkarten vorkommen. Beim Orthofoto nur für *ch.swisstopo.sentinel_2018*, weil die SWISSIMAGE-Kacheln bereits komplett innerhalb des reduzierten Extents liegen.)
+
 Hierfür jeweils eine der folgenden Umgebungsvariablen-Kombinationen setzen und danach den untenstehenden Befehl ausführen:
 ```sh
 # Swiss Map Raster 10
@@ -74,12 +76,16 @@ export PRODUCT=lk500; export VARIANT=grau
 # Swiss Map Raster 1000
 export PRODUCT=lk1000; export VARIANT=farbig_relief
 export PRODUCT=lk1000; export VARIANT=grau_relief
+
+# sentinel_2018
+export PRODUCT=sentinel_2018; unset VARIANT
 ```
 ```sh
-cd $GEODATA_PATH/ch.swisstopo.${PRODUCT}.${VARIANT}
-gdal_translate -of VRT -projwin 2570000 1268000 2667000 1208000 ch.swisstopo.${PRODUCT}.${VARIANT}.tif ch.swisstopo.${PRODUCT}-masked.${VARIANT}.vrt
+cd $GEODATA_PATH/ch.swisstopo.${PRODUCT}${VARIANT:+".$VARIANT"} && \
+  gdal_translate -of VRT -projwin 2570000 1268000 2667000 1208000 ch.swisstopo.${PRODUCT}${VARIANT:+".$VARIANT"}.tif ch.swisstopo.${PRODUCT}-masked${VARIANT:+".$VARIANT"}.vrt && \
+  cd -
 ```
-
+(Der Ausdruck `${VARIANT:+".$VARIANT"}` bedeutet: Wenn `VARIANT` *null* oder *unset* ist, gib den Wert von `VARIANT` nicht aus; andernfalls gib das aus, was in den doppelten Anführungszeichen steht, also einen Punkt und den Wert von `VARIANT`. Die doppelten Anführungszeichen wären nicht einaml nötig, machen aber den Ausdruck vielleicht etwas besser lesbar. Doku: https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html, im Abschnitt mit der Bezeichnung *`${parameter:+word}`*)
 
 ## Kacheln erstellen (seeden)
 
@@ -113,7 +119,7 @@ Z.B. für die Änderung eines Orthofoto-Standes:
 ```sh
 sed -i -E 's/swissimage_2021/swissimage_2024/g' qgs/ch.so.agi.hintergrundkarte_ortho.qgs
 ```
-Falls hingegen manuelle Änderungen an *.qgs*-Dokumenten notwendig sind, kann man mit dem folgenden Befehl einen Docker-Container mit der passenden QGIS-Version starten und die Anpassungen dort vornehmen:
+Falls hingegen manuelle Änderungen an *.qgs*-Dokumenten notwendig sind, kann man mit dem folgenden Befehl einen Docker-Container mit der passenden QGIS-Version starten und die Anpassungen dort vornehmen (aus dem Verzeichnis `seed` heraus ausführen):
 ```sh
 docker run -it --rm --name qgis -u $UID \
 -e HOME=/home/$UID -e DISPLAY=$DISPLAY -e GDAL_PAM_ENABLED=NO \
@@ -210,7 +216,7 @@ docker compose down
 Um das Resultat zu prüfen den WMTS starten (nach Bedarf):
 
 ```sh
-docker compose run --rm --service-ports wmts
+docker compose up -d wmts
 ```
 Danach http://localhost:8080/demo/wmts aufrufen **und im Viewer auf den Plus-Button rechts oben klicken und dort den entsprechenden Layer einschalten**.
 
