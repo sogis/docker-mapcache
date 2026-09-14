@@ -6,6 +6,7 @@ services:
     ports:
       - "8080:8080"
     volumes:
+      - ./mapcache-seed.xml.tpl:/mapcache/mapcache-configfile-template/mapcache.xml.tpl
       - ${TILES_PATH}:/tiles
   wms:
     image: sourcepole/qwc-qgis-server:3.28.7
